@@ -9,6 +9,10 @@
   flex-direction: column;
 }
 
+.app-name {
+  padding: 0 100px 0 50px;
+}
+
 .search-bar-contents {
   display: flex;
   justify-content: space-between;
@@ -24,7 +28,7 @@
   width: 65vw;
   height: 5vh;
   display: flex;
-  margin-bottom: 5px;
+  margin: 0 15px 5px 0;
 }
 
 .search-form>.input-box {

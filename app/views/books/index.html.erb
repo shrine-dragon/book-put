@@ -1,1 +1,33 @@
 <%= render "shared/header" %>
+
+<div class='main'>
+  <div class='title-contents'>
+    <h2 class='service-title'>
+      人生が変わるアプリ
+    </h2>
+    <p class='service-explain'>
+      BookPutは、読書習慣が身に付く
+    </p>
+    <p class='service-explain'>
+      読書アプリです
+    </p>
+    <p class='service-cath_copy'>
+      さあ、快適な読書ライフを手にしませんか？
+    </p>
+    <div class='store-btn'>
+      <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
+      <%= link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
+    </div>
+  </div>
+  <div class='book-contents'>
+    <h2 class='title'>投稿一覧</h2>
+    <ul class='book-lists'>
+      <div class='list'>
+        <%= image_tag "apology.png", class: "img" %>
+      </div>
+    </ul>
+    <p class='alert'>
+      閲覧可能な投稿はありません
+    </p>
+  </div>
+</div>
