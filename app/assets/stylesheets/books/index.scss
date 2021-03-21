@@ -6,7 +6,7 @@ a {
   background: #f8f8f8;
 }
 
-/* 画面上部の「人生を変えるフリマアプリ」帯部分 */
+/* 画面上部の「生き方が変わる読書アプリ」帯部分 */
 .title-contents {
   height: 85vh;
   width: 100vw;
@@ -77,7 +77,7 @@ a {
   align-items: center;
 }
 
-.usage-list {
+.list {
   position: relative;
   z-index: 10;
 }
@@ -112,7 +112,7 @@ a {
   margin-left: 20px;
 }
 
-/* 商品一覧 */
+/* 投稿一覧 */
 .book-contents {
   height: 350px;
   background-color: #FFF;
@@ -171,20 +171,4 @@ a {
   font-size: 18px;
   text-decoration: none;
   margin-bottom: 5px;
-}
-
-.item-info {
-  background-color: #FFF;
-  color: black;
-  padding: 1vw;
-}
-
-.item-name {
-  font-size: 2.5vh;
-}
-
-.item-price {
-  font-size: 1.5vh;
-  display: flex;
-  justify-content: space-between;
 }
