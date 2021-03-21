@@ -8,7 +8,7 @@ a {
 
 /* 画面上部の「人生を変えるフリマアプリ」帯部分 */
 .title-contents {
-  height: 75vh;
+  height: 85vh;
   width: 100vw;
   background-image: image-url('big_library.png');
   background-size: cover;
@@ -25,6 +25,7 @@ a {
 
 .service-title {
   font-size: 8vh;
+  margin-top: 80px;
 }
 
 .service-explain {
@@ -222,6 +223,7 @@ a {
 /* 商品一覧 */
 
 .book-contents {
+  height: 350px;
   background-color: #FFF;
   display: flex;
   flex-direction: column;
@@ -235,32 +237,48 @@ a {
   font-weight: bold;
 }
 
-.book-contents>.subtitle {
-  font-size: 3vh;
-  margin: 1vh 0;
-  text-decoration: none;
-  color: #3ccace;
-  font-weight: bold;
-}
-
 .book-lists {
   width: 100vw;
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .book-lists>.list {
-  width: 37vh;
+  width: 50vw;
   padding: 1vw;
   background-color: #FFF;
+  text-align: center;
 }
 
 .img {
   width: 30vw;
   height: 30vh;
   display: block; 
-  margin: 0 auto;
+  margin: 20px auto 30px;
+}
+
+.no-post-sentence {
+  margin-bottom: 20px;
+}
+
+.post-btn {
+  height: 55px;
+  width: 190px;
+  background: #3ccace;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 12px;
+  right: 41%;
+  position: fixed;
+  padding: 15px;
+}
+
+.post-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
 }
 
 .item-info {

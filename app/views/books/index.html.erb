@@ -21,13 +21,13 @@
   <div class='book-contents'>
     <h2 class='title'>投稿一覧</h2>
     <ul class='book-lists'>
-      <div class='list'>
-        <%= image_tag "apology.png", class: "img" %>
-      </div>
+      <%= image_tag "apology_man.png", class: "img" %>
     </ul>
-    <p class='alert'>
-      閲覧可能な投稿はありません
-    </p>
+    <p class='no-post-sentence'>投稿はありません</p>
   </div>
 </div>
+<%= link_to(root_path, class: 'post-btn') do %>
+  <span class='post-btn-text'>投稿する</span>
+<% end %>
+
 <%= render "shared/footer"%>
