@@ -3,14 +3,18 @@
 }
 
 .top-page-header {
-  width: 100vw;
+  position: fixed;
+  width: 100%;
   padding: 2vh 15vw;
   display: flex;
   flex-direction: column;
+  background-color: white;
 }
 
-.app-name {
+.header-app-name {
   padding: 0 100px 0 50px;
+  text-decoration: none;
+  color: black;
 }
 
 .search-bar-contents {
@@ -82,22 +86,23 @@
   height: 30px;
 }
 
-.btn {
-  border-radius: 10px; 
+.sign-in-btn, .sign-up-btn {
+  width: 80px;
+  border-radius: 4px;
   padding: 3px 3px;
-  margin-right: 10px;
-  background-color: #FFFF22	;
+  margin-right: 6px;
   cursor: pointer;
   box-shadow: 0 3px #222222;
   border: none;
   outline: none;
 }
 
-/* ボタンを押下している間のスタイルを追加 */
-.btn:active {
-  box-shadow: none;
-  position: relative;
-  top: 3px;
+.sign-in-btn {
+  background-color: #FF9900;
+}
+
+.sign-up-btn {
+  background-color: #00bfff;
 }
 
 .user-nickname {
