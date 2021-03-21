@@ -3,6 +3,7 @@
 }
 
 .top-page-header {
+  z-index: 20;
   position: fixed;
   height: 105px;
   width: 100%;
@@ -88,7 +89,7 @@
 }
 
 .sign-in-btn {
-  background-color: #FF9900;
+  background-color: #FF9933;
 }
 
 .sign-up-btn {
