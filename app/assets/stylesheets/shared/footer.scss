@@ -36,7 +36,7 @@
   width: 100vw;
   padding: 5vh 0;
   color: #FFF;
-  background-color: #FF6600;
+  background-color: #999999;
   text-align: center;
 }
 
@@ -46,8 +46,8 @@
   margin-bottom: 5vh;
 }
 
-.furima-details {
-  margin: 0 4vw;
+.bookput-details {
+  margin: 3vh 4vw;
 }
 
 .footer-content-head {
@@ -69,6 +69,14 @@
 
 .footer>p {
   font-size: 14px;
+}
+
+.footer-content-foot {
+  justify-content: center;
+}
+
+.footer-icon {
+  margin-left: 130px;
 }
 
 .copyright {
