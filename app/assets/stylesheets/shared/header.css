@@ -4,6 +4,7 @@
 
 .top-page-header {
   position: fixed;
+  height: 85px;
   width: 100%;
   padding: 2vh 15vw;
   display: flex;
