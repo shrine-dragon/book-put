@@ -33,8 +33,13 @@ a {
   line-height: 40px;
 }
 
+.service-benefit {
+  font-size: 2.5vh;
+  margin-bottom: 10px;
+}
+
 .service-catch-copy {
-  font-size: 8vh;
+  font-size: 5vh;
   line-height: 50px;
 }
 
@@ -58,6 +63,7 @@ a {
 }
 
 .how-to-use > .title {
+  font-color: FF9933;
   font-size: 5vh;
   text-align: center;
   line-height: 1.4;
@@ -102,19 +108,18 @@ a {
 
 .usage-list-text {
   width: 30vw;
-  margin: 15px 0 30px;
-  text-align: center;
+  margin: 15px 0 20px;
   font-size: 18px;
   font-weight: bold;
 }
 
 .usage-list-description {
-  margin-left: 20px;
+  margin:10px 20px 0 0;
 }
 
 /* 投稿一覧 */
 .book-contents {
-  height: 350px;
+  height: 400px;
   background-color: #FFF;
   display: flex;
   flex-direction: column;
