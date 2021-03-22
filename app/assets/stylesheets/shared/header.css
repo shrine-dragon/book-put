@@ -36,7 +36,7 @@
   width: 5vh;
   border: 0;
   cursor: pointer;
-  background-color: #3ccace;
+  background-color: #FF9933;
   padding: 8px;
   position: relative;
 }
@@ -88,13 +88,14 @@
   padding: 3px 3px;
   margin-right: 6px;
   cursor: pointer;
-  box-shadow: 0 2px #222222;
+  box-shadow: 2px 2px #222222;
   border: none;
   outline: none;
 }
 
 .sign-in-btn {
   background-color: #FF9933;
+  margin-left: 15px;
 }
 
 .sign-up-btn {
