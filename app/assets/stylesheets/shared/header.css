@@ -5,7 +5,7 @@
 .top-page-header {
   z-index: 20;
   position: fixed;
-  height: 105px;
+  height: 110px;
   width: 100%;
   padding: 0 15vw;
   display: flex;
@@ -23,7 +23,7 @@
   width: 65vw;
   height: 5vh;
   display: flex;
-  margin: 0 15px 5px 0;
+  margin: 8px 15px 0 0;
 }
 
 .search-form>.input-box {
@@ -86,7 +86,7 @@
   width: 80px;
   border-radius: 4px;
   padding: 3px 3px;
-  margin-right: 6px;
+  margin-right: 12px;
   cursor: pointer;
   box-shadow: 2px 2px #222222;
   border: none;
