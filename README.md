@@ -5,10 +5,10 @@
 |       Column       |  Type  |          Options          |
 |--------------------|--------|---------------------------|
 |      nickname      | string |       null: false         |
-|        email       | string | null: false, unique: true |
-| encrypted_password | string |       null: false         |
+|      birth_day     |  date  |       null: false         |
 |       gender       | string |       null: false         |
-|     birth_day      |  date  |       null: false         |
+|       email        | string | null: false, unique: true |
+| encrypted_password | string |       null: false         |
 
 ### Association
 

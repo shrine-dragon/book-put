@@ -9,10 +9,9 @@ class User < ApplicationRecord
   has_many   :comments
 
   with_options presence: true do
-    validates :nickname
+    validates :nickname, :birth_day
     validates :password, length: { minimum: 12, maximum: 20 },
-              format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'Include both letters and numbers.' }
-    validates :birth_day
+              format:  { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'Include both letters and numbers.' }
   end
   # active_hashのデータ
   validates :gender, numericality: { other_than: 0, message: 'must be other than 0' }
