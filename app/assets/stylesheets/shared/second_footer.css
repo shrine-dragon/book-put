@@ -1,26 +1,37 @@
-.second-fotter {
+.second-footer {
   width: 100%;
   min-width: 800px;
-  height: 200px;
+  height: 120px;
   background-color: #f5f5f5;
   display: flex;
   flex-direction: column;
 }
 
-.second-fotter-text-wrap {
+.second-footer-text-wrap {
   margin: 30px 0;
   display: flex;
   justify-content: center;
+  margin-bottom: 3px;
 }
 
-.second-fotter-text {
+.footer-link {
   color: #333;
   font-size: 12px;
-  margin: 0 10px;
+  margin: 0 10px 20px;
+  cursor: pointer;
 }
 
-.second-fotter-logo {
-  width: 185px;
-  height: 49px;
-  margin: 0 auto;
+.second-footer-content-foot {
+  background-color: #777;
+}
+
+.second-footer-logo {
+  width: 250px;
+  height: 50px;
+  margin: 3px 0 0 42.8vw;
+}
+
+.copyright {
+  text-align: center;
+  margin-bottom: 5px;
 }
