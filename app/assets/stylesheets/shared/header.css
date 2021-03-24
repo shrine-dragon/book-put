@@ -85,7 +85,7 @@
 .sign-in-btn, .sign-up-btn {
   width: 80px;
   border-radius: 4px;
-  padding: 3px 3px;
+  padding: 9px 9px;
   margin-right: 12px;
   cursor: pointer;
   box-shadow: 2px 2px #222222;
@@ -102,13 +102,13 @@
   background-color: #00bfff;
 }
 
-.login {
+.sign-in-btn-text {
   text-decoration: none;
   line-height: 30px;
   color: #333333;
 }
 
-.sign-up {
+.sign-up-btn-text {
   text-decoration: none;
   line-height: 30px;
   color: #333333;

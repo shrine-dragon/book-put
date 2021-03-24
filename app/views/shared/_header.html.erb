@@ -7,9 +7,9 @@
     <%#= link_to image_tag("big_library.png", class:"book-put-icon"), "/" %>
     <form class="search-form" action="#">
       <input class='input-box' placeholder='キーワードを入力してください'>
-      <button class="search-button">
+      <%= link_to(root_path, class:"search-button", id:"orange-btn") do %>
         <%= image_tag "book-search.png", class:"search-icon" %>
-      </button>
+      <% end %>
     </form>
   </div>
   <div class='nav'>
@@ -20,15 +20,15 @@
     <ul class='lists-right'>
       <li>
         はじめての方はこちら
-        <button class='sign-in-btn'>
-          <%= link_to 'ログイン', "/", class: "login" %>
-        </button>
+        <%= link_to(root_path, class:'sign-in-btn', id:"orange-btn") do %>
+          <span class="sign-in-btn-text">ログイン</span>
+        <% end %>
       </li>
 
       <li>
-        <button class='sign-up-btn'>
-          <%= link_to '新規登録', "/", class: "sign-up" %>
-        </button>
+        <%= link_to(root_path, class:'sign-up-btn', id:"blue-btn") do %>
+          <span class="sign-up-btn-text">新規登録</span>
+        <% end %>
       </li>
     </ul>
   </div>
