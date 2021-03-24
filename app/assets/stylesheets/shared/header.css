@@ -100,13 +100,7 @@
   background-color: #00bfff;
 }
 
-.sign-in-btn-text {
-  text-decoration: none;
-  line-height: 30px;
-  color: #333333;
-}
-
-.sign-up-btn-text {
+.sign-in-btn-text, .sign-up-btn-text {
   text-decoration: none;
   line-height: 30px;
   color: #333333;

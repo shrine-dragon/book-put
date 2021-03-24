@@ -10,7 +10,7 @@ a {
 .title-contents {
   height: 85vh;
   width: 100vw;
-  background-image: image-url('big_library.png');
+  background-image: image-url('big-library.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
@@ -87,7 +87,7 @@ a {
   z-index: 10;
 }
 
-.left-image, .right-image {
+.usage-image {
   width: 30vw;
   margin-top: 30px;
 }
@@ -138,7 +138,7 @@ a {
   justify-content: center;
 }
 
-.image {
+.no-post-image {
   width: 30vw;
   height: 30vh;
   display: block; 
