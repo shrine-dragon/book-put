@@ -1,0 +1,171 @@
+a {
+  text-decoration: none;
+}
+
+.main {
+  background: #f8f8f8;
+}
+
+/* 画面上部の「生き方が変わる読書アプリ」帯部分 */
+.title-contents {
+  height: 85vh;
+  width: 100vw;
+  background-image: image-url('big-library.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.service-title {
+  font-size: 8vh;
+  margin-top: 100px;
+}
+
+.service-explain {
+  font-size: 2.5vh;
+  line-height: 40px;
+}
+
+.service-benefit {
+  font-size: 2.5vh;
+  margin-bottom: 10px;
+}
+
+.service-catch-copy {
+  font-size: 5vh;
+  line-height: 50px;
+}
+
+.store-btn {
+  display: flex;
+  margin-top: 24px;
+}
+
+.apple-btn {
+  margin-right: 1vw;
+  height: 9vh;
+}
+
+.google-btn {
+  height: 9vh;
+}
+
+.how-to-use {
+  height: 500px;
+  padding: 10vh;
+}
+
+.how-to-use > .title {
+  font-size: 5vh;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.usage-lists {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.usage-lists> list {
+  width: 33vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list {
+  position: relative;
+  z-index: 10;
+}
+
+.usage-image {
+  width: 30vw;
+  margin-top: 30px;
+}
+
+.usage-list-number {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 60px;
+  background-color: #FF9933;
+  color: #fff;  
+}
+
+.usage-list-text {
+  width: 30vw;
+  margin: 15px 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.usage-list-description {
+  margin:10px 20px 0 0;
+}
+
+/* 投稿一覧 */
+.book-contents {
+  height: 400px;
+  background-color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10vh 0;
+}
+
+.book-contents>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.book-lists {
+  width: 100vw;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.no-post-image {
+  width: 30vw;
+  height: 30vh;
+  display: block; 
+  margin: 20px auto 30px;
+}
+
+.no-post-sentence {
+  margin-bottom: 20px;
+}
+
+.post-btn {
+  height: 55px;
+  width: 190px;
+  background: #FF9933;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 15px;
+  right: 15px;
+  position: fixed;
+  z-index: 20;
+  padding: 15px;
+}
+
+.post-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}

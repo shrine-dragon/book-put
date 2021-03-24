@@ -1,0 +1,35 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <div>
+      <%= link_to image_tag("bookput.png", class:"bookput-icon"), "/" %>
+    </div>
+    <%#= link_to image_tag("big_library.png", class:"book-put-icon"), "/" %>
+    <form class="search-form" action="#">
+      <input class='input-box' placeholder='キーワードを入力してください'>
+      <%= link_to(root_path, class:"search-button", id:"orange-btn") do %>
+        <%= image_tag "book-search.png", width:"20", height:"20", class:"search-icon" %>
+      <% end %>
+    </form>
+  </div>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li><%= link_to 'カテゴリー', "/", class: "category-list" %></li>
+      <li><%= link_to 'ジャンル', "/", class: "genre-list" %></li>
+    </ul>
+    <ul class='lists-right'>
+      <li>
+        はじめての方はこちら
+        <%= link_to(root_path, class:'sign-in-btn', id:"orange-btn") do %>
+          <span class="sign-in-btn-text">ログイン</span>
+        <% end %>
+      </li>
+
+      <li>
+        <%= link_to(root_path, class:'sign-up-btn', id:"blue-btn") do %>
+          <span class="sign-up-btn-text">新規登録</span>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</header>
