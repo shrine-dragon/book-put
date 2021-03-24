@@ -20,13 +20,13 @@
     <ul class='lists-right'>
       <li>
         はじめての方はこちら
-        <%= link_to(root_path, class:'sign-in-btn', id:"orange-btn") do %>
+        <%= link_to(new_user_session_path, class:'sign-in-btn', id:"orange-btn") do %>
           <span class="sign-in-btn-text">ログイン</span>
         <% end %>
       </li>
 
       <li>
-        <%= link_to(root_path, class:'sign-up-btn', id:"blue-btn") do %>
+        <%= link_to(new_user_registration_path, class:'sign-up-btn', id:"blue-btn") do %>
           <span class="sign-up-btn-text">新規登録</span>
         <% end %>
       </li>
