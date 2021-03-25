@@ -1,0 +1,36 @@
+current directory: /Users/shrine-dragon3839/projects/book-put/vendor/bundle/ruby/2.6.0/gems/bcrypt-ruby-3.0.1/ext/mri
+/Users/shrine-dragon3839/.rbenv/versions/2.6.5/bin/ruby -I /Users/shrine-dragon3839/.rbenv/versions/2.6.5/lib/ruby/2.6.0 -r ./siteconf20210324-55463-n0c5e.rb extconf.rb
+creating Makefile
+
+current directory: /Users/shrine-dragon3839/projects/book-put/vendor/bundle/ruby/2.6.0/gems/bcrypt-ruby-3.0.1/ext/mri
+make "DESTDIR=" clean
+
+current directory: /Users/shrine-dragon3839/projects/book-put/vendor/bundle/ruby/2.6.0/gems/bcrypt-ruby-3.0.1/ext/mri
+make "DESTDIR="
+compiling bcrypt_ext.c
+bcrypt_ext.c:27:19: error: implicit declaration of function 'ruby_bcrypt' is invalid in C99 [-Werror,-Wimplicit-function-declaration]
+    return (VALUE)ruby_bcrypt(args->output, args->key, args->salt);
+                  ^
+bcrypt_ext.c:27:19: note: did you mean 'ruby_script'?
+/Users/shrine-dragon3839/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/ruby.h:2666:6: note: 'ruby_script' declared here
+void ruby_script(const char* name);
+     ^
+bcrypt_ext.c:42:25: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+            NIL_P(input) ? 0 : RSTRING_LEN(input));
+                               ^~~~~~~~~~~~~~~~~~
+/Users/shrine-dragon3839/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/ruby.h:1000:6: note: expanded from macro 'RSTRING_LEN'
+     RSTRING_EMBED_LEN(str) : \
+     ^~~~~~~~~~~~~~~~~~~~~~
+/Users/shrine-dragon3839/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/ruby.h:996:6: note: expanded from macro 'RSTRING_EMBED_LEN'
+     (long)((RBASIC(str)->flags >> RSTRING_EMBED_LEN_SHIFT) & \
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+bcrypt_ext.c:42:25: warning: implicit conversion loses integer precision: 'long' to 'int' [-Wshorten-64-to-32]
+            NIL_P(input) ? 0 : RSTRING_LEN(input));
+                               ^~~~~~~~~~~~~~~~~~
+/Users/shrine-dragon3839/.rbenv/versions/2.6.5/include/ruby-2.6.0/ruby/ruby.h:1001:28: note: expanded from macro 'RSTRING_LEN'
+     RSTRING(str)->as.heap.len)
+     ~~~~~~~~~~~~~~~~~~~~~~^~~
+2 warnings and 1 error generated.
+make: *** [bcrypt_ext.o] Error 1
+
+make failed, exit code 2
