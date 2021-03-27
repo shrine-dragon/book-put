@@ -55,12 +55,12 @@
 
 .user-nickname {
   text-decoration: none;
-  margin-right: 3vw;
+  margin-left: 3vw;
   color: #333333;
   font-weight: bold;
 }
 
-.logout {
+.login-condition {
   text-decoration: none;
   color: #333333;
 }

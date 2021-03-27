@@ -12,8 +12,8 @@
     </form>
     <ul class='layout-change'>
       <% if user_signed_in? %>
+        <li class="login-condition">ログインしています</li>
         <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
         <li>
           はじめての方はこちら
@@ -31,11 +31,11 @@
   </div>
   <div class='nav'>
     <ul class='search-lists'>
-      <li><%= link_to 'タイトル', "/", class: "title-list" %></li>
-      <li><%= link_to 'カテゴリー', "/", class: "category-list" %></li>
-      <li><%= link_to 'ジャンル', "/", class: "genre-list" %></li>
-      <li><%= link_to 'キャッチコピー', "/", class: "catch-copy-list" %></li>
-      <li><%= link_to 'お気に入り', "/", class: "favorite-list" %></li>
+      <li><%= link_to 'タイトル', "/", class: "title-list", id:"list" %></li>
+      <li><%= link_to 'カテゴリー', "/", class: "category-list", id:"list" %></li>
+      <li><%= link_to 'ジャンル', "/", class: "genre-list", id:"list" %></li>
+      <li><%= link_to 'キャッチコピー', "/", class: "catch-copy-list", id:"list" %></li>
+      <li><%= link_to 'お気に入り', "/", class: "favorite-list", id:"list" %></li>
     </ul>
   </div>
 </header>
