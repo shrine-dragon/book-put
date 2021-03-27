@@ -7,7 +7,7 @@
   position: fixed;
   height: 110px;
   width: 100%;
-  padding: 0 15vw;
+  padding: 0 5vw;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -20,16 +20,15 @@
 }
 
 .search-form {
-  width: 65vw;
+  width: 35vw;
   height: 5vh;
   display: flex;
-  margin: 8px 15px 0 0;
+  margin: 8px 0 0 -12vw;
 }
 
 .search-form>.input-box {
-  width: 100%;
+  width: 75%;
   height: 5vh;
-  padding-left: 10px;
 }
 
 .search-button {
@@ -47,37 +46,11 @@
   bottom: 3px;
 }
 
-.nav {
-  font-size: 18px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  width: 100%;
-  padding: 1vh 0;
-}
-
-.lists-left {
-  display: flex;
-  min-width: 200px;
-  margin-left: 15px;
-}
-
-.category-list {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
-}
-
-.genre-list {
-  text-decoration: none;
-  color: #333333;
-}
-
-.lists-right {
+.layout-change {
   display: flex;
   list-style: none;
-  align-items: center;
   height: 30px;
+  margin-top: 5px;
 }
 
 .user-nickname {
@@ -115,5 +88,26 @@
 .sign-in-btn-text, .sign-up-btn-text {
   text-decoration: none;
   line-height: 30px;
+  color: #333333;
+}
+
+.nav {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 1vh 0;
+}
+
+.search-lists {
+  display: flex;
+  min-width: 200px;
+  margin-left: 10px;
+}
+
+.title-list, .category-list, .genre-list, .catch-copy-list, .favorite-list {
+  text-decoration: none;
+  margin: 0 20px 0 0.7vw;
   color: #333333;
 }
