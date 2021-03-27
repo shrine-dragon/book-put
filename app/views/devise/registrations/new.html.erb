@@ -101,8 +101,13 @@
       </div>
       <div class='register-btn'>
         <%= f.submit "登録する" ,class:"register-blue-btn", id:"blue-btn" %>
+        <p class='already-register'>登録済みの方は<span><%= link_to 'こちら',  new_user_session_path, id:'link' %></span></p>        
       </div>
-      <p class='already-register'>登録済みの方は<span><%= link_to 'こちら',  new_user_session_path, id:'link' %></span></p>
+    </div>
+    <div class='go-back-btn'>
+      <%= link_to(root_path, class:'go-back-gray-btn', id:"gray-btn") do %>
+        <span class="go-back-btn-text">もどる</span>
+      <% end %>
     </div>
   </div>
 <% end %>

@@ -1,6 +1,7 @@
 .forget-password {
   text-decoration: none;
   color: #0099e8;
+  margin-top: 5px;
 }
 
 .login-btn {
@@ -20,9 +21,27 @@
 }
 
 .not-register {
-  text-align: center;
-  margin-top: 30px;
   font-weight: bold;
+  margin-top: 5px;
+}
+
+.go-back-btn {
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: -60px;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  color: #fff;
+  text-align: center;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.go-back-btn-text {
+  color: white;
+  text-decoration: none;
 }
 
 .login-flash-message {
