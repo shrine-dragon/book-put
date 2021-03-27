@@ -80,6 +80,18 @@
   height: 30px;
 }
 
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+
 .sign-in-btn, .sign-up-btn {
   width: 80px;
   border-radius: 4px;

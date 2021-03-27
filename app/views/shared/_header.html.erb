@@ -17,19 +17,23 @@
       <li><%= link_to 'カテゴリー', "/", class: "category-list" %></li>
       <li><%= link_to 'ジャンル', "/", class: "genre-list" %></li>
     </ul>
-    <ul class='lists-right'>
-      <li>
-        はじめての方はこちら
-        <%= link_to(new_user_session_path, class:'sign-in-btn', id:"orange-btn") do %>
-          <span class="sign-in-btn-text">ログイン</span>
-        <% end %>
-      </li>
-
-      <li>
-        <%= link_to(new_user_registration_path, class:'sign-up-btn', id:"blue-btn") do %>
-          <span class="sign-up-btn-text">新規登録</span>
-        <% end %>
-      </li>
+    <ul class='lists-right'>    
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+        <li>
+          はじめての方はこちら
+          <%= link_to(new_user_session_path, class:'sign-in-btn', id:"orange-btn") do %>
+            <span class="sign-in-btn-text">ログイン</span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to(new_user_registration_path, class:'sign-up-btn', id:"blue-btn") do %>
+            <span class="sign-up-btn-text">新規登録</span>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </header>
