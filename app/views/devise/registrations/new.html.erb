@@ -22,6 +22,9 @@
 
     <div class="form-all">
       <%= render 'shared/error_messages', model: f.object %>
+      <div class="gray-bar">
+        <h1 class="gray-bar-text">お客様情報</h1>
+      </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">ニックネーム</label>
@@ -61,9 +64,14 @@
           <span class="indispensable">必須</span>
         </div>
         <%= f.email_field :email, class:"input-default", id:"email", placeholder:"あなたのメールアドレス", autofocus: true %>
-        <p class='info-text'>※ 本人情報は正しく入力してください。</p>
-              <p class='info-text'>※修正するにはお時間を頂く場合があります。</p>
+        <div class='caution'>
+          <p class='info-text'>※ 本人情報は正しく入力してください。</p>
+          <p class='info-text'>※修正するにはお時間を頂く場合があります。</p>
+        </div>
       </div>
+      <div class="gray-bar">
+        <div class="gray-bar-text">セキュリティ</div>
+      </div>      
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">パスワード</label>
@@ -92,21 +100,14 @@
           <%= link_to '本人情報の登録について', '#', class:'register-info', id:'link' %>
         </p>
       </div>
-      <div class="form-group">
-        <h2 class='form-bottom-text'>
-          「会員登録」のボタンを押すことにより、<br>
-          <span><%= link_to '利用規約', "#", id:'link' %></span>および<span><%= link_to 'プライバシーポリシー', "#", id:'link' %></span>に
-          <br>同意したものとみなします。
-        </h2>
-      </div>
-      <div class='register-btn'>
-        <%= f.submit "登録する" ,class:"register-blue-btn", id:"blue-btn" %>
+      <div class='next-btn'>
+        <%= f.submit "次へ進む" ,class:"blue-next-btn", id:"blue-btn" %>
         <p class='already-register'>登録済みの方は<span><%= link_to 'こちら',  new_user_session_path, id:'link' %></span></p>        
       </div>
     </div>
     <div class='go-back-btn'>
       <%= link_to(root_path, class:'go-back-gray-btn', id:"gray-btn") do %>
-        <span class="go-back-btn-text">もどる</span>
+        <p class="go-back-btn-text">もどる</p>
       <% end %>
     </div>
   </div>
