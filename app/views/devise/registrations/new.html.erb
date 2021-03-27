@@ -88,6 +88,9 @@
         <p class='form-info-text'>
           本人情報は正しくご入力下さい。<br>お客様の情報は他のお客さまに公開されることはありません。
         </p>
+        <p>
+          <%= link_to '本人情報の登録について', '#', class:'register-info', id:'link' %>
+        </p>
       </div>
       <div class="form-group">
         <h2 class='form-bottom-text'>
@@ -99,7 +102,6 @@
       <div class='register-btn'>
         <%= f.submit "登録する" ,class:"register-blue-btn", id:"blue-btn" %>
       </div>
-      <p class='register-info', id='link'>本人情報の登録について</p>
       <p class='already-register'>登録済みの方は<span><%= link_to 'こちら',  new_user_session_path, id:'link' %></span></p>
     </div>
   </div>
