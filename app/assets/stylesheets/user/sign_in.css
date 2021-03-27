@@ -1,3 +1,9 @@
+.form-wrap-sign-in {
+  width: 50%;
+  background-color: white;
+  padding-bottom: 70px;  
+}
+
 .forget-password {
   text-decoration: none;
   color: #0099e8;

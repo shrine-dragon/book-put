@@ -8,7 +8,7 @@
 }
 
 /* form-wrapは商品購入画面でも使用しています */
-.form-wrap {
+.form-wrap-sign-up {
   width: 65%;
   background-color: white;
   padding-bottom: 70px;
