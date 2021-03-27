@@ -16,7 +16,7 @@
       <label class="form-text">メールアドレス</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"登録したメールアドレス", autofocus: true %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -24,10 +24,12 @@
       <span class="indispensable">必須</span>
     </div>
     <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
+    <p><%= link_to "パスワードをお忘れですか？", "#", class:"forget-password", id:'link' %></p>
   </div>
   <div class='login-btn'>
-    <%= f.submit "ログイン" ,class:"login-red-btn" %>
+    <%= f.submit "ログイン" ,class:"login-orange-btn", id:"orange-btn" %>
   </div>
+  <p class="not-register">登録がお済みでない方は<span><%= link_to 'こちら',  new_user_registration_path, id:'link' %></span></p>
 </div>
 <% end %>
 
