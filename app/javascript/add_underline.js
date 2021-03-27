@@ -1,5 +1,5 @@
 const addUnderline = () => {
-  const footerLinks = document.querySelectorAll(".footer-link");
+  const footerLinks = document.querySelectorAll("#link");
   footerLinks.forEach(function (footerLink) {
     footerLink.addEventListener('mouseover', () => {
       footerLink.setAttribute("style", "text-decoration:underline;")
