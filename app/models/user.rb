@@ -2,6 +2,7 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  has_one_attached       :image
   has_one                :questionnaire
   belongs_to_active_hash :gender
   has_many               :books

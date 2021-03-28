@@ -2,24 +2,7 @@
 
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
   <div class='form-wrap-sign-up'>
-    <div class='form-header'>
-      <h1 class='form-header-text'>
-        新規登録
-      </h1>
-      <div class='step-contents'>
-        <div class='left-circle'></div>
-        <hr class='horizontal-line'>
-        <div class='center-circle'></div>
-        <hr class='horizontal-line'>
-        <div class='right-circle'></div>
-      </div>
-      <div class ='step-text'>
-        <div class='step-text-left'>お客様情報入力</div>
-        <div class='step-text-center'>アンケート情報入力</div>
-        <div class='step-text-right'>登録完了</div>
-      </div>
-    </div>
-
+    <%= render 'shared/form_header' %>
     <div class="form-all">
       <%= render 'shared/error_messages', model: f.object %>
       <div class="gray-bar">
@@ -30,7 +13,20 @@
           <label class="form-text">ニックネーム</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) book好男", maxlength:"40" %>
+        <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) book好男", maxlength:"12" %>
+        <p class='info-text'>※12文字以内で入力してください。</p>        
+      </div>
+      <div class="img-upload">
+        <div class="form-text">
+          本人画像
+          <span class="optional">任意</span>
+        </div>
+        <div class="click-upload">
+          <p>
+            クリックしてファイルをアップロード
+          </p>
+          <%= f.file_field :image, id:"item-image" %>
+        </div>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
@@ -77,7 +73,7 @@
           <label class="form-text">パスワード</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.password_field :password, class:"input-default", id:"password", placeholder:"半角英数12文字以上20文字以内", minlength:"12", maxlength:"20" %>
+        <%= f.password_field :password, class:"input-default", id:"password", placeholder:"半角英数12文字以上20文字以内",  maxlength:"20" %>
         <p class='info-text'>※パスワードの長さは<br>半角英数12文字以上20以内です。</p>
       </div>
       <div class="form-group">
@@ -85,7 +81,7 @@
           <label class="form-text">確認用パスワード</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードをご入力下さい" %>
+        <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力してください" %>
         <p class='info-text'>※個人情報から推定しやすいものは<br>お控え下さい。</p>
         <p class='info-text'>※第三者に悪用される恐れがあります。</p>
       </div>
@@ -94,7 +90,7 @@
           本人確認
         </p>
         <p class='form-info-text'>
-          本人情報は正しくご入力下さい。<br>お客様の情報は他のお客さまに公開されることはありません。
+          本人情報は正しく入力してください。<br>お客様の情報は他のお客さまに公開されることはありません。
         </p>
         <p>
           <%= link_to '本人情報の登録について', '#', class:'register-info', id:'link' %>

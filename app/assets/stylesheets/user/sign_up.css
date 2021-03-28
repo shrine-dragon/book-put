@@ -7,81 +7,19 @@
   justify-content: center;
 }
 
-/* form-wrapは商品購入画面でも使用しています */
 .form-wrap-sign-up {
   width: 65%;
   background-color: white;
   padding-bottom: 70px;
 }
 
-.form-header {
-  width: 100%;
-  height: 120px;
-  text-align: center;
-  font-size: 25px;
-}
-
-.form-header-text {
-  line-height: 100px;
-  font-weight: bold;
-}
-
-.step-contents {
-  display: flex;
-  justify-content: center;
-}
-
-.left-circle, .center-circle, .right-circle {
-  width: 30px;
-  height: 30px;
-  border: 0.5px solid #ccc;
-  border-radius: 50%;
-  background-color: #ccc;
-}
-
 .left-circle {
-  width: 30px;
-  height: 30px;
-  margin-left: 80px;
-  background-color: #f00;
-}
-
-.right-circle {
-  margin-right: 80px;
-}
-
-.horizontal-line {
-  width: 20vw;
-  height: 3px;
-  color: #ccc;
-  background-color: #ccc;
-  border: 1px solid;
-  margin: 12px 12px;
-}
-
-.step-text {
-  display: flex;
-  justify-content: space-between;
-  font-size: 15px;
-  padding-bottom: 25px;
-  margin-top: 9px;
-  border-bottom: 1px solid #f5f5f5;
+  background-color: red;
 }
 
 .step-text-left {
-  margin-left: 40px;
-}
-
-.step-text-center, .step-text-right {
-  color: #ccc;
-}
-
-.step-text-center {
-  margin-right: 25px;
-}
-
-.step-text-right {
-  margin-right: 65px;
+  color: black;
+  font-weight: bold;
 }
 
 .form-all {
@@ -124,12 +62,43 @@
   font-weight: bold;
 }
 
-.indispensable {
+.indispensable, .optional {
   color: white;
   border: none;
   padding: 3px;
   margin-left: 3px;
+}
+
+.indispensable {
   background-color: #f00;
+}
+
+.img-upload {
+  width: 50%;
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  font-weight: bold;
+  padding-top: 20px;
+  margin: 0 auto;  
+}
+
+.optional {
+  color: white;
+  border: none;
+  padding: 3px;
+  margin-left: 3px;
+  background-color: #ccc;
+}
+
+.click-upload {
+  margin: 15px 0;
+  min-width: 250px;
+}
+
+.click-upload>p {
+  margin-bottom: 15px;
 }
 
 .select-box {
