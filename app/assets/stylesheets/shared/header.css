@@ -51,7 +51,13 @@
   display: flex;
   list-style: none;
   height: 30px;
-  margin-top: 5px;
+}
+
+.login-condition {
+  display: flex;
+  text-decoration: none;
+  color: #333333;
+  margin-top: 8.5px;
 }
 
 .user-nickname {
@@ -61,9 +67,9 @@
   font-weight: bold;
 }
 
-.login-condition {
-  text-decoration: none;
-  color: #333333;
+.not-login-condition {
+  display: flex;
+  margin-top: 5px;
 }
 
 .sign-in-btn, .sign-up-btn {
@@ -86,7 +92,7 @@
   background-color: #00bfff;
 }
 
-.sign-in-btn-text, .sign-up-btn-text {
+.btn-text {
   text-decoration: none;
   line-height: 30px;
   color: #333333;
@@ -107,7 +113,7 @@
   margin-left: 10px;
 }
 
-.title-list, .category-list, .genre-list, .catch-copy-list, .favorite-list {
+.search-list {
   text-decoration: none;
   margin: 0 20px 0 0.7vw;
   color: #333333;
