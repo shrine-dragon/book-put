@@ -62,15 +62,9 @@
 
 .user-nickname {
   text-decoration: none;
-  margin: 0 0.5vw 0 3vw;
+  margin-left: 3vw;
   color: #333333;
   font-weight: bold;
-}
-
-.user-image {
-  border-radius: 50%;
-  margin-top: -10px;
-  border: 1px solid gray;
 }
 
 .not-login-condition {
