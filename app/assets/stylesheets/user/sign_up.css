@@ -85,10 +85,7 @@
 }
 
 .optional {
-  color: white;
-  border: none;
-  padding: 3px;
-  margin-left: 3px;
+  font-size: 16px;
   background-color: #ccc;
 }
 
