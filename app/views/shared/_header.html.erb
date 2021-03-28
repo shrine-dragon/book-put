@@ -15,6 +15,11 @@
         <div class="login-condition">
           <li>ログインしています</li>
           <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+          <% if current_user.image.attached? %>          
+            <li><%= image_tag current_user.image, width: "45", height: "45", class: 'user-image' %></li>
+          <% else%>
+            <li><%= image_tag "no-image.png", width: "45", height: "45", class: 'user-image' %></li>          
+          <% end %>
         </div>
       <% else %>
         <div class="not-login-condition">
