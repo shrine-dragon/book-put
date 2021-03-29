@@ -1,6 +1,6 @@
 const changeColor = () => {
   const orangeButtons = document.querySelectorAll("#orange-btn")
-  orangeButtons.forEach(function (button) {
+  orangeButtons.forEach((button) => {
     button.addEventListener('mouseover', () => {
       button.setAttribute("style", "background-color:#FFAD90;");
     });
@@ -10,7 +10,7 @@ const changeColor = () => {
   });
 
   const blueButtons = document.querySelectorAll("#blue-btn")
-  blueButtons.forEach(function (button) {
+  blueButtons.forEach((button) => {
     button.addEventListener('mouseover', () => {
       button.setAttribute("style", "background-color:#66CCFF;");
     });
@@ -20,7 +20,7 @@ const changeColor = () => {
   });
 
   const searchLists = document.querySelectorAll("#list");
-  searchLists.forEach(function (list) {
+  searchLists.forEach((list) => {
     list.addEventListener('mouseover', () => {
       list.setAttribute("style", "color: #FF9933");
     });

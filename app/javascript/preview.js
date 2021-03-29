@@ -1,5 +1,5 @@
 if (document.URL.match( /sign_up/ ) || document.URL.match( /edit/) || document.URL.match(/new/)) {
-  document.addEventListener('DOMContentLoaded', function(){
+  document.addEventListener('DOMContentLoaded', () => {
     const ImageList = document.getElementById('image-list');
 
       // 選択した画像を表示する関数
@@ -15,7 +15,7 @@ if (document.URL.match( /sign_up/ ) || document.URL.match( /edit/) || document.U
       ImageList.appendChild(imageElement);
     };
 
-    document.getElementById('user-image').addEventListener('change', function(e){
+    document.getElementById('user-image').addEventListener('change', (e) => {
       // 画像が表示されている場合のみ、すでに存在している画像を削除する
       const imageContent = document.querySelector('#image-list> div> img');
       if (imageContent){
