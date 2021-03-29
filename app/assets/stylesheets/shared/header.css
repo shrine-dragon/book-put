@@ -92,10 +92,6 @@
   color: #222;
 }
 
-.pulldown-menu-text::after {
-  content: url(./images/right-icon.png);
-}
-
 hr {
   width: 100%;
 }
