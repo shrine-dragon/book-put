@@ -67,10 +67,37 @@
   font-weight: bold;
 }
 
-.user-image {
-  border-radius: 50%;
-  margin-top: -10px;
+#user-image {
+  margin-top: -9px;
   border: 1px solid gray;
+  cursor: pointer;
+}
+
+.hidden-lists {
+  color: #fff;
+  width: 12vw;
+  display: none;
+  align-items: center;
+  position: absolute;
+  top: 60px;
+  right: 2.5vw;
+  padding: 1vw 0;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid gray;
+}
+
+.pulldown-menu-text {
+  text-decoration: none;
+  color: #222;
+}
+
+.pulldown-menu-text::after {
+  content: url(./images/right-icon.png);
+}
+
+hr {
+  width: 100%;
 }
 
 .not-login-condition {

@@ -10,6 +10,7 @@ require("channels")
 require("../change_color")
 require("../add_underline")
 require('../preview')
+require('../pulldown')
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
