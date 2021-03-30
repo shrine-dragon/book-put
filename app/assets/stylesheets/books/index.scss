@@ -8,8 +8,7 @@ a {
 
 /* 画面上部の「生き方が変わる読書アプリ」帯部分 */
 .title-contents {
-  height: 85vh;
-  width: 100vw;
+  min-height: 85vh;
   background-image: image-url('big-library.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -118,7 +117,7 @@ a {
 
 /* 投稿一覧 */
 .book-contents {
-  height: 400px;
+  min-height: 75vh;
   background-color: #FFF;
   display: flex;
   flex-direction: column;
