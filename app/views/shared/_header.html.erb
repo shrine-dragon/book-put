@@ -7,7 +7,6 @@
     <form class="search-form" action="#">
       <input class='input-box' placeholder='キーワードを入力してください'>
       <%= link_to(root_path, class:"search-button", id:"orange-btn") do %>
-        <%= image_tag "book-search.png", width:"20", height:"20", class:"search-icon" %>
       <% end %>
     </form>
     <ul class='layout-change'>
@@ -53,7 +52,7 @@
         <span class="pulldown-menu-text", id="list">マイページ</span>
       <% end %>
     </li>
-    <hr class="partition-line">
+    <hr>
     <li>
       <%= link_to(destroy_user_session_path, class:"log-out", method: :delete) do%>
         <span class="pulldown-menu-text", id="list">ログアウト</span>
