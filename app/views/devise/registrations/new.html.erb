@@ -11,15 +11,13 @@
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">ニックネーム</label>
-          <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) book好男", maxlength:"12" %>
         <p class='info-text'>※12文字以内で入力してください。</p>        
       </div>
       <div class="img-upload">
         <div class="form-text-wrap">
-          <label class="form-text">本人画像</label>
-          <span class="optional">任意</span>
+          <label class="weight-bold-text">本人画像</label>
         </div>
         <div class="click-upload">
           <p>
@@ -33,14 +31,12 @@
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">性別</label>
-          <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"user-gender"}) %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">生年月日</label>
-          <span class="indispensable">必須</span>
         </div>
         <div class='input-birth-wrap'>
           <%= raw sprintf(
@@ -59,7 +55,6 @@
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">メールアドレス</label>
-          <span class="indispensable">必須</span>
         </div>
         <%= f.email_field :email, class:"input-default", id:"email", placeholder:"あなたのメールアドレス", autofocus: true %>
         <div class='caution'>
@@ -73,7 +68,6 @@
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">パスワード</label>
-          <span class="indispensable">必須</span>
         </div>
         <%= f.password_field :password, class:"input-default", id:"password", placeholder:"半角英数12文字以上20文字以内",  maxlength:"20" %>
         <p class='info-text'>※パスワードの長さは<br>半角英数12文字以上20以内です。</p>
@@ -81,7 +75,6 @@
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">確認用パスワード</label>
-          <span class="indispensable">必須</span>
         </div>
         <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力してください" %>
         <p class='info-text'>※個人情報から推定しやすいものは<br>お控え下さい。</p>

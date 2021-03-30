@@ -57,20 +57,26 @@
   margin-bottom: 3px;
 }
 
-.form-text {
+.form-text, .weight-bold-text {
   font-size: 14px;
   font-weight: bold;
 }
 
-.indispensable, .optional {
+.form-text::after, .weight-bold-text::after {
   color: white;
   border: none;
   padding: 3px;
-  margin-left: 3px;
+  margin-left: 10px;
 }
 
-.indispensable {
+.form-text::after {
+  content: "必須";
   background-color: #f00;
+}
+
+.weight-bold-text::after {
+  content: "任意";
+  background-color: #ccc;
 }
 
 .img-upload {
@@ -82,11 +88,6 @@
   font-weight: bold;
   padding-top: 20px;
   margin: 0 auto;  
-}
-
-.optional {
-  font-size: 16px;
-  background-color: #ccc;
 }
 
 .click-upload {

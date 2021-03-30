@@ -13,6 +13,7 @@
 .step-contents {
   display: flex;
   justify-content: center;
+  margin: 0 80px;
 }
 
 .left-circle, .center-circle, .right-circle {
@@ -21,16 +22,6 @@
   border: 0.5px solid #ccc;
   border-radius: 50%;
   background-color: #ccc;
-}
-
-.left-circle {
-  width: 30px;
-  height: 30px;
-  margin-left: 80px;
-}
-
-.right-circle {
-  margin-right: 80px;
 }
 
 .horizontal-line {
@@ -46,24 +37,12 @@
   display: flex;
   justify-content: space-between;
   font-size: 15px;
+  color: #ccc;
   padding-bottom: 25px;
-  margin-top: 9px;
+  margin: 9px 65px 0 40px;
   border-bottom: 1px solid #f5f5f5;
-}
-
-.step-text-left {
-  margin-left: 40px;
-  color: #ccc;
-}
-
-.step-text-center, .step-text-right {
-  color: #ccc;
 }
 
 .step-text-center {
   margin-right: 25px;
-}
-
-.step-text-right {
-  margin-right: 65px;
 }
