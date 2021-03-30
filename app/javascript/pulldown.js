@@ -11,6 +11,13 @@ const pullDown = () => {
       pullDownParents.setAttribute("style", "display:block;")
     }
   });
+
+  document.addEventListener('click', (e) => {
+    // 本人画像以外の要素をクリックした時のイベントの設定
+    if(!e.target.closest('#user-image')) {
+      pullDownParents.removeAttribute("style", "display:block;");
+    }
+  });
 }
 
 window.addEventListener('DOMContentLoaded', pullDown);
