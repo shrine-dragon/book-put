@@ -26,7 +26,7 @@
     </div>
     <div class='login-btn'>
       <%= f.submit "ログイン" ,class:"login-orange-btn", id:"orange-btn" %>
-      <p class='not-register'>登録がお済みでない方は<span><%= link_to 'こちら',  new_user_registration_path, id:'link' %></span></p>    
+      <p class='not-register'>初めての方は<span><%= link_to 'こちら',  new_user_registration_path, id:'link' %></span></p>    
     </div>
     <div class='go-back-btn'>
       <%= link_to(root_path, class:'go-back-gray-btn', id:"gray-btn") do %>
