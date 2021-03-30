@@ -7,8 +7,6 @@ require("@rails/ujs").start()
 // require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("../change_color")
-require("../add_underline")
 require('../preview')
 require('../pulldown')
 // Uncomment to copy all static images under ../images to the output folder and reference
