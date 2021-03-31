@@ -4,6 +4,7 @@
   <div class='form-wrap-sign-up'>
     <%= render 'shared/form_header' %>
     <div class="form-all">
+      <%= render 'shared/error_messages', model: f.object %>
       <div class="gray-bar">
         <h1 class="gray-bar-text">アンケート内容入力</h1>
       </div>
