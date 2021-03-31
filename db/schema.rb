@@ -34,10 +34,10 @@ ActiveRecord::Schema.define(version: 2021_03_30_235427) do
   end
 
   create_table "questionnaires", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "book_category_id"
-    t.integer "book_genre_id"
-    t.integer "purchase_place_id"
-    t.integer "reading_type_id"
+    t.integer "book_category_id", null: false
+    t.integer "book_genre_id", null: false
+    t.integer "purchase_place_id", null: false
+    t.integer "reading_type_id", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
