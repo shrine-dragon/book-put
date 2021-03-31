@@ -16,7 +16,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
     @address = @user.build_questionnaire
     render :new_questionnaire
-  end  
+  end
+
+  def create_questionnaire
+    @user = User.new(session["devise.regist_data"]["user"])
+    @questionnaire = Questionnaire.new(questionnaire_params)
+     unless @questionnaire.valid?
+       render :new_questionnaire and return
+     end
+    @user.build_questionnaire(@questionnaire.attributes)
+    @user.save
+    session["devise.regist_data"]["user"].clear
+    sign_in(:user, @user)
+  end
+ 
+  private
+ 
+  def questionnaire_params
+    params.permit(:book_category_id, :book_genre_id, :purchase_place_id, :reading_type_id)
+  end
 
   # GET /resource/sign_up
   # def new

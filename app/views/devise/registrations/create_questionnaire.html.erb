@@ -1,0 +1,13 @@
+<%= render "shared/second_header" %>
+  <div class='form-wrap-sign-up'>
+    <%= render 'shared/form_header' %>
+    <div class="form-all">
+      <h2>登録が完了しました</h2>
+    </div>
+    <div class='go-back-btn'>
+      <%= link_to(root_path, class:'go-back-gray-btn', id:"gray-btn") do %>
+        <p class="go-back-btn-text">もどる</p>
+      <% end %>
+    </div>
+  </div>
+<%= render "shared/second_footer" %>
