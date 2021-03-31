@@ -3,15 +3,6 @@
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
   <div class='form-wrap-sign-up'>
     <%= render 'shared/form_header' %>
-    <style>
-      .left-circle {
-        background-color:red;
-      }
-      .step-text-left {
-        color: black;
-        font-weight: bold;
-      }
-    </style>
     <div class="form-all">
       <%= render 'shared/error_messages', model: f.object %>
       <div class="gray-bar">
@@ -22,7 +13,7 @@
           <label class="form-text">ニックネーム</label>
         </div>
         <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) book好男", maxlength:"12" %>
-        <p class='info-text'>※12文字以内で入力してください。</p>        
+        <p class='info-text'>※12文字以内で入力してください。</p>
       </div>
       <div class="img-upload">
         <div class="form-text-wrap">
@@ -112,5 +103,16 @@
     </div>
   </div>
 <% end %>
+
+<style>
+  .left-circle {
+    background-color:red;
+  }
+  
+  .step-text-left {
+    color: black;
+    font-weight: bold;
+  }
+</style>
 
 <%= render "shared/second_footer"%>

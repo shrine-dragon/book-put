@@ -191,7 +191,6 @@
 }
 
 .form-bottom-text:last-child {
-  margin: 0;
   padding-bottom: 50px;
 }
 
@@ -200,12 +199,17 @@
   cursor: pointer;
 }
 
-.next-btn {
+.next-btn, .register-btn {
   width: 50%;
   margin: 40px auto 0;
 }
 
-.blue-next-btn {
+.register-btn {
+  width: 50%;
+  margin: -30px auto 0;
+}
+
+.blue-next-btn, .blue-register-btn {
   width: 100%;
   background: #00bfff;
   border: 1px solid #00bfff;
@@ -215,11 +219,18 @@
   cursor: pointer;
 }
 
-.already-register {
+.already-register, span > #link {
   margin-top: 5px;
   font-weight: bold;
 }
 
 span > #link {
   color: #0099e8;
+}
+
+.registration-completed {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 0 20px;
 }
