@@ -12,8 +12,8 @@ class User < ApplicationRecord
     validates :nickname, length: { maximum: 12}
     validates :birth_day
     validates :password, length: { minimum: 12, maximum: 20 },
-              format:  { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'Include both letters and numbers.' }
+              format:  { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'は半角英数混合で入力してください' }
   end
   # active_hashのデータ
-  validates :gender_id, numericality: { other_than: 0, message: 'must be other than 0' }
+  validates :gender_id, numericality: { other_than: 0, message: 'を入力してください' }
 end

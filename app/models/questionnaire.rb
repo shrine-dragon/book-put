@@ -7,7 +7,7 @@ class Questionnaire < ApplicationRecord
   belongs_to_active_hash :reading_type
 
   # active_hashのデータ
-  with_options numericality: { other_than: 0, message: 'must be other than 0' } do
+  with_options numericality: { other_than: 0, message: 'を入力してください' } do
     validates :book_category_id, :book_genre_id, :purchase_place_id, :reading_type_id
   end
 end
