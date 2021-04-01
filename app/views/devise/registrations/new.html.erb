@@ -4,7 +4,6 @@
   <div class='form-wrap-sign-up'>
     <%= render 'shared/form_header' %>
     <div class="form-all">
-      <%= render 'shared/error_messages', model: f.object %>
       <div class="gray-bar">
         <h1 class="gray-bar-text">お客様情報</h1>
       </div>
@@ -13,6 +12,7 @@
           <label class="form-text">ニックネーム</label>
         </div>
         <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) book好男", maxlength:"12" %>
+        <%= render "shared/error_messages", model: @user, attribute: :nickname %>
         <p class='info-text'>※12文字以内で入力してください。</p>
       </div>
       <div class="img-upload">
@@ -33,6 +33,7 @@
           <label class="form-text">性別</label>
         </div>
         <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"user-gender"}) %>
+        <%= render "shared/error_messages", model: @user, attribute: :gender_id %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
@@ -50,6 +51,7 @@
                         end_year: (Time.now.year - 5),
                         date_separator: '%s'),
                       "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+          <%= render "shared/error_messages", model: f.object, attribute: :birth_day %>
         </div>
       </div>
       <div class="form-group">
@@ -57,6 +59,7 @@
           <label class="form-text">メールアドレス</label>
         </div>
         <%= f.email_field :email, class:"input-default", id:"email", placeholder:"あなたのメールアドレス", autofocus: true %>
+        <%= render "shared/error_messages", model: @user, attribute: :email %>        
         <div class='caution'>
           <p class='info-text'>※ 本人情報は正しく入力してください。</p>
           <p class='info-text'>※修正するにはお時間を頂く場合があります。</p>
@@ -70,6 +73,7 @@
           <label class="form-text">パスワード</label>
         </div>
         <%= f.password_field :password, class:"input-default", id:"password", placeholder:"半角英数12文字以上20文字以内",  maxlength:"20" %>
+        <%= render "shared/error_messages", model: @user, attribute: :password %>
         <p class='info-text'>※パスワードの長さは<br>半角英数12文字以上20以内です。</p>
       </div>
       <div class="form-group">
@@ -77,6 +81,7 @@
           <label class="form-text">確認用パスワード</label>
         </div>
         <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力してください" %>
+        <%= render "shared/error_messages", model: @user, attribute: :password_confirmation %>
         <p class='info-text'>※個人情報から推定しやすいものは<br>お控え下さい。</p>
         <p class='info-text'>※第三者に悪用される恐れがあります。</p>
       </div>
