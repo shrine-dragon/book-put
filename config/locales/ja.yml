@@ -7,7 +7,7 @@ ja:
        birth_day: 生年月日
        gender_id: 性別
      questionnaire:
-       book_category_id: 本の種類
-       book_genre_id: 本のジャンル
-       purchase_place_id: 本を買う場所
-       reading_type_id: 本を読む媒体
+       book_category_id: 種類
+       book_genre_id: ジャンル
+       purchase_place_id: 購入場所
+       reading_type_id: 媒体
