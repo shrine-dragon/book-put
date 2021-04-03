@@ -70,7 +70,6 @@ RSpec.describe 'ログイン', type: :system do
   end
   context 'ログインができるとき' do
     it '保存されているユーザーの情報と合致すればログインができる' do
-      # トップページにログインページへ遷移するボタンがあることを確認する
       # ログインページへ移動する
       access_sign_in_page(@user)
       # 正しいユーザー情報を入力する

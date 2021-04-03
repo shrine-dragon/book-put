@@ -1,5 +1,4 @@
 .form-header {
-  width: 100%;
   height: 120px;
   text-align: center;
   font-size: 25px;
@@ -27,10 +26,9 @@
 .horizontal-line {
   width: 20vw;
   height: 3px;
-  color: #ccc;
   background-color: #ccc;
-  border: 1px solid;
-  margin: 12px 12px;
+  border: 1px solid #ccc;
+  margin: 12px;
 }
 
 .step-text {

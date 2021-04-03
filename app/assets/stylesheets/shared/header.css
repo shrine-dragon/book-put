@@ -32,7 +32,7 @@
   padding-left: 10px;
 }
 
-.layout-change {
+.display-change {
   display: flex;
   list-style: none;
   height: 30px;
@@ -50,32 +50,6 @@
   margin: 0 0.5vw 0 3vw;
   color: #333333;
   font-weight: bold;
-}
-
-.hidden-lists {
-  color: #fff;
-  width: 12vw;
-  display: none;
-  align-items: center;
-  position: absolute;
-  top: 60px;
-  right: 5vw;
-  padding: 1vw 0;
-  text-align: center;
-  background-color: #fff;
-  border: 1px solid gray;
-}
-
-.pulldown-menu-text {
-  text-decoration: none;
-  color: #222;
-}
-
-.pulldown-menu-text::after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: bold;
-  content: "\f105";
-  margin-left: 10px;
 }
 
 .not-login-condition {
@@ -102,4 +76,30 @@
   text-decoration: none;
   margin: 0 20px 0 0.7vw;
   color: #333333;
+}
+
+.hidden-lists {
+  color: #fff;
+  width: 12vw;
+  display: none;
+  align-items: center;
+  position: absolute;
+  top: 60px;
+  right: 5vw;
+  padding: 1vw 0;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid gray;
+}
+
+.pulldown-menu-text {
+  text-decoration: none;
+  color: #222;
+}
+
+.pulldown-menu-text::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  content: "\f105";
+  margin-left: 10px;
 }
