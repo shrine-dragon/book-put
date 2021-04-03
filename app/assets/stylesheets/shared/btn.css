@@ -80,7 +80,7 @@
   margin-bottom: 5px;
 }
 
-/* devise/registrations/ */
+/* devise/registrations, /sessions */
 .next-btn, .register-btn {
   width: 50%;
   margin: 40px auto 0;
@@ -115,4 +115,20 @@
 .go-back-btn-text {
   color: white;
   text-decoration: none;
+}
+
+.login-btn {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.login-orange-btn {
+  width: 100%;
+  background: #FF9933;
+  border: 1px solid #FF9933;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
 }
