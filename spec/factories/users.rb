@@ -7,8 +7,4 @@ FactoryBot.define do
     password              { '1a' + Faker::Internet.password(min_length: 12) }
     password_confirmation { password }
   end
-
-  after(:build) do |item|
-    item.image.attach(io: File.open('app/assets/images/no-image.png'), filename: 'no-image.png')
-  end
 end
