@@ -42,20 +42,6 @@ a {
   line-height: 50px;
 }
 
-.store-btn {
-  display: flex;
-  margin-top: 24px;
-}
-
-.apple-btn {
-  margin-right: 1vw;
-  height: 9vh;
-}
-
-.google-btn {
-  height: 9vh;
-}
-
 .how-to-use {
   height: 500px;
   padding: 10vh;
@@ -137,34 +123,6 @@ a {
   justify-content: center;
 }
 
-.no-post-image {
-  width: 30vw;
-  height: 30vh;
-  display: block; 
-  margin: 20px auto 30px;
-}
-
 .no-post-sentence {
   margin-bottom: 20px;
-}
-
-.post-btn {
-  height: 55px;
-  width: 190px;
-  background: #FF9933;
-  text-align: center;
-  border-radius: 4%;
-  bottom: 15px;
-  right: 15px;
-  position: fixed;
-  z-index: 20;
-  padding: 15px;
-}
-
-.post-btn-text {
-  color: #fff;
-  display: block;
-  font-size: 18px;
-  text-decoration: none;
-  margin-bottom: 5px;
 }

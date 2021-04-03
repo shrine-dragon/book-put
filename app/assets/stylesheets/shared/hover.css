@@ -6,6 +6,15 @@
   background-color:#66CCFF;
 }
 
+.go-back-btn:hover {
+  background-color: #ddd;
+}
+
 #list:hover {
   color: #FF9933;
+}
+
+#user-image:hover {
+  border: 1px solid #FF9933;
+  background-color: #eee;
 }

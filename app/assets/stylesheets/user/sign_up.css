@@ -196,26 +196,6 @@
   cursor: pointer;
 }
 
-.next-btn, .register-btn {
-  width: 50%;
-  margin: 40px auto 0;
-}
-
-.register-btn {
-  width: 50%;
-  margin: -30px auto 0;
-}
-
-.blue-next-btn, .blue-register-btn {
-  width: 100%;
-  background: #00bfff;
-  border: 1px solid #00bfff;
-  color: #fff;
-  line-height: 48px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
 .already-register, span > #link {
   margin-top: 5px;
   font-weight: bold;
