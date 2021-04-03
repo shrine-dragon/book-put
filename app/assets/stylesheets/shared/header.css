@@ -73,8 +73,13 @@
 
 #user-image {
   margin-top: -9px;
-  border: 1px solid gray;
+  border: 1px solid #ccc;
   cursor: pointer;
+}
+
+#user-image:hover {
+  border: 1px solid #FF9933;
+  background-color: #eee;
 }
 
 .hidden-lists {

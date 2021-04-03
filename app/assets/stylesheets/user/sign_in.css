@@ -36,11 +36,14 @@
   margin: 30px auto 0px;
   background-color: #ccc;
   border: 1px solid #ccc;
-  color: #fff;
   text-align: center;
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+}
+
+.go-back-btn:hover {
+  background-color: #ddd;
 }
 
 .go-back-btn-text {
