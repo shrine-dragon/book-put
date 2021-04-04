@@ -2,8 +2,8 @@ class Book < ApplicationRecord
   belongs_to       :user
   has_one_attached :image
   has_many         :comments
-  belongs_to       :book_category_id
-  belongs_to       :book_genre_id
+  belongs_to       :book_category
+  belongs_to       :book_genre
 
   with_options presence: true do
     validates :image, :title

@@ -1,6 +1,7 @@
 #image-list> div> img {
-  height: 200px;
-  width: 200px;
+  height: 23.5vw;
+  width: 30vw;
+  padding: 10px 150px 0 0;
   object-fit: contain;
 }
 

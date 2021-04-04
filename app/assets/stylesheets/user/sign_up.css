@@ -45,24 +45,24 @@
   margin-bottom: 3px;
 }
 
-.form-text, .image-text {
+.form-text-indispensable, .form-text-optional {
   font-size: 14px;
   font-weight: bold;
 }
 
-.form-text::after, .image-text::after {
+.form-text-indispensable::after, .form-text-optional::after {
   color: white;
   border: none;
   padding: 3px;
   margin-left: 10px;
 }
 
-.form-text::after {
+.form-text-indispensable::after {
   content: "必須";
   background-color: #f00;
 }
 
-.image-text::after {
+.form-text-optional::after {
   content: "任意";
   background-color: #ccc;
 }
@@ -171,10 +171,6 @@
 
 span > #link {
   color: #0099e8;
-}
-
-.field_with_errors {
-  display: contents;
 }
 
 .registration-completed-text {
