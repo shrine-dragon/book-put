@@ -21,31 +21,31 @@ RSpec.describe User, type: :model do
       it 'ニックネームが空では保存できない' do
         @user.nickname = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("ニックネームを入力してください")
+        expect(@user.errors.full_messages).to include('ニックネームを入力してください')
       end
 
       it 'ニックネームが12文字以上だと保存できない' do
         @user.nickname = 'abcdefg123456'
         @user.valid?
-        expect(@user.errors.full_messages).to include("ニックネームは12文字以内で入力してください")
+        expect(@user.errors.full_messages).to include('ニックネームは12文字以内で入力してください')
       end
 
       it '生年月日が空では登録できない' do
         @user.birth_day = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("生年月日を入力してください")
+        expect(@user.errors.full_messages).to include('生年月日を入力してください')
       end
 
       it '性別が空では登録できない' do
         @user.gender_id = 0
         @user.valid?
-        expect(@user.errors.full_messages).to include("性別を入力してください")
+        expect(@user.errors.full_messages).to include('性別を入力してください')
       end
 
       it 'メールアドレスが空では保存できない' do
         @user.email = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("メールアドレスを入力してください")
+        expect(@user.errors.full_messages).to include('メールアドレスを入力してください')
       end
 
       it 'メールアドレスに@が含んでいないと保存できない' do
@@ -64,7 +64,7 @@ RSpec.describe User, type: :model do
       it 'パスワードが空では保存できない' do
         @user.password = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを入力してください")
+        expect(@user.errors.full_messages).to include('パスワードを入力してください')
       end
 
       it 'パスワードが11文字以下だと保存できない' do
@@ -79,7 +79,7 @@ RSpec.describe User, type: :model do
         @user.password_confirmation = 'abcdefghij12345678910'
         @user.valid?
         expect(@user.errors.full_messages).to include('パスワードは20文字以内で入力してください')
-      end      
+      end
 
       it 'パスワードが全角だと保存できず、半角英数混合でないといけない' do
         @user.password = 'aaaaああああａａａａ'
@@ -106,7 +106,7 @@ RSpec.describe User, type: :model do
         @user.password = 'abcdef123456'
         @user.password_confirmation = 'abcdef12345'
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
+        expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
       end
     end
   end
