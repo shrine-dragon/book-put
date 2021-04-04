@@ -2,34 +2,61 @@
 <header class='top-page-header'>
   <div class='search-bar-contents'>
     <div>
-      <%= link_to image_tag("bookput.png", class:"bookput-icon"), "/" %>
+      <%= link_to image_tag("bookput-logo.png", class:"bookput-icon"), "/" %>
     </div>
-    <%#= link_to image_tag("big_library.png", class:"book-put-icon"), "/" %>
     <form class="search-form" action="#">
       <input class='input-box' placeholder='キーワードを入力してください'>
       <%= link_to(root_path, class:"search-button", id:"orange-btn") do %>
-        <%= image_tag "book-search.png", width:"20", height:"20", class:"search-icon" %>
       <% end %>
     </form>
+    <ul class='display-change'>
+      <% if user_signed_in? %>
+        <div class="login-condition">
+          <li>ログインしています</li>
+          <li class="user-nickname"><%= current_user.nickname %></li>
+          <% if current_user.image.attached? %>
+            <li><%= image_tag current_user.image, width: "45", height: "45", id: 'user-image' %></li>
+          <% else%>
+            <li><%= image_tag "no-image.png", width: "45", height: "45", id: 'user-image' %></li>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="not-login-condition">
+          <li>
+            はじめての方はこちら
+            <%= link_to(new_user_session_path, class:'sign-in-btn', id:"orange-btn") do %>
+              <span class="sign-btn-text">ログイン</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to(new_user_registration_path, class:'sign-up-btn', id:"blue-btn") do %>
+              <span class="sign-btn-text">新規登録</span>
+            <% end %>
+          </li>
+        </div>
+      <% end %>
+    </ul>
   </div>
   <div class='nav'>
-    <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "/", class: "category-list" %></li>
-      <li><%= link_to 'ジャンル', "/", class: "genre-list" %></li>
-    </ul>
-    <ul class='lists-right'>
-      <li>
-        はじめての方はこちら
-        <%= link_to(root_path, class:'sign-in-btn', id:"orange-btn") do %>
-          <span class="sign-in-btn-text">ログイン</span>
-        <% end %>
-      </li>
-
-      <li>
-        <%= link_to(root_path, class:'sign-up-btn', id:"blue-btn") do %>
-          <span class="sign-up-btn-text">新規登録</span>
-        <% end %>
-      </li>
+    <ul class='search-lists'>
+      <li><%= link_to 'タイトル', "/", class: "search-list", id:"list" %></li>
+      <li><%= link_to 'カテゴリー', "/", class: "search-list", id:"list" %></li>
+      <li><%= link_to 'ジャンル', "/", class: "search-list", id:"list" %></li>
+      <li><%= link_to 'キャッチコピー', "/", class: "search-list", id:"list" %></li>
+      <li><%= link_to 'お気に入り', "/", class: "search-list", id:"list" %></li>
     </ul>
   </div>
+  <ul class="hidden-lists", id="pull-down">
+    <li>
+      <%= link_to(root_path, class:"my-page") do%>
+        <span class="pulldown-menu-text", id="list">マイページ</span>
+      <% end %>
+    </li>
+    <hr>
+    <li>
+      <%= link_to(destroy_user_session_path, class:"log-out", method: :delete) do%>
+        <span class="pulldown-menu-text", id="list">ログアウト</span>
+      <% end %>
+    </li>
+  </ul>  
 </header>

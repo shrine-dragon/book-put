@@ -1,0 +1,18 @@
+#image-list> div> img {
+  height: 200px;
+  width: 200px;
+  object-fit: contain;
+}
+
+#user-image {
+  margin-top: -9px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.no-post-image {
+  width: 30vw;
+  height: 30vh;
+  display: block; 
+  margin: 20px auto 30px;
+}

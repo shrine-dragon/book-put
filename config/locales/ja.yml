@@ -1,0 +1,13 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+       email: メールアドレス
+       birth_day: 生年月日
+       gender_id: 性別
+     questionnaire:
+       book_category_id: 種類
+       book_genre_id: ジャンル
+       purchase_place_id: 購入場所
+       reading_media_id: 媒体

@@ -1,0 +1,21 @@
+.form-wrap-sign-in {
+  width: 50%;
+  background-color: white;
+  padding-bottom: 70px;  
+}
+
+.forget-password {
+  text-decoration: none;
+  color: #0099e8;
+  margin-top: 5px;
+}
+
+.not-register {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.login-flash-message {
+  text-align: center;
+  color: red;
+}

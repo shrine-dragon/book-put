@@ -1,0 +1,73 @@
+<%= render "shared/second_header" %>
+
+<%= form_with model: @questionnaire, url: questionnaires_path, class: 'registration-main', local: true do |f| %>
+  <div class='form-wrap-sign-up'>
+    <%= render 'shared/form_header' %>
+    <div class="form-all">
+      <div class="gray-bar">
+        <h1 class="gray-bar-text">アンケート</h1>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">好きな本の種類を選択してください</label>
+        </div>
+        <%= f.collection_select(:book_category_id, BookCategory.all, :id, :name, {}, {class:"select-box", id:"book-category"}) %>
+        <%= render "shared/error_messages", model: f.object, attribute: :book_category_id %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">好きな本のジャンルを選択してください</label>
+        </div>
+        <%= f.collection_select(:book_genre_id, BookGenre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
+        <%= render "shared/error_messages", model: @questionnaire, attribute: :book_genre_id %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">本をよく買う場所を選択してください</label>
+        </div>
+        <%= f.collection_select(:purchase_place_id, PurchasePlace.all, :id, :name, {}, {class:"select-box", id:"purchase-place"}) %>
+        <%= render "shared/error_messages", model: @questionnaire, attribute: :purchase_place_id %>
+      </div>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">読書時によく使う媒体を選択してください</label>
+        </div>
+        <%= f.collection_select(:reading_media_id, ReadingMedia.all, :id, :name, {}, {class:"select-box", id:"reading-media"}) %>
+        <%= render "shared/error_messages", model: @questionnaire, attribute: :reading_media_id %>
+      </div>
+      <div class="form-group">
+        <h2 class='form-bottom-text'>
+          登録ボタンを押すことにより、
+          <br><span><%= link_to '利用規約', '#', id:'link' %></span>および<span><%= link_to 'プライバシーポリシー', '#', id:'link' %></span>
+          <br>に同意したものとみなします
+        </h2>
+      </div>
+      <div class='register-btn'>
+        <%= f.submit "登録する" ,class:"blue-register-btn", id:"blue-btn" %>
+        <p class='already-register'>登録済みの方は<span><%= link_to 'こちら',  new_user_session_path, id:'link' %></span></p>
+      </div>
+    </div>
+    <div class='go-back-btn'>
+      <%= link_to(new_user_registration_path, class:'go-back-gray-btn', id:"gray-btn") do %>
+        <p class="go-back-btn-text">もどる</p>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+
+<style>
+  .center-circle {
+    background-color:red;
+  }
+
+  .step-text-center {
+    color: black;
+    font-weight: bold;
+  }
+  
+  .form-group {
+    padding-top: 40px;
+  }  
+</style>
+
+<%= render "shared/second_footer" %>

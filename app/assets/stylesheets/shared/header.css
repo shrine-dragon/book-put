@@ -7,7 +7,7 @@
   position: fixed;
   height: 110px;
   width: 100%;
-  padding: 0 15vw;
+  padding: 0 5vw;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -20,31 +20,41 @@
 }
 
 .search-form {
-  width: 65vw;
+  width: 35vw;
   height: 5vh;
   display: flex;
-  margin: 8px 15px 0 0;
+  margin: 8px 0 0 -12vw;
 }
 
 .search-form>.input-box {
-  width: 100%;
+  width: 75%;
   height: 5vh;
   padding-left: 10px;
 }
 
-.search-button {
-  width: 5vh;
-  border: 0;
-  cursor: pointer;
-  background-color: #FF9933;
-  padding: 8px;
-  position: relative;
+.display-change {
+  display: flex;
+  list-style: none;
+  height: 30px;
 }
 
-.search-icon {
-  position: absolute;
-  left: 3px;
-  bottom: 3px;
+.login-condition {
+  display: flex;
+  text-decoration: none;
+  color: #333333;
+  margin-top: 8.5px;
+}
+
+.user-nickname {
+  text-decoration: none;
+  margin: 0 0.5vw 0 3vw;
+  color: #333333;
+  font-weight: bold;
+}
+
+.not-login-condition {
+  display: flex;
+  margin-top: 5px;
 }
 
 .nav {
@@ -56,52 +66,40 @@
   padding: 1vh 0;
 }
 
-.lists-left {
+.search-lists {
   display: flex;
   min-width: 200px;
-  margin-left: 15px;
+  margin-left: 10px;
 }
 
-.category-list {
+.search-list {
   text-decoration: none;
-  margin-right: 3vw;
+  margin: 0 20px 0 0.7vw;
   color: #333333;
 }
 
-.genre-list {
-  text-decoration: none;
-  color: #333333;
-}
-
-.lists-right {
-  display: flex;
-  list-style: none;
+.hidden-lists {
+  color: #fff;
+  width: 12vw;
+  display: none;
   align-items: center;
-  height: 30px;
+  position: absolute;
+  top: 60px;
+  right: 5vw;
+  padding: 1vw 0;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid gray;
 }
 
-.sign-in-btn, .sign-up-btn {
-  width: 80px;
-  border-radius: 4px;
-  padding: 9px 9px;
-  margin-right: 12px;
-  cursor: pointer;
-  box-shadow: 2px 2px #222222;
-  border: none;
-  outline: none;
-}
-
-.sign-in-btn {
-  background-color: #FF9933;
-  margin-left: 15px;
-}
-
-.sign-up-btn {
-  background-color: #00bfff;
-}
-
-.sign-in-btn-text, .sign-up-btn-text {
+.pulldown-menu-text {
   text-decoration: none;
-  line-height: 30px;
-  color: #333333;
+  color: #222;
+}
+
+.pulldown-menu-text::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  content: "\f105";
+  margin-left: 10px;
 }
