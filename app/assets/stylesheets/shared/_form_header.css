@@ -12,7 +12,7 @@
 .step-contents {
   display: flex;
   justify-content: center;
-  margin: 0 80px;
+  padding: 0 100px;
 }
 
 .left-circle, .center-circle, .right-circle {
@@ -24,7 +24,7 @@
 }
 
 .horizontal-line {
-  width: 20vw;
+  width: 12vw;
   height: 3px;
   background-color: #ccc;
   border: 1px solid #ccc;
@@ -37,7 +37,7 @@
   font-size: 15px;
   color: #ccc;
   padding-bottom: 25px;
-  margin: 9px 65px 0 40px;
+  margin: 9px 12.2vw 0 10vw;
   border-bottom: 1px solid #f5f5f5;
 }
 
