@@ -23,7 +23,7 @@
 |   book_category_id    |   integer  |          null: false           |
 |     book_genre_id     |   integer  |          null: false           |
 |   purchase_place_id   |   integer  |          null: false           |
-|    reading_type_id    |   integer  |          null: false           |
+|    reading_media_id   |   integer  |          null: false           |
 |         user          | references |  null: false, optional: true   |
 
 ### Association

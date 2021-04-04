@@ -31,7 +31,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
 
   def questionnaire_params
-    params.require(:questionnaire).permit(:book_category_id, :book_genre_id, :purchase_place_id, :reading_type_id)
+    params.require(:questionnaire).permit(:book_category_id, :book_genre_id, :purchase_place_id, :reading_media_id)
   end
 
   # GET /resource/sign_up

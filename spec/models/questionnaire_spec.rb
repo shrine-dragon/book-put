@@ -32,7 +32,7 @@ RSpec.describe Questionnaire, type: :model do
       end
 
       it '媒体が空だと保存できない' do
-        @questionnaire.reading_type_id = 0
+        @questionnaire.reading_media_id = 0
         @questionnaire.valid?
         expect(@questionnaire.errors.full_messages).to include('媒体を選択してください')
       end

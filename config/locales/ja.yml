@@ -10,4 +10,4 @@ ja:
        book_category_id: 種類
        book_genre_id: ジャンル
        purchase_place_id: 購入場所
-       reading_type_id: 媒体
+       reading_media_id: 媒体

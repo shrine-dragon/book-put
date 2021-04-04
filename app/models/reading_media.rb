@@ -1,4 +1,4 @@
-class ReadingType < ActiveHash::Base
+class ReadingMedia < ActiveHash::Base
   self.data = [
     { id: 0, name: '--' },
     { id: 1, name: '紙媒体' },

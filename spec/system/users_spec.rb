@@ -14,7 +14,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       select '漫画', from: 'questionnaire[book_category_id]'
       select 'ファンタジー', from: 'questionnaire[book_genre_id]'
       select '書店', from: 'questionnaire[purchase_place_id]'
-      select '紙媒体', from: 'questionnaire[reading_type_id]'
+      select '紙媒体', from: 'questionnaire[reading_media_id]'
       # 「登録する」ボタンを押すと登録完了ページへ移動する
       click_on('登録する')
       # ユーザー新規登録2ページ目の「登録する」ボタンが表示されていないことを確認する
@@ -55,7 +55,7 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       select '--', from: 'questionnaire[book_category_id]'
       select '--', from: 'questionnaire[book_genre_id]'
       select '--', from: 'questionnaire[purchase_place_id]'
-      select '--', from: 'questionnaire[reading_type_id]'
+      select '--', from: 'questionnaire[reading_media_id]'
       # 「登録する」ボタンを押してもアンケート内容入力ページへ戻されることを確認する
       click_on('登録する')
       # ユーザー新規登録3ページ目の「トップページへ」ボタンが表示されていないことを確認する
