@@ -54,7 +54,7 @@
     </li>
     <hr>
     <li>
-      <%= link_to(destroy_user_session_path, class:"log-out", method: :delete) do%>
+      <%= link_to(destroy_user_session_path, class:"log-out", method: :delete, data: { confirm: 'ログアウトしますか？' }) do%>
         <span class="pulldown-menu-text", id="list">ログアウト</span>
       <% end %>
     </li>
