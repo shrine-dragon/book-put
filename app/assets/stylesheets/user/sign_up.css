@@ -45,12 +45,12 @@
   margin-bottom: 3px;
 }
 
-.form-text, .weight-bold-text {
+.form-text, .image-text {
   font-size: 14px;
   font-weight: bold;
 }
 
-.form-text::after, .weight-bold-text::after {
+.form-text::after, .image-text::after {
   color: white;
   border: none;
   padding: 3px;
@@ -62,9 +62,21 @@
   background-color: #f00;
 }
 
-.weight-bold-text::after {
+.image-text::after {
   content: "任意";
   background-color: #ccc;
+}
+
+.input-default {
+  width: 100%;
+  margin-top: 5px;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
 }
 
 .img-upload {
@@ -100,20 +112,26 @@
   padding: 0 5px;  
 }
 
-.input-default {
-  width: 100%;
+.input-birth-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-birth-wrap select {
+  width: 75px;
   margin-top: 5px;
-  height: 48px;
-  padding: 10px 16px 8px;
+  padding-left: 10px;
   border-radius: 4px;
   border: 1px solid #ccc;
   background: #fff;
-  font-size: 16px;
-  resize: none;
+  font-size: 12px;
+  cursor: pointer;
 }
 
-.caution {
-  margin-bottom: 30px;
+.input-birth-wrap p {
+  line-height: 35px;
+  margin-top: 5px;
+  padding: 0 5px;
 }
 
 .info-text {
@@ -137,51 +155,6 @@
   cursor: pointer;
 }
 
-.input-name-wrap {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.input-name {
-  width: 130px;
-  margin: 5px 20px 0 20px;
-  height: 48px;
-  line-height: 30px;
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 14px;
-  resize: none;
-}
-
-.input-birth-wrap {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.input-birth-wrap select {
-  width: 75px;
-  margin-top: 5px;
-  padding-left: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.input-birth-wrap p {
-  line-height: 35px;
-  margin-top: 5px;
-  padding: 0 5px;
-}
-
-.field_with_errors {
-  display: contents;
-}
-
 .form-bottom-text {
   font-size: 15px;
   margin-top: 10px;
@@ -196,16 +169,15 @@
   cursor: pointer;
 }
 
-.already-register, span > #link {
-  margin-top: 5px;
-  font-weight: bold;
-}
-
 span > #link {
   color: #0099e8;
 }
 
-.registration-completed {
+.field_with_errors {
+  display: contents;
+}
+
+.registration-completed-text {
   text-align: center;
   font-size: 25px;
   font-weight: bold;

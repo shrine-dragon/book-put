@@ -15,7 +15,7 @@ if (document.URL.match( /sign_up/ ) || document.URL.match( /edit/) || document.U
       ImageList.appendChild(imageElement);
     };
 
-    document.getElementById('user-image').addEventListener('change', (e) => {
+    document.getElementById('user-image-text').addEventListener('change', (e) => {
       // 画像が表示されている場合のみ、すでに存在している画像を削除する
       const imageContent = document.querySelector('#image-list> div> img');
       if (imageContent){
