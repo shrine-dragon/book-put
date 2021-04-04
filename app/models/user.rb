@@ -4,7 +4,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_one_attached       :image
   has_one                :questionnaire
-  belongs_to             :gender
+  belongs_to_active_hash :gender
   has_many               :books
   has_many               :comments
 
