@@ -23,6 +23,7 @@
               </p>
               <%= f.file_field :image, id:"user-image-text" %>
             </div>
+            <%= render "shared/error_messages", model: f.object, attribute: :image %>
             <div id="image-list">
             </div>
           </div>
@@ -68,6 +69,7 @@
           </label>
         </div>
         <%= f.text_area :content, class:"book-content-text", id:"content", placeholder:"主旨、ストーリー、あらすじ等、本の内容について具体的に記述" ,rows:"7" ,maxlength:"1000" %>
+        <%= render "shared/error_messages", model: f.object, attribute: :content %>
       </div>
       <div class="book-highlight">
         <div class='form-text-wrap'>

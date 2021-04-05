@@ -12,5 +12,8 @@ ja:
        purchase_place_id: 購入場所
        reading_media_id: 媒体
      book:
+       image: 画像
        title: タイトル
-       content: 内容 
+       content: 内容
+       book_category_id: 種類
+       book_genre_id: ジャンル
