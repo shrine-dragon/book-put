@@ -9,28 +9,28 @@
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">好きな本の種類を選択してください</label>
+          <label class="form-text-indispensable">好きな本の種類を選択してください</label>
         </div>
         <%= f.collection_select(:book_category_id, BookCategory.all, :id, :name, {}, {class:"select-box", id:"book-category"}) %>
         <%= render "shared/error_messages", model: f.object, attribute: :book_category_id %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">好きな本のジャンルを選択してください</label>
+          <label class="form-text-indispensable">好きな本のジャンルを選択してください</label>
         </div>
         <%= f.collection_select(:book_genre_id, BookGenre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
         <%= render "shared/error_messages", model: @questionnaire, attribute: :book_genre_id %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">本をよく買う場所を選択してください</label>
+          <label class="form-text-indispensable">本をよく買う場所を選択してください</label>
         </div>
         <%= f.collection_select(:purchase_place_id, PurchasePlace.all, :id, :name, {}, {class:"select-box", id:"purchase-place"}) %>
         <%= render "shared/error_messages", model: @questionnaire, attribute: :purchase_place_id %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">読書時によく使う媒体を選択してください</label>
+          <label class="form-text-indispensable">読書時によく使う媒体を選択してください</label>
         </div>
         <%= f.collection_select(:reading_media_id, ReadingMedia.all, :id, :name, {}, {class:"select-box", id:"reading-media"}) %>
         <%= render "shared/error_messages", model: @questionnaire, attribute: :reading_media_id %>
