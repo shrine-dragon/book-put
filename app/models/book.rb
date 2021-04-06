@@ -7,7 +7,8 @@ class Book < ApplicationRecord
   belongs_to_active_hash :book_genre
 
   with_options presence: true do
-    validates :image, :title
+    validates :image, presence: { message: 'を選択してください'}
+    validates :title
     validates :content, length: { maximum: 1000 }
   end
 
