@@ -173,6 +173,10 @@ span > #link {
   color: #0099e8;
 }
 
+.field_with_errors {
+  display: contents;
+}
+
 .registration-completed-text {
   text-align: center;
   font-size: 25px;

@@ -51,8 +51,8 @@
                         end_year: (Time.now.year - 5),
                         date_separator: '%s'),
                       "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
-          <%= render "shared/error_messages", model: @user, attribute: :birth_day %>
         </div>
+        <%= render "shared/error_messages", model: @user, attribute: :birth_day %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
