@@ -8,7 +8,7 @@ class Book < ApplicationRecord
 
   with_options presence: true do
     validates :image, presence: { message: 'を選択してください'}
-    validates :title
+    validates :title,   length: { maximum: 50 }
     validates :content, length: { maximum: 1000 }
   end
 
