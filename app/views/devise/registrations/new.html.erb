@@ -11,9 +11,9 @@
         <div class='form-text-wrap'>
           <label class="form-text-indispensable">ニックネーム</label>
         </div>
-        <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例) book好男", maxlength:"12" %>
+        <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例) book好男", maxlength:"10" %>
         <%= render "shared/error_messages", model: @user, attribute: :nickname %>
-        <p class='info-text'>※12文字以内で入力してください。</p>
+        <p class='info-text'>※10文字以内で入力してください。</p>
       </div>
       <div class="img-upload">
         <div class="form-text-wrap">

@@ -24,10 +24,10 @@ RSpec.describe User, type: :model do
         expect(@user.errors.full_messages).to include('ニックネームを入力してください')
       end
 
-      it 'ニックネームが12文字以上だと保存できない' do
-        @user.nickname = 'abcdefg123456'
+      it 'ニックネームが11文字以上だと保存できない' do
+        @user.nickname = 'abcdef12345'
         @user.valid?
-        expect(@user.errors.full_messages).to include('ニックネームは12文字以内で入力してください')
+        expect(@user.errors.full_messages).to include('ニックネームは10文字以内で入力してください')
       end
 
       it '生年月日が空では登録できない' do

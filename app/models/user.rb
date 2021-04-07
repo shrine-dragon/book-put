@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many               :comments
 
   with_options presence: true do
-    validates :nickname, length: { maximum: 12 }
+    validates :nickname, length: { maximum: 10 }
     validates :birth_day, :email
     validates :password, length: { minimum: 12, maximum: 20 },
                          format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'は半角英数混合で入力してください' }
