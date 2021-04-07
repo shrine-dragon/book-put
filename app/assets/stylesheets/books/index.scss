@@ -103,26 +103,62 @@ a {
 
 /* 投稿一覧 */
 .book-contents {
-  min-height: 75vh;
-  background-color: #FFF;
+  background-image: image-url('book-pile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color:rgba(255,255,255,0.7);
+  background-blend-mode:lighten;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10vh 0;
 }
 
-.book-contents>.title {
+.title {
   font-size: 5vh;
-  line-height: 1.4;
   font-weight: bold;
 }
 
 .book-lists {
-  width: 100vw;
+  display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
+.book-lists>.list {
+  width: 37vh;
+  padding: 1vw;
+  margin: 3vh 1vw -3vh ;
+  background-color: #FFF;
+}
+
+.book-img {
+  width: 33vh;
+  height: 33vh;
+}
+
+.book-info {
+  background-color: #FFF;
+  color: black;
+}
+
+.book-title {
+  font-size: 4.5vh;
+  font-weight: bold;
+}
+
+.book-posted-user {
+  font-size: 3vh;
+}
+
+.book-posted-time {
+  font-size: 3vh;
+}
+
+.no-post {
+  display: block;
+}
 .no-post-sentence {
-  margin-bottom: 20px;
+  margin-left: 8.5vw;
 }
