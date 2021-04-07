@@ -7,9 +7,9 @@ FactoryBot.define do
     content          { Faker::Lorem.sentence }
     highlight        { Faker::Lorem.sentence }
     association :user
-  end
 
-  after(:build) do |book|
-    book.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+    after(:build) do |book|
+      book.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')
+    end
   end
 end

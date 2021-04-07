@@ -15,5 +15,5 @@ class User < ApplicationRecord
                          format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'は半角英数混合で入力してください' }
   end
   # active_hashのデータ
-  validates :gender_id, numericality: { other_than: 0, message: 'を入力してください' }
+  validates :gender_id, numericality: { other_than: 0, message: 'を選択してください' }
 end
