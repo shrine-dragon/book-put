@@ -43,6 +43,9 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       fill_in 'user[password_confirmation]', with: ''
       # 「次へ進む」ボタンを押しても新規登録ページへ戻されることを確認する
       click_on('次へ進む')
+      expect(current_path).to eq(user_registration_path)
+      # エラーメッセージが表示されていることを確認する
+      expect(page).to have_css '.field_with_errors'
       # ユーザー新規登録2ページ目の「登録する」ボタンが表示されていないことを確認する
       expect(page).to have_no_content('登録する')
     end
@@ -64,6 +67,8 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       }.to change { User.count && Questionnaire.count }.by(0)
       # アンケート入力ページへ戻されることを確認する
       expect(current_path).to eq questionnaires_path
+      # エラーメッセージが表示されていることを確認する
+      expect(page).to have_css '.field_with_errors'
       # ユーザー新規登録3ページ目の「トップページへ」ボタンが表示されていないことを確認する
       expect(page).to have_no_content('トップページへ')
     end
