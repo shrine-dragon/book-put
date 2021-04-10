@@ -112,7 +112,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10vh 0;
+  padding: 5vh 0;
 }
 
 .title {
@@ -127,15 +127,16 @@ a {
 }
 
 .book-lists>.list {
-  width: 37vh;
+  width: 25vw;
   padding: 1vw;
-  margin: 3vh 1vw -3vh ;
+  margin: 5vh 1vw 0;
   background-color: #FFF;
 }
 
 .book-img {
-  width: 33vh;
-  height: 33vh;
+  width: 23vw;
+  height: 40vh;
+  margin: 0 auto;
 }
 
 .book-info {
@@ -144,7 +145,7 @@ a {
 }
 
 .book-title {
-  font-size: 4.5vh;
+  font-size: 3.5vh;
   font-weight: bold;
 }
 
