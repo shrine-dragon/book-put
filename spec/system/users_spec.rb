@@ -27,6 +27,8 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       expect(current_path).to eq(root_path)
       # トップページに「新規登録」ボタンが表示されていないことを確認する
       expect(page).to have_no_content('新規登録')
+      # トップページにユーザー名が表示されていることを確認する
+      expect(page).to have_content(@user.nickname)
     end
   end
   context 'ユーザー情報を保存できず、次のページへ進めない時' do
