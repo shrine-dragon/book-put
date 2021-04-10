@@ -155,6 +155,11 @@
   cursor: pointer;
 }
 
+.already-registered {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
 .form-bottom-text {
   font-size: 15px;
   margin-top: 10px;

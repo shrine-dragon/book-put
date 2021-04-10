@@ -70,6 +70,9 @@
         </div>
         <%= f.text_area :content, class:"book-content-text", id:"content", placeholder:"主旨、ストーリー、あらすじ等、本の内容について具体的に記述" ,rows:"7" ,maxlength:"1000" %>
         <%= render "shared/error_messages", model: f.object, attribute: :content %>
+        <p class='info-text'>
+          ※批判的な意見はご遠慮ください
+        </p>
       </div>
       <div class="book-highlight">
         <div class='form-text-wrap'>
@@ -77,9 +80,10 @@
         </div>
         <%= f.text_field :highlight, class:"book-highlight-text", id:"highlight", placeholder:"面白いところ、魅力的なところを具体的に記述", maxlength:"100" %>
         <%= render "shared/error_messages", model: f.object, attribute: :highlight %>
-      </div>      
+      </div>
       <div class='post-output-btn'>
         <%= f.submit "投稿する" ,class:"post-output-orange-btn", id:"orange-btn" %>
+        <p class='caution-text'>※書籍以外の投稿は<br>削除の対象になります</p>
       </div>
       <div class='go-back-btn'>
         <%= link_to(root_path, class:'go-back-gray-btn', id:"gray-btn") do %>
