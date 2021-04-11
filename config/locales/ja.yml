@@ -35,6 +35,13 @@ ja:
      over_x_years:
        one:   "1年"
        other: "%{count}年"
+ views:
+   pagination:
+     first: <i class="fas fa-angle-double-left" style="color:#FF9933;"></i>
+     last: <i class="fas fa-angle-double-right" style="color:#FF9933;"></i>
+     previous: <i class="fas fa-angle-left" style="color:#FF9933;"></i>
+     next: <i class="fas fa-angle-right" style="color:#FF9933;"></i>
+     truncate: "..."
  time:
    formats:
      default: "%Y/%m/%d %H:%M:%S"
