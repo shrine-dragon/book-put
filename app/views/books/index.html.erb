@@ -70,6 +70,7 @@
         </div>
       <% end %>
     </ul>
+    <%= paginate @books %>
   </div>
 </div>
 <%= link_to(new_book_path, class:'post-btn', id:"orange-btn" ) do %>
