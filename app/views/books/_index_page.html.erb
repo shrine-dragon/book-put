@@ -6,16 +6,29 @@
           <div class='book-img-content'>
             <%= image_tag book.image, class: "book-img" %>
           </div>
+          <h1 class='book-title'>
+            <%= book.title %>
+          </h1>
+        <% end %>
+        <%= link_to root_path do %>
           <div class='book-info'>
-            <h1 class='book-title'>
-              <%= book.title %>
-            </h1>
-            <h1 class='book-posted-user'>
-              <%= book.user.nickname %>
-            </h1>
-            <h1 class='book-posted-time'>
-              <%= time_ago_in_words(book.created_at) %>前
-            </h1>
+            <div class='book-info-posted-user'>
+              <div class='book-posted-user-image'>
+                <% if current_user.image.attached? %>
+                  <%= image_tag current_user.image, width: "45", height: "45", id: 'user-image' %>
+                <% else%>
+                  <%= image_tag "no-image.png", width: "45", height: "45", id: 'user-image' %>
+                <% end %>
+              </div>
+              <div>
+                <h1 class='book-posted-user'>
+                  <%= book.user.nickname %>
+                </h1>
+                <h1 class='book-posted-time'>
+                  <%= time_ago_in_words(book.created_at) %>前
+                </h1>
+              </div>
+            </div>
           </div>
         <% end %>
       </li>
@@ -28,3 +41,9 @@
   <% end %>
   <%= paginate @books, remote: true %>
 </ul>
+
+<style>
+  .book-posted-user-image {
+    margin: 18px 9px 0 0;
+  }
+</style>
