@@ -16,9 +16,9 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       select '書店', from: 'questionnaire[purchase_place_id]'
       select '紙媒体', from: 'questionnaire[reading_media_id]'
       # 「登録する」ボタンを押すとUserモデルとQuestionnaireモデルのカウントが1上がることを確認する
-      expect{
+      expect do
         find('input[name="commit"]').click
-      }.to change { User.count && Questionnaire.count }.by(1)
+      end.to change { User.count && Questionnaire.count }.by(1)
       # ユーザー新規登録2ページ目の「登録する」ボタンが表示されていないことを確認する
       expect(page).to have_no_content('登録する')
       # 「トップページへ」ボタンを押すとトップページへ移動する
@@ -64,9 +64,9 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       select '--', from: 'questionnaire[purchase_place_id]'
       select '--', from: 'questionnaire[reading_media_id]'
       # 「登録する」ボタンを押してもUserモデルとQuestionnaireモデルのカウントは上がらないことを確認する
-      expect{
+      expect do
         find('input[name="commit"]').click
-      }.to change { User.count && Questionnaire.count }.by(0)
+      end.to change { User.count && Questionnaire.count }.by(0)
       # アンケート入力ページへ戻されることを確認する
       expect(current_path).to eq questionnaires_path
       # エラーメッセージが表示されていることを確認する

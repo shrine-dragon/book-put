@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "新規投稿", type: :system do
+RSpec.describe '新規投稿', type: :system do
   before do
     @user = FactoryBot.create(:user)
     @book = FactoryBot.create(:book)
@@ -21,9 +21,9 @@ RSpec.describe "新規投稿", type: :system do
       fill_in 'book[content]', with: @book.content
       fill_in 'book[highlight]', with: @book.highlight
       # 「投稿する」ボタンを押すとBookモデルのカウントが1上がることを確認する
-      expect{
+      expect  do
         find('input[name="commit"]').click
-      }.to change { Book.count }.by(1)
+      end.to change { Book.count }.by(1)
       # トップページに遷移することを確認する
       expect(current_path).to eq(root_path)
       # トップページには先ほど投稿した内容が存在することを確認する（画像）
@@ -33,7 +33,7 @@ RSpec.describe "新規投稿", type: :system do
     end
   end
 
-  context '新規投稿ができないとき'do
+  context '新規投稿ができないとき' do
     it 'ログインしていないと新規投稿ページに遷移できない' do
       # トップページに遷移する
       visit root_path
@@ -54,13 +54,13 @@ RSpec.describe "新規投稿", type: :system do
       fill_in 'book[content]', with: ''
       fill_in 'book[highlight]', with: ''
       # 「投稿する」ボタンを押してもBookモデルのカウントが1上がらないことを確認する
-      expect{
+      expect  do
         find('input[name="commit"]').click
-      }.to change { Book.count }.by(0)
+      end.to change { Book.count }.by(0)
       # 新規投稿ページへ戻されることを確認する
       expect(current_path).to eq books_path
       # エラーメッセージが表示されることを確認する
       expect(page).to have_css '.field_with_errors'
     end
-  end  
+  end
 end

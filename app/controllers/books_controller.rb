@@ -1,8 +1,8 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  
+
   def index
-    @books = Book.includes(:user).order("created_at DESC").page(params[:page]).per(3)
+    @books = Book.includes(:user).order('created_at DESC').page(params[:page]).per(3)
 
     respond_to do |format|
       format.html
@@ -26,6 +26,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:image, :title, :book_category_id, :book_genre_id, :catch_copy, :content, :highlight).merge(user_id: current_user.id)
+    params.require(:book).permit(:image, :title, :book_category_id, :book_genre_id, :catch_copy, :content,
+                                 :highlight).merge(user_id: current_user.id)
   end
 end
