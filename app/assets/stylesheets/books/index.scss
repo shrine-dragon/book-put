@@ -163,3 +163,26 @@ a {
 .no-post-sentence {
   margin-left: 8.5vw;
 }
+
+// paginate
+.pagination{
+  margin: 5vh auto 0;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination span{
+  background-color: white;
+  text-align: center;
+  width: 50px;
+  border: solid 1px black;
+}
+
+ .pagination span:hover:not(.pagination span.current){
+  border-color: #FF9933;
+}
+
+.pagination span.current {
+  background-color: #FF9933;
+}

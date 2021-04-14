@@ -37,11 +37,11 @@ ja:
        other: "%{count}年"
  views:
    pagination:
-     first: <i class="fas fa-angle-double-left" style="color:#FF9933;"></i>
-     last: <i class="fas fa-angle-double-right" style="color:#FF9933;"></i>
-     previous: <i class="fas fa-angle-left" style="color:#FF9933;"></i>
-     next: <i class="fas fa-angle-right" style="color:#FF9933;"></i>
-     truncate: "..."
+      first: <i class="fas fa-angle-double-left", style="color:black"></i>
+      last: <i class="fas fa-angle-double-right", style="color:black"></i>
+      previous: <i class="fas fa-angle-left", style="color:black"></i>
+      next: <i class="fas fa-angle-right", style="color:black"></i>
+      truncate: "..."
  time:
    formats:
      default: "%Y/%m/%d %H:%M:%S"
