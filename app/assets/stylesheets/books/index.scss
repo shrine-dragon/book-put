@@ -166,10 +166,10 @@ a {
 
 // paginate
 .pagination{
-  margin: 5vh auto 0;
+  margin-top: 5vh;
   width: 50%;
   display: flex;
-  justify-content: center;
+  justify-content: center;  
 }
 
 .pagination span{
@@ -177,6 +177,7 @@ a {
   text-align: center;
   width: 50px;
   border: solid 1px black;
+  color: black;
 }
 
  .pagination span:hover:not(.pagination span.current){
