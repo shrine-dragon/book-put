@@ -27,7 +27,7 @@ RSpec.describe Book, type: :model do
       it '画像が選択されていないと保存できない' do
         @book.image = nil
         @book.valid?
-        expect(@book.errors.full_messages).to include('画像を選択してください')
+        expect(@book.errors.full_messages).to include('画像を添付してください')
       end
 
       it 'タイトルが入力されていないと保存できない' do
