@@ -11,12 +11,6 @@
   background-color: #FFF;
 }
 
-.book-img {
-  width: 23vw;
-  height: 40vh;
-  margin: 0 auto;
-}
-
 .book-title {
   font-size: 3.5vh;
   font-weight: bold;
@@ -30,17 +24,18 @@
   display: flex;
 }
 
-.book-posted-user {
-  font-size: 3vh;
+.book-posted-text {
+  margin-top: 1.5vh;
 }
 
-.book-posted-time {
+.book-posted-user, .book-posted-time {
   font-size: 3vh;
 }
 
 .no-post {
   display: block;
 }
+
 .no-post-sentence {
   margin-left: 8.5vw;
 }

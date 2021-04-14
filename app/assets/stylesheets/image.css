@@ -11,6 +11,12 @@
   cursor: pointer;
 }
 
+.book-img {
+  width: 23vw;
+  height: 40vh;
+  margin: 0 auto;
+}
+
 .no-post-image {
   width: 30vw;
   height: 30vh;
