@@ -1,0 +1,46 @@
+<%= render 'shared/second_header' %>
+
+<div class='book-detail-main'>
+  <div class='book-detail'>
+    <div class='detail-header'>
+      <h1 class='detail-header-text'>
+        投稿詳細
+      </h1>
+    </div>
+    <div class='detail-all'>
+      <h1 class='detail-title'>
+        <%= @book.title %>
+      </h1>
+      <h1 class='detail-user'>
+        <% if current_user.id == @book.user_id %>
+          (by <%= link_to @book.user.nickname, '#', class:'detail-user-text' %>)
+        <% else %>
+          (by <%= @book.user.nickname %>)
+        <% end %>
+      </h1>
+      <ul class='review-btns'>
+        <li class='review-btn'><i class="fas fa-thumbs-up"></i></li>
+        <li class='review-btn'><i class="far fa-star"></i></li>
+        <li class='review-btn'><i class="fas fa-ellipsis-h"></i></li>
+      </ul>
+      <div class='detail-upper'>
+        <div class='detail-img-content'>
+          <%= image_tag @book.image, class: "detail-img" %>
+        </div>
+        <div class='detail-category-genre'>
+          <%= @book.book_category.name %>・<%= @book.book_genre.name %>
+        </div>
+      </div>
+      <div class='detail-lower'>
+        <h1 class='detail-catch-copy'>
+          「<%= @book.catch_copy %>」
+        </h1>
+        <div class='detail-content'>
+          <%= @book.content %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/second_footer' %>

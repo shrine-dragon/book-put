@@ -1,0 +1,85 @@
+.book-detail-main {
+  min-width: 1000px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+}
+
+.book-detail {
+  width: 80%;
+  background-color: white;
+}
+
+.detail-header {
+  height: 120px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.detail-header-text {
+  line-height: 100px;
+  font-weight: bold;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.detail-all {
+}
+
+.detail-title {
+  text-align: center;
+  font-size: 30px;
+}
+
+.detail-user {
+  text-align: center;
+  font-size: 25px;
+}
+
+.detail-user-text:hover {
+  color: #00CCFF;
+}
+
+.detail-user-text, .detail-posted-user-text {
+  color: black;
+}
+
+.review-btns {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+}
+
+.review-btn {
+  font-size: 25px;
+  margin-left: 30px;
+}
+
+.detail-upper {
+  display: block;
+  padding-bottom: 4vh;
+}
+
+.detail-img-content {
+  margin: 0 16.5vw;
+}
+
+.detail-img {
+  width: 45vw;
+  height: 65vh;
+  margin: 0 auto;
+}
+
+.detail-category-genre {
+  margin-left: 16.5vw;
+  font-size: 20px;
+}
+
+.detail-catch-copy {
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.detail-content {
+  width: 60vw;
+}
