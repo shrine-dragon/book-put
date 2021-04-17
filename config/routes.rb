@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     post 'questionnaires', to: 'users/registrations#create_questionnaire'
   end  
   root to: "books#index"
-  resources :books, only: [:index, :new, :create]
+  resources :books, only: [:index, :new, :create, :show]
 end
