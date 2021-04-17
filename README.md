@@ -37,7 +37,7 @@
 |        title       |   string   |          null: false           |
 |  book_category_id  |   integer  |          null: false           |
 |    book_genre_id   |   integer  |          null: false           |
-|     catch_copy     |   string   |                                |
+|     catch_copy     |   string   |          null: false           |
 |       content      |    text    |          null: false           |
 |      highlight     |   string   |                                |
 |        user        | references | null: false, foreign_key: true |

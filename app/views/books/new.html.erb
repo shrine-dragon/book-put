@@ -52,9 +52,9 @@
           </div>
           <div class="form-group">
             <div class='form-text-wrap'>
-              <label class="form-text-optional">キャッチコピー</label>
+              <label class="form-text-indispensable">キャッチコピー</label>
             </div>
-            <%= f.text_field :catch_copy, class:"input-default", id:"catch-copy", placeholder:"キャッチコピー" %>
+            <%= f.text_field :catch_copy, class:"input-default", id:"catch-copy", placeholder:"キャッチコピー", maxlength:"30" %>
             <%= render "shared/error_messages", model: f.object, attribute: :catch_copy %>
           </div>
         </div>

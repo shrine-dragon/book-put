@@ -42,10 +42,6 @@ ja:
       previous: <i class="fas fa-angle-left", style="color:black"></i>
       next: <i class="fas fa-angle-right", style="color:black"></i>
       truncate: "..."
- time:
-   formats:
-     default: "%Y/%m/%d %H:%M:%S"
-     short: "%m/%d %H:%M"
  activerecord:
    attributes:
      user:
@@ -61,6 +57,7 @@ ja:
      book:
        image: 画像
        title: タイトル
+       catch_copy: キャッチコピー
        content: 内容
        book_category_id: 種類
        book_genre_id: ジャンル

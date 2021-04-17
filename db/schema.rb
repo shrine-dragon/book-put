@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2021_04_04_031756) do
     t.string "title", null: false
     t.integer "book_category_id", null: false
     t.integer "book_genre_id", null: false
-    t.string "catch_copy"
+    t.string "catch_copy", null: false
     t.text "content", null: false
     t.string "highlight"
     t.bigint "user_id", null: false
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 2021_04_04_031756) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

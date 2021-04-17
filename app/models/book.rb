@@ -7,9 +7,10 @@ class Book < ApplicationRecord
   belongs_to_active_hash :book_genre
 
   with_options presence: true do
-    validates :image, presence: { message: 'を添付してください' }
-    validates :title,   length: { maximum: 50 }
-    validates :content, length: { maximum: 1000 }
+    validates :image,    presence: { message: 'を添付してください' }
+    validates :title,      length: { maximum: 50 }
+    validates :catch_copy, length: { maximum: 30 }
+    validates :content,    length: { maximum: 1000 }
   end
 
   with_options numericality: { other_than: 0, message: 'を選択してください' } do
