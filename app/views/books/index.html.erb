@@ -41,13 +41,10 @@
 
   <div class='book-contents'>
     <h2 class='title'>投稿一覧</h2>
-    <ul class='book-lists'>
-      <%= image_tag "apology-man.png", class: "no-post-image" %>
-    </ul>
-    <p class='no-post-sentence'>投稿はありません</p>
+    <%= render 'index_page' %>
   </div>
 </div>
-<%= link_to(root_path, class:'post-btn', id:"orange-btn" ) do %>
+<%= link_to(new_book_path, class:'post-btn', id:"orange-btn" ) do %>
   <span class='post-btn-text'>投稿する</span>
 <% end %>
 

@@ -13,4 +13,5 @@ class BookCategory < ActiveHash::Base
   ]
   include ActiveHash::Associations
   has_many :questionnaires
+  has_many :books
 end

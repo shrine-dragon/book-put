@@ -9,15 +9,15 @@
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">ニックネーム</label>
+          <label class="form-text-indispensable">ニックネーム</label>
         </div>
-        <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) book好男", maxlength:"12" %>
+        <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例) book好男", maxlength:"10" %>
         <%= render "shared/error_messages", model: @user, attribute: :nickname %>
-        <p class='info-text'>※12文字以内で入力してください。</p>
+        <p class='info-text'>※10文字以内で入力してください。</p>
       </div>
       <div class="img-upload">
         <div class="form-text-wrap">
-          <label class="image-text">本人画像</label>
+          <label class="form-text-optional">本人画像</label>
         </div>
         <div class="click-upload">
           <p>
@@ -30,14 +30,14 @@
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">性別</label>
+          <label class="form-text-indispensable">性別</label>
         </div>
         <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"user-gender"}) %>
         <%= render "shared/error_messages", model: @user, attribute: :gender_id %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">生年月日</label>
+          <label class="form-text-indispensable">生年月日</label>
         </div>
         <div class='input-birth-wrap'>
           <%= raw sprintf(
@@ -51,12 +51,12 @@
                         end_year: (Time.now.year - 5),
                         date_separator: '%s'),
                       "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
-          <%= render "shared/error_messages", model: @user, attribute: :birth_day %>
         </div>
+        <%= render "shared/error_messages", model: @user, attribute: :birth_day %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">メールアドレス</label>
+          <label class="form-text-indispensable">メールアドレス</label>
         </div>
         <%= f.email_field :email, class:"input-default", id:"email", placeholder:"あなたのメールアドレス", autofocus: true %>
         <%= render "shared/error_messages", model: @user, attribute: :email %>        
@@ -66,7 +66,7 @@
       </div>      
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">パスワード</label>
+          <label class="form-text-indispensable">パスワード</label>
         </div>
         <%= f.password_field :password, class:"input-default", id:"password", placeholder:"半角英数12文字以上20文字以内",  maxlength:"20" %>
         <%= render "shared/error_messages", model: @user, attribute: :password %>
@@ -74,7 +74,7 @@
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">確認用パスワード</label>
+          <label class="form-text-indispensable">確認用パスワード</label>
         </div>
         <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力してください" %>
         <%= render "shared/error_messages", model: @user, attribute: :password_confirmation %>
@@ -94,7 +94,7 @@
       </div>
       <div class='next-btn'>
         <%= f.submit "次へ進む" ,class:"blue-next-btn", id:"blue-btn" %>
-        <p class='already-register'>登録済みの方は<span><%= link_to 'こちら',  new_user_session_path, id:'link' %></span></p>        
+        <p class='already-registered'>登録済みの方は<span><%= link_to 'こちら',  new_user_session_path, id:'link' %></span></p>        
       </div>
     </div>
     <div class='go-back-btn'>

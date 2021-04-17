@@ -1,0 +1,108 @@
+<%= render 'shared/second_header' %>
+
+<%= form_with model: @book, url: books_path, class: 'post-main', local: true do |f| %>
+  <div class='form-wrap-post'>
+    <div class='form-header'>
+      <h1 class='form-header-text'>
+        新規投稿
+      </h1>
+    </div>
+    <div class='form-all'>
+      <div class="gray-bar">
+        <h1 class="gray-bar-text">基本情報</h1>
+      </div>
+      <div class="basic-info">
+        <div class="left-group">
+          <div class="img-upload">
+            <div class="form-text-wrap">
+              <label class="form-text-indispensable">画像</label>
+            </div>
+            <div class="click-upload">
+              <p>
+                クリックしてファイルをアップロード
+              </p>
+              <%= f.file_field :image, id:"user-image-text" %>
+            </div>
+            <%= render "shared/error_messages", model: f.object, attribute: :image %>
+            <div id="image-list">
+            </div>
+          </div>
+        </div>  
+        <div class="right-group">
+          <div class="form-group">
+            <div class='form-text-wrap'>
+              <label class="form-text-indispensable">タイトル</label>
+            </div>
+            <%= f.text_field :title, class:"input-default", id:"title", placeholder:"本のタイトル", maxlength:"50" %>
+            <%= render "shared/error_messages", model: f.object, attribute: :title %>
+          </div>
+          <div class="form-group">
+            <div class='form-text-wrap'>
+              <label class="form-text-indispensable">種類</label>
+            </div>
+            <%= f.collection_select(:book_category_id, BookCategory.all, :id, :name, {}, {class:"select-box", id:"book-category"}) %>
+            <%= render "shared/error_messages", model: f.object, attribute: :book_category_id %>
+          </div>
+          <div class="form-group">
+            <div class='form-text-wrap'>
+              <label class="form-text-indispensable">ジャンル</label>
+            </div>
+            <%= f.collection_select(:book_genre_id, BookGenre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
+            <%= render "shared/error_messages", model: f.object, attribute: :book_genre_id %>
+          </div>
+          <div class="form-group">
+            <div class='form-text-wrap'>
+              <label class="form-text-optional">キャッチコピー</label>
+            </div>
+            <%= f.text_field :catch_copy, class:"input-default", id:"catch-copy", placeholder:"キャッチコピー" %>
+            <%= render "shared/error_messages", model: f.object, attribute: :catch_copy %>
+          </div>
+        </div>
+      </div>
+      <div class="gray-bar">
+        <h1 class="gray-bar-text">詳細</h1>
+      </div>
+      <div class="book-content">
+        <div class='form-text-wrap'>
+          <label class="form-text-indispensable">
+            内容
+          </label>
+        </div>
+        <%= f.text_area :content, class:"book-content-text", id:"content", placeholder:"主旨、ストーリー、あらすじ等、本の内容について具体的に記述" ,rows:"7" ,maxlength:"1000" %>
+        <%= render "shared/error_messages", model: f.object, attribute: :content %>
+        <p class='info-text'>
+          ※批判的な意見はご遠慮ください
+        </p>
+      </div>
+      <div class="book-highlight">
+        <div class='form-text-wrap'>
+          <label class="form-text-optional">見どこと</label>
+        </div>
+        <%= f.text_field :highlight, class:"book-highlight-text", id:"highlight", placeholder:"面白いところ、魅力的なところを具体的に記述", maxlength:"100" %>
+        <%= render "shared/error_messages", model: f.object, attribute: :highlight %>
+      </div>
+      <div class='post-output-btn'>
+        <%= f.submit "投稿する" ,class:"post-output-orange-btn", id:"orange-btn" %>
+        <p class='caution-text'>※書籍以外の投稿は<br>削除の対象になります</p>
+      </div>
+      <div class='go-back-btn'>
+        <%= link_to(root_path, class:'go-back-gray-btn', id:"gray-btn") do %>
+          <p class="go-back-btn-text">もどる</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <style>
+    .go-back-btn {
+      width: 20%
+    }
+    .form-header {
+      height: 30px;
+    }
+    .form-header-text {
+      border-bottom: 1px solid #f5f5f5;
+    }
+  </style>
+<% end %>
+
+<%= render 'shared/second_footer' %>

@@ -9,11 +9,11 @@ class User < ApplicationRecord
   has_many               :comments
 
   with_options presence: true do
-    validates :nickname, length: { maximum: 12 }
+    validates :nickname, length: { maximum: 10 }
     validates :birth_day, :email
     validates :password, length: { minimum: 12, maximum: 20 },
                          format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'は半角英数混合で入力してください' }
   end
   # active_hashのデータ
-  validates :gender_id, numericality: { other_than: 0, message: 'を入力してください' }
+  validates :gender_id, numericality: { other_than: 0, message: 'を選択してください' }
 end

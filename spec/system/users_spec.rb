@@ -15,8 +15,10 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       select 'ファンタジー', from: 'questionnaire[book_genre_id]'
       select '書店', from: 'questionnaire[purchase_place_id]'
       select '紙媒体', from: 'questionnaire[reading_media_id]'
-      # 「登録する」ボタンを押すと登録完了ページへ移動する
-      click_on('登録する')
+      # 「登録する」ボタンを押すとUserモデルとQuestionnaireモデルのカウントが1上がることを確認する
+      expect do
+        find('input[name="commit"]').click
+      end.to change { User.count && Questionnaire.count }.by(1)
       # ユーザー新規登録2ページ目の「登録する」ボタンが表示されていないことを確認する
       expect(page).to have_no_content('登録する')
       # 「トップページへ」ボタンを押すとトップページへ移動する
@@ -25,6 +27,8 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       expect(current_path).to eq(root_path)
       # トップページに「新規登録」ボタンが表示されていないことを確認する
       expect(page).to have_no_content('新規登録')
+      # トップページにユーザー名が表示されていることを確認する
+      expect(page).to have_content(@user.nickname)
     end
   end
   context 'ユーザー情報を保存できず、次のページへ進めない時' do
@@ -41,6 +45,9 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       fill_in 'user[password_confirmation]', with: ''
       # 「次へ進む」ボタンを押しても新規登録ページへ戻されることを確認する
       click_on('次へ進む')
+      expect(current_path).to eq(user_registration_path)
+      # エラーメッセージが表示されていることを確認する
+      expect(page).to have_css '.field_with_errors'
       # ユーザー新規登録2ページ目の「登録する」ボタンが表示されていないことを確認する
       expect(page).to have_no_content('登録する')
     end
@@ -56,8 +63,14 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       select '--', from: 'questionnaire[book_genre_id]'
       select '--', from: 'questionnaire[purchase_place_id]'
       select '--', from: 'questionnaire[reading_media_id]'
-      # 「登録する」ボタンを押してもアンケート内容入力ページへ戻されることを確認する
-      click_on('登録する')
+      # 「登録する」ボタンを押してもUserモデルとQuestionnaireモデルのカウントは上がらないことを確認する
+      expect do
+        find('input[name="commit"]').click
+      end.to change { User.count && Questionnaire.count }.by(0)
+      # アンケート入力ページへ戻されることを確認する
+      expect(current_path).to eq questionnaires_path
+      # エラーメッセージが表示されていることを確認する
+      expect(page).to have_css '.field_with_errors'
       # ユーザー新規登録3ページ目の「トップページへ」ボタンが表示されていないことを確認する
       expect(page).to have_no_content('トップページへ')
     end
@@ -72,13 +85,8 @@ RSpec.describe 'ログイン', type: :system do
     it '保存されているユーザーの情報と合致すればログインができる' do
       # ログインページへ移動する
       access_sign_in_page(@user)
-      # 正しいユーザー情報を入力する
-      fill_in 'user[email]', with: @user.email
-      fill_in 'user[password]', with: @user.password
-      # ログインボタンを押す
-      click_on('ログイン')
-      # トップページへ遷移することを確認する
-      expect(current_path).to eq(root_path)
+      # 正しい情報を入力してログインする
+      sign_in(@user)
     end
   end
   context 'ログインができないとき' do
