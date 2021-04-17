@@ -1,0 +1,190 @@
+.registration-main {
+  width: 100%;
+  min-width: 1000px;
+  height: 100%;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+}
+
+.form-wrap-sign-up {
+  width: 65%;
+  background-color: white;
+  padding-bottom: 10px;
+}
+
+.form-all {
+  margin-top: 100px;
+}
+
+.gray-bar {
+  width: 85%;
+  height: 40px;
+  border: 1px solid #eee;
+  background-color: #eee;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.gray-bar-text {
+  padding: 5px 0 0 20px;
+  font-weight: bold;
+}
+
+.form-group {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.form-text-wrap {
+  width: 100%;
+  height: 20%;
+  margin-bottom: 3px;
+}
+
+.form-text-indispensable, .form-text-optional {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-text-indispensable::after, .form-text-optional::after {
+  color: white;
+  border: none;
+  padding: 3px;
+  margin-left: 10px;
+}
+
+.form-text-indispensable::after {
+  content: "必須";
+  background-color: #f00;
+}
+
+.form-text-optional::after {
+  content: "任意";
+  background-color: #ccc;
+}
+
+.input-default {
+  width: 100%;
+  margin-top: 5px;
+  height: 48px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
+
+.img-upload {
+  width: 50%;
+  flex-direction: column;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 14px;
+  font-weight: bold;
+  padding-top: 20px;
+  margin: 0 auto;  
+}
+
+.click-upload {
+  margin-top: 10px;
+  min-width: 250px;
+}
+
+.click-upload>p {
+  margin-bottom: 15px;
+}
+
+.select-box {
+  width: 8.5vw;
+  margin-top: 5px;
+  height: 30px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;  
+  padding: 0 5px;  
+}
+
+.input-birth-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.input-birth-wrap select {
+  width: 75px;
+  margin-top: 5px;
+  padding-left: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.input-birth-wrap p {
+  line-height: 35px;
+  margin-top: 5px;
+  padding: 0 5px;
+}
+
+.info-text {
+  color: #888;
+  font-size: 15px;
+  margin-top: 3px;
+}
+
+.form-info-header {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.form-info-text {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.register-info {
+  color: #0099e8;
+  cursor: pointer;
+}
+
+.already-registered {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.form-bottom-text {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.form-bottom-text:last-child {
+  padding-bottom: 50px;
+}
+
+.form-bottom-text>span>#link {
+  color: #0099e8;
+  cursor: pointer;
+}
+
+span > #link {
+  color: #0099e8;
+}
+
+.field_with_errors {
+  display: contents;
+}
+
+.registration-completed-text {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 0 20px;
+}

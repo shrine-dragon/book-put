@@ -1,0 +1,121 @@
+a {
+  text-decoration: none;
+}
+
+.main {
+  background: #f8f8f8;
+}
+
+/* 画面上部の「生き方が変わる読書アプリ」帯部分 */
+.title-contents {
+  min-height: 85vh;
+  background-image: image-url('big-library.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5vh 15vw;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+}
+
+.service-title {
+  font-size: 8vh;
+  margin-top: 100px;
+}
+
+.service-explain {
+  font-size: 2.5vh;
+  line-height: 40px;
+}
+
+.service-benefit {
+  font-size: 2.5vh;
+  margin-bottom: 10px;
+}
+
+.service-catch-copy {
+  font-size: 5vh;
+  line-height: 50px;
+}
+
+.how-to-use {
+  height: 500px;
+  padding: 10vh;
+}
+
+.how-to-use > .title {
+  font-size: 5vh;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.usage-lists {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.usage-lists> list {
+  width: 33vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.list {
+  position: relative;
+  z-index: 10;
+}
+
+.usage-image {
+  width: 30vw;
+  margin-top: 30px;
+}
+
+.usage-list-number {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 60px;
+  background-color: #FF9933;
+  color: #fff;  
+}
+
+.usage-list-text {
+  width: 30vw;
+  margin: 15px 0 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.usage-list-description {
+  margin:10px 20px 0 0;
+}
+
+/* 投稿一覧 */
+.book-contents {
+  background-image: image-url('book-pile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color:rgba(255,255,255,0.7);
+  background-blend-mode:lighten;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5vh 0;
+}
+
+.title {
+  font-size: 5vh;
+  font-weight: bold;
+}

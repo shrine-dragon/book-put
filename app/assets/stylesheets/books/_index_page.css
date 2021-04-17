@@ -1,0 +1,61 @@
+.book-lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.book-lists>.list {
+  width: 25vw;
+  padding: 1vw;
+  margin: 5vh 1vw 0;
+  background-color: #FFF;
+  border: 1px solid black;
+}
+
+.book-lists>.list:hover {
+  border-color: #FF9933;
+}
+
+.book-info {
+  color: black;
+}
+
+.book-title {
+  font-size: 3.5vh;
+  font-weight: bold;
+}
+
+.book-posted-user, .book-posted-time {
+  font-size: 3vh;
+}
+
+.no-post {
+  display: block;
+}
+
+.no-post-sentence {
+  margin-left: 8.5vw;
+}
+
+.pagination{
+  margin-top: 5vh;
+  width: 50%;
+  display: flex;
+  justify-content: center;  
+}
+
+.pagination span{
+  background-color: white;
+  text-align: center;
+  width: 50px;
+  border: solid 1px black;
+  color: black;
+}
+
+ .pagination span:hover:not(.pagination span.current){
+  border-color: #FF9933;
+}
+
+.pagination span.current {
+  background-color: #FF9933;
+}

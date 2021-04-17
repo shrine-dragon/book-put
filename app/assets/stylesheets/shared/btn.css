@@ -1,0 +1,150 @@
+/* shared/header */
+.search-button {
+  width: 5vh;
+  cursor: pointer;
+  background-color: #FF9933;
+  position: relative;
+}
+
+.search-button::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: bold;
+  content: "\f002";
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 5px;
+  bottom: 1.5px;
+  color: #555;
+}
+
+.sign-in-btn, .sign-up-btn {
+  width: 80px;
+  border-radius: 4px;
+  padding: 9px 9px;
+  margin-right: 12px;
+  cursor: pointer;
+  box-shadow: 1.5px 1.5px #666;
+  border: none;
+  outline: none;
+}
+
+.sign-in-btn {
+  background-color: #FF9933;
+  margin-left: 15px;
+}
+
+.sign-up-btn {
+  background-color: #00bfff;
+}
+
+.sign-btn-text {
+  text-decoration: none;
+  line-height: 30px;
+  color: #333333;
+}
+
+/* index */
+.store-btn {
+  display: flex;
+  margin-top: 24px;
+}
+
+.apple-btn {
+  margin-right: 1vw;
+  height: 9vh;
+}
+
+.google-btn {
+  height: 9vh;
+}
+
+.post-btn {
+  height: 55px;
+  width: 190px;
+  background: #FF9933;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 15px;
+  right: 15px;
+  position: fixed;
+  z-index: 20;
+  padding: 15px;
+}
+
+.post-btn-text {
+  color: #fff;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+/* devise/registrations, /sessions */
+.next-btn, .register-btn {
+  width: 50%;
+  margin: 40px auto 0;
+}
+
+.register-btn {
+  width: 50%;
+  margin: -30px auto 0;
+}
+
+.blue-next-btn, .blue-register-btn {
+  width: 100%;
+  background: #00bfff;
+  border: 1px solid #00bfff;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.go-back-btn {
+  width: 30%;
+  margin: 30px auto 0px;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.go-back-btn-text {
+  color: white;
+  text-decoration: none;
+}
+
+.login-btn {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.login-orange-btn {
+  width: 100%;
+  background: #FF9933;
+  border: 1px solid #FF9933;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* books/new */
+.post-output-btn {
+  width: 30%;
+  margin: 40px auto 0;
+}
+
+.post-output-orange-btn {
+  width: 100%;
+  background: #FF9933;
+  border: 1px solid #ff9933;
+  color: #fff;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}

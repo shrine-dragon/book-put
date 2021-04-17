@@ -1,0 +1,25 @@
+#image-list> div> img {
+  height: 23.5vw;
+  width: 30vw;
+  padding: 10px 150px 0 0;
+  object-fit: contain;
+}
+
+#user-image {
+  margin-top: -9px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.book-img {
+  width: 22.8vw;
+  height: 40vh;
+  margin: 0 auto;
+}
+
+.no-post-image {
+  width: 30vw;
+  height: 30vh;
+  display: block; 
+  margin: 20px auto 30px;
+}

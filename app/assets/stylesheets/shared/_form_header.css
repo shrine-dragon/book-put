@@ -1,0 +1,46 @@
+.form-header {
+  height: 120px;
+  text-align: center;
+  font-size: 25px;
+}
+
+.form-header-text {
+  line-height: 100px;
+  font-weight: bold;
+}
+
+.step-contents {
+  display: flex;
+  justify-content: center;
+  padding: 0 100px;
+}
+
+.left-circle, .center-circle, .right-circle {
+  width: 30px;
+  height: 30px;
+  border: 0.5px solid #ccc;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+.horizontal-line {
+  width: 12vw;
+  height: 3px;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  margin: 12px;
+}
+
+.step-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  color: #ccc;
+  padding-bottom: 25px;
+  margin: 9px 12.2vw 0 10vw;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.step-text-center {
+  margin-right: 25px;
+}
