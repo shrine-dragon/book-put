@@ -9,23 +9,20 @@
   padding: 1vw;
   margin: 5vh 1vw 0;
   background-color: #FFF;
+  border: 1px solid black;
+}
+
+.book-lists>.list:hover {
+  border-color: #FF9933;
+}
+
+.book-info {
+  color: black;
 }
 
 .book-title {
   font-size: 3.5vh;
   font-weight: bold;
-}
-
-.book-title, .book-info {
-  color: black;
-}
-
-.book-info-posted-user {
-  display: flex;
-}
-
-.book-posted-text {
-  margin-top: 1.5vh;
 }
 
 .book-posted-user, .book-posted-time {
