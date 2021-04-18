@@ -20,8 +20,8 @@
 
 |         Column        |    Type    |            Options             |
 |-----------------------|------------|--------------------------------|
-|   book_category_id    |   integer  |          null: false           |
-|     book_genre_id     |   integer  |          null: false           |
+|       category_id     |   integer  |          null: false           |
+|        genre_id       |   integer  |          null: false           |
 |   purchase_place_id   |   integer  |          null: false           |
 |    reading_media_id   |   integer  |          null: false           |
 |         user          | references |  null: false, optional: true   |
@@ -35,8 +35,8 @@
 |       Column       |    Type    |            Options             |
 |--------------------|------------|--------------------------------|
 |        title       |   string   |          null: false           |
-|  book_category_id  |   integer  |          null: false           |
-|    book_genre_id   |   integer  |          null: false           |
+|     category_id    |   integer  |          null: false           |
+|      genre_id      |   integer  |          null: false           |
 |     catch_copy     |   string   |          null: false           |
 |       content      |    text    |          null: false           |
 |      highlight     |   string   |                                |

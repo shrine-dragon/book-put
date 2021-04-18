@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 2021_04_04_031756) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.integer "book_category_id", null: false
-    t.integer "book_genre_id", null: false
+    t.integer "category_id", null: false
+    t.integer "genre_id", null: false
     t.string "catch_copy", null: false
     t.text "content", null: false
     t.string "highlight"
@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 2021_04_04_031756) do
   end
 
   create_table "questionnaires", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "book_category_id", null: false
-    t.integer "book_genre_id", null: false
+    t.integer "category_id", null: false
+    t.integer "genre_id", null: false
     t.integer "purchase_place_id", null: false
     t.integer "reading_media_id", null: false
     t.bigint "user_id"
@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(version: 2021_04_04_031756) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
