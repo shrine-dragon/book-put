@@ -41,4 +41,12 @@
 
 #report-text:hover {
   color: #8B008B;
+=======
+#list:hover {
+  color: #FF9933;
+}
+
+#user-image:hover {
+  border: 1px solid #FF9933;
+  background-color: #eee;
 }
