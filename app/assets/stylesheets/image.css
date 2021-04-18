@@ -23,3 +23,12 @@
   display: block; 
   margin: 20px auto 30px;
 }
+
+.detail-img-content {
+  margin: 0 16.5vw;
+}
+
+.detail-img {
+  width: 45vw;
+  min-height: 65vh;
+}
