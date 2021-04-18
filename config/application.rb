@@ -14,6 +14,7 @@ module BookPut
     # 日本語の言語設定
     config.i18n.default_locale = :ja
     config.time_zone = 'Tokyo'
+    config.web_console.development_only = false
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
