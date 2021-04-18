@@ -1,0 +1,76 @@
+<%= render 'shared/second_header' %>
+
+<div class='book-detail-main'>
+  <div class='book-detail'>
+    <div class='detail-header'>
+      <h1 class='detail-header-text'>
+        投稿詳細
+      </h1>
+    </div>
+    <div class='detail-all'>
+      <div class='detail-time'>
+        <%= @book.created_at.to_s(:datetime_jp) %>
+      </div>
+      <h1 class='detail-title'>
+        <%= @book.title %>
+      </h1>
+      <h1 class='detail-user'>
+        <% if user_signed_in? && current_user.id == @book.user_id %>
+          by <span><%= link_to @book.user.nickname, '#', class:'detail-user-text' %></span>
+        <% else %>
+          by <span><%= @book.user.nickname %></span>
+        <% end %>
+      </h1>
+      <ul class='review-btns'>
+        <li><i class="fas fa-thumbs-up"  id='good-btn'></i></li>
+        <li><i class="far fa-star"       id='favorite-btn'></i></li>
+        <li><i class="fas fa-ellipsis-h" id='ellipsis-btn'></i></li>
+      </ul>
+      <ul class="hidden-lists-2", id="pull-down-2">
+        <% if user_signed_in? && current_user.id == @book.user_id %>
+          <li>
+            <%= link_to(root_path, class:"edit") do%>
+              <span class="pulldown-menu-text", id="edit-text">編集</span>
+            <% end %>
+          </li>
+          <hr>
+          <li>
+            <%= link_to(root_path, class:"destroy",  data: { confirm: '削除しますか？' }) do %>
+              <span class="pulldown-menu-text", id="destroy-text">削除</span>
+            <% end %>
+          </li>
+        <% else %>
+          <li>
+            <%= link_to(root_path, class:"report") do%>
+              <span class="pulldown-menu-text", id="report-text">報告</span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      <div class='detail-img-content'>
+        <%= image_tag @book.image, class: "detail-img" %>
+      </div>
+      <div class='detail-category-genre'>
+        <%= @book.category.name %>・<%= @book.genre.name %>
+      </div>
+      <h1 class='detail-catch-copy'>
+        「<%= @book.catch_copy %>」
+      </h1>
+      <div class='detail-content'>
+        <%= @book.content %>
+      </div>
+      <% if @book.highlight.present? %>
+        <div class='detail-highlight'>
+          <%= @book.highlight %>
+        </div>
+      <% end %>
+      <div class='go-back-btn'>
+        <%= link_to(root_path, class:'go-back-gray-btn', id:"gray-btn") do %>
+          <p class="go-back-btn-text">もどる</p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/second_footer' %>

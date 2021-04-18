@@ -39,24 +39,24 @@
   </div>
   <div class='nav'>
     <ul class='search-lists'>
-      <li><%= link_to 'タイトル', "/", class: "search-list", id:"list" %></li>
-      <li><%= link_to 'カテゴリー', "/", class: "search-list", id:"list" %></li>
-      <li><%= link_to 'ジャンル', "/", class: "search-list", id:"list" %></li>
-      <li><%= link_to 'キャッチコピー', "/", class: "search-list", id:"list" %></li>
-      <li><%= link_to 'お気に入り', "/", class: "search-list", id:"list" %></li>
+      <li><%= link_to 'タイトル', "/", class: "search-list", id:"list-text" %></li>
+      <li><%= link_to 'カテゴリー', "/", class: "search-list", id:"list-text" %></li>
+      <li><%= link_to 'ジャンル', "/", class: "search-list", id:"list-text" %></li>
+      <li><%= link_to 'キャッチコピー', "/", class: "search-list", id:"list-text" %></li>
+      <li><%= link_to 'お気に入り', "/", class: "search-list", id:"list-text" %></li>
     </ul>
   </div>
   <ul class="hidden-lists", id="pull-down">
     <li>
       <%= link_to(root_path, class:"my-page") do%>
-        <span class="pulldown-menu-text", id="list">マイページ</span>
+        <span class="pulldown-menu-text", id="my-page-text">マイページ</span>
       <% end %>
     </li>
     <hr>
     <li>
       <%= link_to(destroy_user_session_path, class:"log-out", method: :delete, data: { confirm: 'ログアウトしますか？' }) do%>
-        <span class="pulldown-menu-text", id="list">ログアウト</span>
+        <span class="pulldown-menu-text", id="log-out-text">ログアウト</span>
       <% end %>
     </li>
-  </ul>  
+  </ul>
 </header>

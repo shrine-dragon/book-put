@@ -11,15 +11,15 @@
         <div class='form-text-wrap'>
           <label class="form-text-indispensable">好きな本の種類を選択してください</label>
         </div>
-        <%= f.collection_select(:book_category_id, BookCategory.all, :id, :name, {}, {class:"select-box", id:"book-category"}) %>
-        <%= render "shared/error_messages", model: f.object, attribute: :book_category_id %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"book-category"}) %>
+        <%= render "shared/error_messages", model: f.object, attribute: :category_id %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text-indispensable">好きな本のジャンルを選択してください</label>
         </div>
-        <%= f.collection_select(:book_genre_id, BookGenre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
-        <%= render "shared/error_messages", model: @questionnaire, attribute: :book_genre_id %>
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
+        <%= render "shared/error_messages", model: @questionnaire, attribute: :genre_id %>
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>

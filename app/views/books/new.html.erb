@@ -9,7 +9,7 @@
     </div>
     <div class='form-all'>
       <div class="gray-bar">
-        <h1 class="gray-bar-text">基本情報</h1>
+        <h1 class="gray-bar-text">書籍情報</h1>
       </div>
       <div class="basic-info">
         <div class="left-group">
@@ -40,27 +40,27 @@
             <div class='form-text-wrap'>
               <label class="form-text-indispensable">種類</label>
             </div>
-            <%= f.collection_select(:book_category_id, BookCategory.all, :id, :name, {}, {class:"select-box", id:"book-category"}) %>
-            <%= render "shared/error_messages", model: f.object, attribute: :book_category_id %>
+            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"book-category"}) %>
+            <%= render "shared/error_messages", model: f.object, attribute: :category_id %>
           </div>
           <div class="form-group">
             <div class='form-text-wrap'>
               <label class="form-text-indispensable">ジャンル</label>
             </div>
-            <%= f.collection_select(:book_genre_id, BookGenre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
-            <%= render "shared/error_messages", model: f.object, attribute: :book_genre_id %>
+            <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
+            <%= render "shared/error_messages", model: f.object, attribute: :genre_id %>
           </div>
           <div class="form-group">
             <div class='form-text-wrap'>
-              <label class="form-text-optional">キャッチコピー</label>
+              <label class="form-text-indispensable">キャッチコピー</label>
             </div>
-            <%= f.text_field :catch_copy, class:"input-default", id:"catch-copy", placeholder:"キャッチコピー" %>
+            <%= f.text_field :catch_copy, class:"input-default", id:"catch-copy", placeholder:"キャッチコピー", maxlength:"30" %>
             <%= render "shared/error_messages", model: f.object, attribute: :catch_copy %>
           </div>
         </div>
       </div>
       <div class="gray-bar">
-        <h1 class="gray-bar-text">詳細</h1>
+        <h1 class="gray-bar-text">書籍詳細</h1>
       </div>
       <div class="book-content">
         <div class='form-text-wrap'>
@@ -78,7 +78,7 @@
         <div class='form-text-wrap'>
           <label class="form-text-optional">見どこと</label>
         </div>
-        <%= f.text_field :highlight, class:"book-highlight-text", id:"highlight", placeholder:"面白いところ、魅力的なところを具体的に記述", maxlength:"100" %>
+        <%= f.text_area :highlight, class:"book-highlight-text", id:"highlight", placeholder:"面白いところ、魅力的なところを具体的に記述", maxlength:"100" %>
         <%= render "shared/error_messages", model: f.object, attribute: :highlight %>
       </div>
       <div class='post-output-btn'>

@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 2021_04_04_031756) do
 
   create_table "books", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
-    t.integer "book_category_id", null: false
-    t.integer "book_genre_id", null: false
-    t.string "catch_copy"
+    t.integer "category_id", null: false
+    t.integer "genre_id", null: false
+    t.string "catch_copy", null: false
     t.text "content", null: false
     t.string "highlight"
     t.bigint "user_id", null: false
@@ -47,8 +47,8 @@ ActiveRecord::Schema.define(version: 2021_04_04_031756) do
   end
 
   create_table "questionnaires", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "book_category_id", null: false
-    t.integer "book_genre_id", null: false
+    t.integer "category_id", null: false
+    t.integer "genre_id", null: false
     t.integer "purchase_place_id", null: false
     t.integer "reading_media_id", null: false
     t.bigint "user_id"

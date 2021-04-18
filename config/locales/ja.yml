@@ -42,10 +42,6 @@ ja:
       previous: <i class="fas fa-angle-left", style="color:black"></i>
       next: <i class="fas fa-angle-right", style="color:black"></i>
       truncate: "..."
- time:
-   formats:
-     default: "%Y/%m/%d %H:%M:%S"
-     short: "%m/%d %H:%M"
  activerecord:
    attributes:
      user:
@@ -54,13 +50,14 @@ ja:
        birth_day: 生年月日
        gender_id: 性別
      questionnaire:
-       book_category_id: 種類
-       book_genre_id: ジャンル
+       category_id: 種類
+       genre_id: ジャンル
        purchase_place_id: 購入場所
        reading_media_id: 媒体
      book:
        image: 画像
        title: タイトル
+       catch_copy: キャッチコピー
        content: 内容
-       book_category_id: 種類
-       book_genre_id: ジャンル
+       category_id: 種類
+       genre_id: ジャンル
