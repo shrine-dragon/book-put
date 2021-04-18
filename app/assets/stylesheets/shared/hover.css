@@ -10,8 +10,12 @@
   background-color: #ddd;
 }
 
-#list:hover {
+#list-text:hover {
   color: #FF9933;
+}
+
+#link-text:hover {
+  text-decoration: underline;
 }
 
 #user-image:hover {
@@ -19,10 +23,22 @@
   background-color: #eee;
 }
 
+#my-page-text:hover, .detail-user-text:hover {
+  color: #00CCFF;
+}
+
+#log-out-text:hover, #destroy-text:hover {
+  color: #FF0000;
+}
+
+#ellipsis-btn:hover {
+  color: #666;
+}
+
 #edit-text:hover {
   color: #00AA00;
 }
 
-#destroy-text:hover {
-  color: #FF0000;
+#report-text:hover {
+  color: #8B008B;
 }

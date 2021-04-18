@@ -15,19 +15,19 @@
         <%= @book.title %>
       </h1>
       <h1 class='detail-user'>
-        <% if current_user.id == @book.user_id %>
-          by <span><%= link_to @book.user.nickname, '#', class:'detail-posted-user-text' %></span>
+        <% if user_signed_in? && current_user.id == @book.user_id %>
+          by <span><%= link_to @book.user.nickname, '#', class:'detail-user-text' %></span>
         <% else %>
           by <span><%= @book.user.nickname %></span>
         <% end %>
       </h1>
       <ul class='review-btns'>
         <li><i class="fas fa-thumbs-up"  id='good-btn'></i></li>
-        <li><i class="far fa-star"       id='favorite'></i></li>
-        <li><i class="fas fa-ellipsis-h" id='ellipsis'></i></li>
+        <li><i class="far fa-star"       id='favorite-btn'></i></li>
+        <li><i class="fas fa-ellipsis-h" id='ellipsis-btn'></i></li>
       </ul>
       <ul class="hidden-lists-2", id="pull-down-2">
-        <% if current_user.id == @book.user_id %>
+        <% if user_signed_in? && current_user.id == @book.user_id %>
           <li>
             <%= link_to(root_path, class:"edit") do%>
               <span class="pulldown-menu-text", id="edit-text">編集</span>
@@ -47,25 +47,26 @@
           </li>
         <% end %>
       </ul>
-      <div class='detail-upper'>
-        <div class='detail-img-content'>
-          <%= image_tag @book.image, class: "detail-img" %>
-        </div>
-        <div class='detail-category-genre'>
-          <%= @book.category.name %>・<%= @book.genre.name %>
-        </div>
+      <div class='detail-img-content'>
+        <%= image_tag @book.image, class: "detail-img" %>
       </div>
-      <div class='detail-lower'>
-        <h1 class='detail-catch-copy'>
-          「<%= @book.catch_copy %>」
-        </h1>
-        <div class='detail-content'>
-          <%= @book.content %>
+      <div class='detail-category-genre'>
+        <%= @book.category.name %>・<%= @book.genre.name %>
+      </div>
+      <h1 class='detail-catch-copy'>
+        「<%= @book.catch_copy %>」
+      </h1>
+      <div class='detail-content'>
+        <%= @book.content %>
+      </div>
+      <% if @book.highlight.present? %>
+        <div class='detail-highlight'>
+          <%= @book.highlight %>
         </div>
-        <% if @book.highlight.present? %>
-          <div class='detail-highlight'>
-            <%= @book.highlight %>
-          </div>
+      <% end %>
+      <div class='go-back-btn'>
+        <%= link_to(root_path, class:'go-back-gray-btn', id:"gray-btn") do %>
+          <p class="go-back-btn-text">もどる</p>
         <% end %>
       </div>
     </div>

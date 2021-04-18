@@ -1,5 +1,4 @@
 .book-detail-main {
-  min-width: 1000px;
   background-color: #f5f5f5;
   flex-direction: column;
   align-items: center;
@@ -10,8 +9,7 @@
 .book-detail {
   width: 80%;
   background-color: white;
-  flex-direction: column;
-  align-items: center;
+  padding-bottom: 10px;
 }
 
 .detail-header {
@@ -46,29 +44,8 @@
   font-size: 25px;
 }
 
-.detail-posted-user-text:hover {
-  color: #00CCFF;
-}
-
-.detail-posted-user-text {
+.detail-user-text {
   color: black;
-}
-
-.review-btns {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 30px;
-}
-
-.review-btns > li {
-  font-size: 25px;
-  margin-left: 30px;
-  color: #999;
-  cursor: pointer;
-}
-
-#ellipsis:hover {
-  color: #666;
 }
 
 .hidden-lists-2 {
@@ -92,15 +69,6 @@
   margin-right: 10px;
 }
 
-#report-text:hover {
-  color: #8B008B;
-}
-
-.detail-upper {
-  display: block;
-  padding-bottom: 4vh;
-}
-
 .detail-img-content {
   margin: 0 16.5vw;
 }
@@ -113,6 +81,7 @@
 .detail-category-genre {
   margin-left: 16.5vw;
   font-size: 20px;
+  margin-bottom: 4vh;
 }
 
 .detail-catch-copy {
@@ -123,18 +92,6 @@
 
 .detail-content, .detail-highlight {
   width: 60vw;
-  margin: 0 0 5vh 16.5vw;
+  margin-left: 16.5vw;
   white-space: pre-line;
-}
-
-.detail-highlight {
-  margin-top: -5vh;
-}
-
-.comment-field {
-  width: 80vw;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  padding: 1vh 0;
 }

@@ -97,14 +97,6 @@
   color: #222;
 }
 
-#my-page-text:hover {
-  color: #00CCFF;
-}
-
-#log-out-text:hover {
-  color: #FF0000;
-}
-
 .pulldown-menu-text::after {
   font-family: "Font Awesome 5 Free";
   font-weight: bold;
