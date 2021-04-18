@@ -18,3 +18,11 @@
   border: 1px solid #FF9933;
   background-color: #eee;
 }
+
+#edit-text:hover {
+  color: #00AA00;
+}
+
+#destroy-text:hover {
+  color: #FF0000;
+}

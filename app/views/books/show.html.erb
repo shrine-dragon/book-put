@@ -8,20 +8,38 @@
       </h1>
     </div>
     <div class='detail-all'>
+      <div class='detail-time'>
+        <%= @book.created_at.to_s(:datetime_jp) %>
+      </div>
       <h1 class='detail-title'>
         <%= @book.title %>
       </h1>
       <h1 class='detail-user'>
         <% if current_user.id == @book.user_id %>
-          (by <%= link_to @book.user.nickname, '#', class:'detail-user-text' %>)
+          (<span>by</span> <%= link_to @book.user.nickname, '#', class:'detail-user-text' %>)
         <% else %>
           (by <%= @book.user.nickname %>)
         <% end %>
       </h1>
       <ul class='review-btns'>
-        <li class='review-btn'><i class="fas fa-thumbs-up"></i></li>
-        <li class='review-btn'><i class="far fa-star"></i></li>
-        <li class='review-btn'><i class="fas fa-ellipsis-h"></i></li>
+        <li><i class="fas fa-thumbs-up"  id='good-btn'></i></li>
+        <li><i class="far fa-star"       id='favorite'></i></li>
+        <% if current_user.id == @book.user_id %>
+          <li><i class="fas fa-ellipsis-h" id='ellipsis'></i></li>
+        <% end %>
+      </ul>
+      <ul class="hidden-lists-2", id="pull-down-2">
+        <li>
+          <%= link_to(root_path, class:"edit") do%>
+            <span class="pulldown-menu-text", id="edit-text">編集</span>
+          <% end %>
+        </li>
+        <hr>
+        <li>
+          <%= link_to(root_path, class:"destroy",  data: { confirm: '削除しますか？' }) do %>
+            <span class="pulldown-menu-text", id="destroy-text">削除</span>
+          <% end %>
+        </li>
       </ul>
       <div class='detail-upper'>
         <div class='detail-img-content'>
@@ -38,6 +56,11 @@
         <div class='detail-content'>
           <%= @book.content %>
         </div>
+        <% if @book.highlight.present? %>
+          <div class='detail-highlight'>
+            <%= @book.highlight %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
