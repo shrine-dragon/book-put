@@ -3,8 +3,8 @@ class Book < ApplicationRecord
   belongs_to       :user
   has_one_attached :image
   has_many         :comments
-  belongs_to_active_hash :category
-  belongs_to_active_hash :genre
+  belongs_to       :category
+  belongs_to       :genre
 
   with_options presence: true do
     validates :image,    presence: { message: 'を添付してください' }
