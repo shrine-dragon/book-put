@@ -15,13 +15,13 @@ RSpec.describe Questionnaire, type: :model do
 
     context 'アンケート内容が保存できず、新規登録できない時' do
       it '本の種類が選択されていないと保存できない' do
-        @questionnaire.book_category_id = 0
+        @questionnaire.category_id = 0
         @questionnaire.valid?
         expect(@questionnaire.errors.full_messages).to include('種類を選択してください')
       end
 
       it '本のジャンルが選択されていないと保存できない' do
-        @questionnaire.book_genre_id = 0
+        @questionnaire.genre_id = 0
         @questionnaire.valid?
         expect(@questionnaire.errors.full_messages).to include('ジャンルを選択してください')
       end

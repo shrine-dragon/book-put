@@ -11,8 +11,8 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       # ユーザー情報を入力し、アンケート内容入力ページへ移動する
       input_user_info(@user)
       # アンケート内容を入力する
-      select '漫画', from: 'questionnaire[book_category_id]'
-      select 'ファンタジー', from: 'questionnaire[book_genre_id]'
+      select '漫画', from: 'questionnaire[category_id]'
+      select 'ファンタジー', from: 'questionnaire[genre_id]'
       select '書店', from: 'questionnaire[purchase_place_id]'
       select '紙媒体', from: 'questionnaire[reading_media_id]'
       # 「登録する」ボタンを押すとUserモデルとQuestionnaireモデルのカウントが1上がることを確認する
@@ -59,8 +59,8 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       # ユーザー情報を入力し、アンケート内容入力ページへ移動する
       input_user_info(@user)
       # アンケート内容を入力する
-      select '--', from: 'questionnaire[book_category_id]'
-      select '--', from: 'questionnaire[book_genre_id]'
+      select '--', from: 'questionnaire[category_id]'
+      select '--', from: 'questionnaire[genre_id]'
       select '--', from: 'questionnaire[purchase_place_id]'
       select '--', from: 'questionnaire[reading_media_id]'
       # 「登録する」ボタンを押してもUserモデルとQuestionnaireモデルのカウントは上がらないことを確認する

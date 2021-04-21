@@ -15,8 +15,8 @@ RSpec.describe '新規投稿', type: :system do
       attach_file('book[image]', image_path)
       # フォームに情報を入力する
       fill_in 'book[title]', with: @book.title
-      select '漫画', from: 'book[book_category_id]'
-      select 'ファンタジー', from: 'book[book_genre_id]'
+      select '漫画', from: 'book[category_id]'
+      select 'ファンタジー', from: 'book[genre_id]'
       fill_in 'book[catch_copy]', with: @book.catch_copy
       fill_in 'book[content]', with: @book.content
       fill_in 'book[highlight]', with: @book.highlight
@@ -48,8 +48,8 @@ RSpec.describe '新規投稿', type: :system do
       access_new_post_page(@user)
       # フォームに情報を入力する
       fill_in 'book[title]', with: ''
-      select '--', from: 'book[book_category_id]'
-      select '--', from: 'book[book_genre_id]'
+      select '--', from: 'book[category_id]'
+      select '--', from: 'book[genre_id]'
       fill_in 'book[catch_copy]', with: ''
       fill_in 'book[content]', with: ''
       fill_in 'book[highlight]', with: ''

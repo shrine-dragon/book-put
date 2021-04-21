@@ -12,11 +12,6 @@ RSpec.describe Book, type: :model do
         expect(@book).to be_valid
       end
 
-      it 'キャッチコピーが入力されていなくても保存できる' do
-        @book.catch_copy = ''
-        expect(@book).to be_valid
-      end
-
       it '見どころが入力されていなくても保存できる' do
         @book.highlight = ''
         expect(@book).to be_valid
@@ -43,15 +38,21 @@ RSpec.describe Book, type: :model do
       end
 
       it '本の種類が選択されていないと保存できない' do
-        @book.book_category_id = 0
+        @book.category_id = 0
         @book.valid?
         expect(@book.errors.full_messages).to include('種類を選択してください')
       end
 
       it '本のジャンルが選択されていないと保存できない' do
-        @book.book_genre_id = 0
+        @book.genre_id = 0
         @book.valid?
         expect(@book.errors.full_messages).to include('ジャンルを選択してください')
+      end
+
+      it 'キャッチコピーが入力されていないと保存できない' do
+        @book.catch_copy = ''
+        @book.valid?
+        expect(@book.errors.full_messages).to include('キャッチコピーを入力してください')
       end
 
       it '内容が入力されていないと保存できない' do
