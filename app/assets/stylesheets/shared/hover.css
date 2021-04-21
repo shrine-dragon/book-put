@@ -10,6 +10,10 @@
   background-color: #ddd;
 }
 
+#green-btn:hover {
+  background-color: #00ee00;
+}
+
 #list-text:hover {
   color: #FF9933;
 }
@@ -36,7 +40,7 @@
 }
 
 #edit-text:hover {
-  color: #00AA00;
+  color: #00cc00;
 }
 
 #report-text:hover {
