@@ -1,7 +1,7 @@
 <% if flash[:notice] %>
-  <div class='flash'>
+  <p class='flash-notification', id='flash-message'>
     <%= flash[:notice] %>
-  </div>
+  </p>
 <% end %>
 <%= render 'shared/second_header' %>
 

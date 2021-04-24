@@ -18,7 +18,7 @@
   color: #FF9933
 }
 
-.flash {
+.flash-notification, .flash-success {
   width: 18%;
   font-weight: bold;
   font-size: 14px;
@@ -26,7 +26,15 @@
   position: absolute;
   top: 20px;
   left: 15px;
-  color: #009900;
   background-color: white;
+}
+
+.flash-notification {
+  color: #009900;
   border: 1px solid #009900;
+}
+
+.flash-success {
+  color: #FF9933;
+  border: 1px solid #FF9933;
 }

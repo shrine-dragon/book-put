@@ -1,5 +1,10 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header'>
+  <% if flash[:success] %>
+    <p class='flash-success', id='flash-message'>
+      <%= flash[:success] %>
+    </p>
+  <% end %>
   <div class='search-bar-contents'>
     <div>
       <%= link_to image_tag("bookput-logo.png", class:"bookput-icon"), "/" %>

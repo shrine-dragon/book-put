@@ -19,7 +19,7 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
     if @book.save
-      redirect_to root_path
+      redirect_to root_path, flash: { success: "投稿に成功しました！" } 
     else
       render :new
     end
@@ -33,8 +33,7 @@ class BooksController < ApplicationController
 
   def update
     if @book.update(book_params)
-      flash[:notice] = "更新が完了しました！"
-      redirect_to book_path(@book.id)
+      redirect_to book_path(@book.id), notice: "更新が完了しました！"
     else
       render :edit
     end
