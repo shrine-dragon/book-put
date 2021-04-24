@@ -38,13 +38,13 @@
       <div class="form-group">
         <h2 class='form-bottom-text'>
           登録ボタンを押すことにより、
-          <br><span><%= link_to '利用規約', '#', id:'link' %></span>および<span><%= link_to 'プライバシーポリシー', '#', id:'link' %></span>
+          <br><span><%= link_to '利用規約', '#', id:'link-text' %></span>および<span><%= link_to 'プライバシーポリシー', '#', id:'link-text' %></span>
           <br>に同意したものとみなします
         </h2>
       </div>
       <div class='register-btn'>
         <%= f.submit "登録する" ,class:"blue-register-btn", id:"blue-btn" %>
-        <p class='already-register'>登録済みの方は<span><%= link_to 'こちら',  new_user_session_path, id:'link' %></span></p>
+        <p class='already-registered'>登録済みの方は<span><%= link_to 'こちら',  new_user_session_path, id:'link-text' %></span></p>
       </div>
     </div>
     <div class='go-back-btn'>
