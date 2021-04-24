@@ -17,3 +17,16 @@
 .pagination>li>a {
   color: #FF9933
 }
+
+.flash {
+  width: 18%;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 6px 12px;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  color: #009900;
+  background-color: white;
+  border: 1px solid #009900;
+}

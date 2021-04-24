@@ -33,6 +33,7 @@ class BooksController < ApplicationController
 
   def update
     if @book.update(book_params)
+      flash[:notice] = "更新が完了しました！"
       redirect_to book_path(@book.id)
     else
       render :edit
