@@ -146,3 +146,58 @@ RSpec.describe '投稿編集', type: :system do
     end
   end
 end
+
+RSpec.describe '投稿削除', type: :system do
+  before do
+    @book1 = FactoryBot.create(:book)
+    @book2 = FactoryBot.create(:book)
+    sleep 0.1
+  end
+  context '投稿削除ができるとき' do
+    it 'ログインしたユーザーは自らが投稿した投稿の削除ができる' do
+      # 書籍1を投稿したユーザーでログインする
+      sign_in(@book1.user)
+      # 書籍1の詳細ページへ遷移する
+      visit book_path(@book1.id)
+      # 書籍1に「削除」ボタンがあることを確認する
+      find('#ellipsis-btn').click
+      have_link '削除', href: book_path(@book1.id)
+      # 投稿を削除するとレコードの数が1減ることを確認する
+      page.accept_confirm do
+        find("#destroy-text").click
+      end
+      change { Book.count }.by(-1)
+      # トップページに遷移する
+      expect(current_path).to eq(root_path)
+      # トップページには書籍1の内容が存在しないことを確認する（画像）
+      expect(page).to have_no_selector("img[src$='test_image2.png']")
+      # トップページには書籍1の内容が存在しないことを確認する（テキスト）
+      expect(page).to have_no_content(@book1.title)
+    end
+  end
+  context '書籍削除ができないとき' do
+    it 'ログインしたユーザーは自分以外が投稿した書籍の削除ができない' do
+      # 書籍1を投稿したユーザーでログインする
+      sign_in(@book1.user)
+      # 書籍2の詳細ページへ遷移する
+      visit book_path(@book2.id)
+      # 書籍2に「削除」ボタンが無いことを確認する
+      find('#ellipsis-btn').click
+      have_no_link '削除', href: book_path(@book2.id)
+    end
+    it 'ログインしていないと投稿の削除ボタンがない' do
+      # トップページに移動する
+      visit root_path
+      # 書籍1の詳細ページへ遷移する
+      visit book_path(@book1.id)
+      # 書籍1に「削除」ボタンが無いことを確認する
+      find('#ellipsis-btn').click
+      have_no_link '削除', href: book_path(@book1.id)
+      # 書籍2の詳細ページへ遷移する
+      visit book_path(@book2.id)
+      # 書籍2に「削除」ボタンが無いことを確認する
+      find('#ellipsis-btn').click
+      have_no_link '削除', href: book_path(@book2.id)
+    end
+  end
+end
