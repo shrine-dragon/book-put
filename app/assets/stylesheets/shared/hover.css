@@ -35,6 +35,14 @@
   color: #FF0000;
 }
 
+.book-list>.list:hover {
+  border-color: #FF9933;
+}
+
+.pagination span:hover:not(.pagination span.current){
+  border-color: #FF9933;
+}
+
 #ellipsis-btn:hover {
   color: #666;
 }
@@ -45,9 +53,4 @@
 
 #report-text:hover {
   color: #8B008B;
-}
-
-#user-image:hover {
-  border: 1px solid #FF9933;
-  background-color: #eee;
 }

@@ -1,19 +1,19 @@
 .book-lists {
-  display: flex;
+  display: block;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.book-lists>.list {
+.book-list {
+  display: flex;
+}
+
+.book-list>.list {
   width: 25vw;
   padding: 1vw;
   margin: 5vh 1vw 0;
   background-color: #FFF;
   border: 1px solid black;
-}
-
-.book-lists>.list:hover {
-  border-color: #FF9933;
 }
 
 .book-info {
@@ -39,7 +39,6 @@
 
 .pagination{
   margin-top: 5vh;
-  width: 50%;
   display: flex;
   justify-content: center;  
 }
@@ -50,10 +49,6 @@
   width: 50px;
   border: solid 1px black;
   color: black;
-}
-
- .pagination span:hover:not(.pagination span.current){
-  border-color: #FF9933;
 }
 
 .pagination span.current {
