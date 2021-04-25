@@ -1,10 +1,10 @@
 <%= render 'shared/second_header' %>
 
-<%= form_with model: @book, url: books_path, class: 'post-main', local: true do |f| %>
+<%= form_with model: @book, url: book_path(@book.id), class: 'post-main', local: true do |f| %>
   <div class='form-wrap-post'>
     <div class='form-header'>
       <h1 class='form-header-text'>
-        新規投稿
+        投稿編集
       </h1>
     </div>
     <div class='form-all'>
@@ -82,10 +82,10 @@
         <%= render "shared/error_messages", model: f.object, attribute: :highlight %>
       </div>
       <div class='post-output-btn'>
-        <%= f.submit "投稿する" ,class:"post-output-orange-btn", id:"orange-btn" %>
+        <%= f.submit "確定する" ,class:"post-edit-green-btn", id:"green-btn" %>
       </div>
       <div class='go-back-btn'>
-        <%= link_to(root_path, class:'go-back-gray-btn', id:"gray-btn") do %>
+        <%= link_to(book_path(@book.id), class:'go-back-gray-btn', id:"gray-btn") do %>
           <p class="go-back-btn-text">もどる</p>
         <% end %>
       </div>

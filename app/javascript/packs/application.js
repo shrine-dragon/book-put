@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require('../preview')
 require('../pulldown')
+require('../flash')
 require('jquery')
 window.$ = jQuery;
 // Uncomment to copy all static images under ../images to the output folder and reference

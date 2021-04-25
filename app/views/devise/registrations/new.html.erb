@@ -89,12 +89,12 @@
         <p class='form-info-text'>修正するにはお時間を頂く場合があります。</p>
         <p class='form-info-text'>お客様の情報は他のお客さまに公開されることはありません。</p>
         <p>
-          <%= link_to '本人情報の登録について', '#', class:'register-info', id:'link' %>
+          <%= link_to '本人情報の登録について', '#', class:'register-info', id:'link-text' %>
         </p>
       </div>
       <div class='next-btn'>
         <%= f.submit "次へ進む" ,class:"blue-next-btn", id:"blue-btn" %>
-        <p class='already-registered'>登録済みの方は<span><%= link_to 'こちら',  new_user_session_path, id:'link' %></span></p>        
+        <p class='already-registered'>登録済みの方は<span><%= link_to 'こちら',  new_user_session_path, id:'link-text' %></span></p>        
       </div>
     </div>
     <div class='go-back-btn'>

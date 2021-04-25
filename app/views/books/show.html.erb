@@ -1,3 +1,8 @@
+<% if flash[:notice] %>
+  <p class='flash-notification', id='flash-message'>
+    <%= flash[:notice] %>
+  </p>
+<% end %>
 <%= render 'shared/second_header' %>
 
 <div class='book-detail-main'>
@@ -29,7 +34,7 @@
       <ul class="hidden-lists-2", id="pull-down-2">
         <% if user_signed_in? && current_user.id == @book.user_id %>
           <li>
-            <%= link_to(root_path, class:"edit") do%>
+            <%= link_to(edit_book_path(@book.id), class:"edit") do %>
               <span class="pulldown-menu-text", id="edit-text">編集</span>
             <% end %>
           </li>
