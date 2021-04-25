@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_book,             only: [:show, :edit, :update]
-  before_action :move_to_root_path,    only: [:edit, :update]
+  before_action :set_book,             only: [:show, :edit, :update, :destroy]
+  before_action :move_to_root_path,    only: [:edit, :update, :destroy]
 
   def index
     @books = Book.includes(:user).order('created_at DESC').page(params[:page]).per(3)
@@ -36,6 +36,12 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id), notice: '更新が完了しました！'
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @book.destroy
+      redirect_to root_path, notice: "削除が完了しました。"
     end
   end
 
