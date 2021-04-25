@@ -4,7 +4,7 @@ RSpec.describe '新規投稿', type: :system do
   before do
     @user = FactoryBot.create(:user)
     @book = FactoryBot.create(:book)
-    sleep 0.1 
+    sleep 0.1
   end
 
   context '新規投稿ができるとき' do
@@ -90,10 +90,10 @@ RSpec.describe '投稿編集', type: :system do
       ).to eq(@book1.title)
       expect(
         find('#book-category').value
-      ).to eq("#{@book1.category_id}")
+      ).to eq(@book1.category_id.to_s)
       expect(
         find('#book-genre').value
-      ).to eq("#{@book1.genre_id}")
+      ).to eq(@book1.genre_id.to_s)
       expect(
         find('#catch-copy').value
       ).to eq(@book1.catch_copy)
