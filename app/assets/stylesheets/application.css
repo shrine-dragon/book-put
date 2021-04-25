@@ -18,7 +18,7 @@
   color: #FF9933
 }
 
-.flash-notification, .flash-success {
+.flash-success-post, .flash-notification-update, .flash-notification-delete {
   width: 18%;
   font-weight: bold;
   font-size: 14px;
@@ -29,12 +29,17 @@
   background-color: white;
 }
 
-.flash-notification {
+.flash-success-post {
+  color: #FF9933;
+  border: 1px solid #FF9933;
+}
+
+.flash-notification-update {
   color: #009900;
   border: 1px solid #009900;
 }
 
-.flash-success {
-  color: #FF9933;
-  border: 1px solid #FF9933;
+.flash-notification-delete {
+  color: #f00;
+  border: 1px solid #f00;
 }

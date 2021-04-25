@@ -1,8 +1,12 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
 <header class='top-page-header'>
   <% if flash[:success] %>
-    <p class='flash-success', id='flash-message'>
+    <p class='flash-success-post', id='flash-message'>
       <%= flash[:success] %>
+    </p>
+  <% elsif flash[:notice] %>
+    <p class='flash-notification-delete', id='flash-message'>
+      <%= flash[:notice] %>
     </p>
   <% end %>
   <div class='search-bar-contents'>
