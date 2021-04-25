@@ -40,7 +40,7 @@
           </li>
           <hr>
           <li>
-            <%= link_to(book_path(@book.id), class:"destroy", method: :delete, data: { confirm: '削除しますか？' }) do %>
+            <%= link_to(book_path(@book.id), class:"destroy", method: :delete, data: { confirm: '削除しますか？ 一度削除した投稿は復元できません。' }) do %>
               <span class="pulldown-menu-text", id="destroy-text">削除</span>
             <% end %>
           </li>
