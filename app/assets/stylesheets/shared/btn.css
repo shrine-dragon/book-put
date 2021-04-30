@@ -150,13 +150,13 @@
 }
 /* books/show */
 
-.review-btns {
+.font-btns {
   display: flex;
   justify-content: flex-end;
   padding-right: 30px;
 }
 
-.review-btns > li {
+.font-btns > li {
   font-size: 25px;
   margin-left: 30px;
   color: #999;
