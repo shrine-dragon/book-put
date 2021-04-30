@@ -133,7 +133,7 @@
 }
 
 /* books/new */
-.post-output-btn {
+.post-output-btn, .post-edit-btn {
   width: 20vw;
   margin: 40px auto 0;
 }
@@ -161,11 +161,12 @@
   color: #999;
   cursor: pointer;
 }
+
 /* books/edit */
 
 .post-edit-green-btn {
   width: 20vw;
-  background: #00dd00;
+  background-color: #00dd00;
   border: 1px solid #00dd00;
   color: #fff;
   line-height: 48px;

@@ -81,7 +81,7 @@
         <%= f.text_area :highlight, class:"book-highlight-text", id:"highlight", placeholder:"面白いところ、魅力的なところを具体的に記述", maxlength:"100" %>
         <%= render "shared/error_messages", model: f.object, attribute: :highlight %>
       </div>
-      <div class='post-output-btn'>
+      <div class='post-edit-btn'>
         <%= f.submit "確定する" ,class:"post-edit-green-btn", id:"green-btn" %>
       </div>
       <div class='go-back-btn'>
