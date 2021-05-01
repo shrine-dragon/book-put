@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
     comment = Comment.find_by(id: params[:id], book_id: params[:book_id])
     if current_user.id == comment.user_id
       comment.destroy
-      redirect_to book_path(comment.book.id)
+      redirect_to book_path(comment.book.id), flash: { delete: "削除が完了しました。" }
     else
       redirect_to root_path
     end

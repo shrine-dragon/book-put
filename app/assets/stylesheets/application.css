@@ -27,6 +27,7 @@
   top: 20px;
   left: 15px;
   background-color: white;
+  position: fixed;
 }
 
 .flash-post {
