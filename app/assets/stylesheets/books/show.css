@@ -116,7 +116,7 @@
 }
 
 .comments-number {
-  margin: 20px 0 0 30px;
+  margin: 20px 0 10px 30px;
 }
 
 .comments-list {
@@ -146,7 +146,7 @@
   width: 9vw;
   position: absolute;
   left: 79vw;
-  padding: 0.5vw 0;
+  padding: 3px 0;
   text-align: center;
   background-color: #fff;
   border: 1px solid gray;
