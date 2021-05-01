@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
@@ -14,8 +14,11 @@ class CommentsController < ApplicationController
 
   def destroy
     comment = Comment.find_by(id: params[:id], book_id: params[:book_id])
-    if comment.destroy
-      redirect_to book_path(comment.book.id), flash: { delete: "削除が完了しました。" }
+    if current_user.id == comment.user_id
+      comment.destroy
+      redirect_to book_path(comment.book.id)
+    else
+      redirect_to root_path
     end
   end
 
