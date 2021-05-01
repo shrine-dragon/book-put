@@ -27,7 +27,7 @@ class BooksController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comments = @book.comments.includes(:user)
+    @comments = @book.comments.includes(:user).order('created_at DESC')
   end
 
   def edit

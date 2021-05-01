@@ -162,6 +162,14 @@
   cursor: pointer;
 }
 
+.comment-yellow-btn {
+  background-color: yellow;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 0 8px;
+  cursor: pointer;
+}
+
 /* books/edit */
 
 .post-edit-green-btn {

@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
+    comment = Comment.find(params[:id])
     if @comment.destroy
       redirect_to book_path(@comment.book), flash: { delete: "削除が完了しました。" }
     end
