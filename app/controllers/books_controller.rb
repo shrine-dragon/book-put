@@ -26,6 +26,8 @@ class BooksController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @book.comments.includes(:user)
   end
 
   def edit

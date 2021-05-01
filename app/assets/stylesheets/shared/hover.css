@@ -27,7 +27,7 @@
   background-color: #eee;
 }
 
-#my-page-text:hover, .detail-user-text:hover {
+#my-page-text:hover, #user-text:hover {
   color: #00CCFF;
 }
 
