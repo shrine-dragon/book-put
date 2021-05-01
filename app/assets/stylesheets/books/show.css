@@ -141,15 +141,6 @@
   color: #999;
 }
 
-.comment-detail-btn {
-  display: flex;
-}
-
-.comment-detail-btn > li {
-  color: #999;
-  cursor: pointer;
-}
-
 .hidden-lists-3 {
   color: #fff;
   width: 9vw;

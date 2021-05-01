@@ -170,6 +170,16 @@
   cursor: pointer;
 }
 
+.comment-detail-btn {
+  display: flex;
+  font-size: 20px;
+}
+
+.comment-detail-btn > li {
+  color: #999;
+  cursor: pointer;
+}
+
 /* books/edit */
 
 .post-edit-green-btn {
