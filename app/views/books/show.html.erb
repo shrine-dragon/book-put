@@ -117,9 +117,9 @@
             </div>
             <div class="comment-right">
               <ul class="comment-detail-btn">
-                <li><i class="fas fa-ellipsis-v" id='ellipsis-btn'></i></li>
+                <li><i class="fas fa-ellipsis-v" id='ellipsis-btn-2'></i></li>
               </ul>
-              <ul class="hidden-lists-3", id="pull-down-2">
+              <ul class="hidden-lists-3", id="pull-down-3">
                 <% if user_signed_in? && current_user.id == comment.user_id %>
                   <li>
                     <%= link_to(book_comment_path(comment.book.id, comment.id), class:"destroy", method: :delete, data: { confirm: "コメントを削除します。よろしいですか？" }) do %>
