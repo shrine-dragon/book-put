@@ -7,13 +7,13 @@ RSpec.describe Comment, type: :model do
   end
 
   describe 'コメント投稿機能' do
-    context 'コメント内容を保存できる時' do
+    context '投稿内容を保存できる時' do
       it '文字が入力されていれば保存できる' do
         expect(@comment).to be_valid
       end
     end
 
-    context 'コメント内容を保存できない時' do
+    context '投稿内容を保存できない時' do
       it '文字が入力されていないと保存できない' do
         @comment.text = ''
         @comment.valid?
