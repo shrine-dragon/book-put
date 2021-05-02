@@ -7,13 +7,13 @@ RSpec.describe Questionnaire, type: :model do
   end
 
   describe 'ユーザー新規登録2ページ目' do
-    context 'アンケート内容が保存できて、新規登録できる時' do
+    context 'アンケート内容を保存できて、新規登録できる時' do
       it '全ての値が正しく入力されていれば保存できる' do
         expect(@questionnaire).to be_valid
       end
     end
 
-    context 'アンケート内容が保存できず、新規登録できない時' do
+    context 'アンケート内容を保存できず、新規登録できない時' do
       it '本の種類が選択されていないと保存できない' do
         @questionnaire.category_id = 0
         @questionnaire.valid?

@@ -8,7 +8,7 @@ RSpec.describe '新規投稿', type: :system do
   end
 
   context '新規投稿ができるとき' do
-    it 'ログインしたユーザーは新規投稿できる' do
+    it 'ログインしているユーザーは新規投稿できる' do
       # ログインして新規投稿ページへ遷移する
       access_new_post_page(@user)
       # 画像を添付する
@@ -25,7 +25,7 @@ RSpec.describe '新規投稿', type: :system do
       expect do
         find('input[name="commit"]').click
       end.to change { Book.count }.by(1)
-      # トップページに遷移することを確認する
+      # トップページへ遷移することを確認する
       expect(current_path).to eq(root_path)
       # トップページには先ほど投稿した内容が存在することを確認する（画像）
       expect(page).to have_selector("img[src$='test_image.png']")
@@ -35,8 +35,8 @@ RSpec.describe '新規投稿', type: :system do
   end
 
   context '新規投稿ができないとき' do
-    it 'ログインしていないと新規投稿ページに遷移できない' do
-      # トップページに遷移する
+    it 'ログインしていないと新規投稿ページへ遷移できない' do
+      # トップページへ遷移する
       visit root_path
       # 「投稿する」ボタンを押しても投稿ページではなく、ログインページへ遷移する
       expect(page).to have_content('投稿する')
@@ -72,8 +72,9 @@ RSpec.describe '投稿編集', type: :system do
     @book2 = FactoryBot.create(:book)
     sleep 0.1
   end
-  context '投稿編集ができるとき' do
-    it 'ログインしたユーザーは自分が投稿した書籍内容の編集ができる' do
+
+  context '投稿を編集できるとき' do
+    it 'ログインしているユーザーは自分が投稿した書籍内容を編集できる' do
       # 書籍1を投稿したユーザーでログインする
       sign_in(@book1.user)
       # 詳細ページへ遷移する
@@ -116,7 +117,7 @@ RSpec.describe '投稿編集', type: :system do
       expect  do
         find('input[name="commit"]').click
       end.to change { Book.count }.by(0)
-      # 編集完了画面（投稿詳細画面）に遷移したことを確認する
+      # 編集完了画面（投稿詳細画面）へ遷移したことを確認する
       expect(current_path).to eq(book_path(@book1.id))
       # トップページに遷移する
       visit root_path
@@ -126,8 +127,9 @@ RSpec.describe '投稿編集', type: :system do
       expect(page).to have_content(@book1.title)
     end
   end
-  context '投稿編集ができないとき' do
-    it 'ログインしたユーザーは自分以外が投稿した書籍の編集画面には遷移できない' do
+
+  context '投稿を編集できないとき' do
+    it 'ログインしているユーザーは自分以外が投稿した書籍を編集できない' do
       # 書籍1を投稿したユーザーでログインする
       sign_in(@book1.user)
       # 詳細ページへ遷移する
@@ -136,8 +138,9 @@ RSpec.describe '投稿編集', type: :system do
       find('#ellipsis-btn').click
       expect(page).to have_no_link '編集', href: edit_book_path(@book2.id)
     end
-    it 'ログインしていないと書籍の編集画面には遷移できない' do
-      # トップページにいる
+
+    it 'ログインしていないと書籍を編集できない' do
+      # トップページへ遷移する
       visit root_path
       # 書籍1に「編集」ボタンがないことを確認する
       visit book_path(@book1.id)
@@ -153,8 +156,9 @@ RSpec.describe '投稿削除', type: :system do
     @book2 = FactoryBot.create(:book)
     sleep 0.1
   end
+
   context '投稿削除ができるとき' do
-    it 'ログインしたユーザーは自らが投稿した投稿の削除ができる' do
+    it 'ログインしているユーザーは自分が投稿した書籍を削除できる' do
       # 書籍1を投稿したユーザーでログインする
       sign_in(@book1.user)
       # 書籍1の詳細ページへ遷移する
@@ -175,8 +179,9 @@ RSpec.describe '投稿削除', type: :system do
       expect(page).to have_no_content(@book1.title)
     end
   end
-  context '書籍削除ができないとき' do
-    it 'ログインしたユーザーは自分以外が投稿した書籍の削除ができない' do
+
+  context '投稿削除ができないとき' do
+    it 'ログインしているユーザーは自分以外が投稿した書籍を削除できない' do
       # 書籍1を投稿したユーザーでログインする
       sign_in(@book1.user)
       # 書籍2の詳細ページへ遷移する
@@ -185,8 +190,9 @@ RSpec.describe '投稿削除', type: :system do
       find('#ellipsis-btn').click
       have_no_link '削除', href: book_path(@book2.id)
     end
+
     it 'ログインしていないと投稿の削除ボタンがない' do
-      # トップページに移動する
+      # トップページへ遷移する
       visit root_path
       # 書籍1の詳細ページへ遷移する
       visit book_path(@book1.id)

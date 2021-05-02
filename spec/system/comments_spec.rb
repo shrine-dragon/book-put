@@ -9,8 +9,6 @@ RSpec.describe 'コメント投稿', type: :system do
   end
 
   it 'ログインしているユーザーはコメントを投稿できる' do
-    # トップページに遷移する
-    visit root_path
     # ログインする
     sign_in(@user)
     # 投稿詳細ページに遷移する
@@ -39,8 +37,6 @@ RSpec.describe 'コメント投稿', type: :system do
   end
 
   it '文字が入力されていないとコメントを投稿できない' do
-    # トップページに遷移する
-    visit root_path
     # ログインする
     sign_in(@user)
     # 投稿詳細ページに遷移する
@@ -65,8 +61,6 @@ RSpec.describe 'コメント削除', type: :system do
 
   context 'コメント削除ができる時' do
     it 'ログインしているユーザーは自分が投稿したコメントを削除できる' do
-      # トップページへ遷移する
-      visit root_path
       # コメント1を投稿したユーザーでログインする
       sign_in(@comment1.user)
       # 詳細ページへ遷移する
@@ -83,8 +77,6 @@ RSpec.describe 'コメント削除', type: :system do
     end
 
     it 'ログインしているユーザーは自分以外が投稿したコメントを削除できない' do
-      # トップページへ遷移する
-      visit root_path
       # コメント1を投稿したユーザーでログインする
       sign_in(@comment1.user)
       # コメント2が含まれている書籍の詳細ページへ遷移する

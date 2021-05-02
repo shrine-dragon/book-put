@@ -6,7 +6,7 @@ RSpec.describe Book, type: :model do
     sleep 0.1
   end
   describe 'アウトプット投稿機能' do
-    context '投稿内容が保存できる時' do
+    context '投稿内容を保存できる時' do
       it '必須項目が全て正しく入力・選択されていれば保存できる' do
         expect(@book).to be_valid
       end

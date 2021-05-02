@@ -7,7 +7,7 @@ RSpec.describe User, type: :model do
   end
 
   describe 'ユーザー新規登録1ページ目' do
-    context 'ユーザー情報が保存できて、次のページに進める時' do
+    context 'ユーザー情報を保存できて且つ、次のページに進める時' do
       it '必須項目が全て正しく入力されていれば保存できる' do
         expect(@user).to be_valid
       end
@@ -18,7 +18,7 @@ RSpec.describe User, type: :model do
       end
     end
 
-    context 'ユーザー情報が保存できず、次のページに進めない時' do
+    context 'ユーザー情報を保存できず、次のページに進めない時' do
       it 'ニックネームが入力されていないと保存できない' do
         @user.nickname = ''
         @user.valid?
