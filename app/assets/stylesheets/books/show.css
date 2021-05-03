@@ -64,7 +64,7 @@
 #report-text::before {
   font-family: "Font Awesome 5 Free";
   font-weight: bold;
-  color: #999;
+  color: #BA55D3;
   content: "\f024";
   margin-right: 10px;
 }
