@@ -1,0 +1,27 @@
+.flash-post, .flash-update, .flash-delete {
+  width: 18%;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 6px 12px;
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  background-color: white;
+  border: 1px solid;
+  position: fixed;
+}
+
+.flash-post {
+  color: #FF9933;
+  border-color: #FF9933;
+}
+
+.flash-update {
+  color: #009900;
+  border-color: #009900;
+}
+
+.flash-delete {
+  color: #f00;
+  border-color: #f00;
+}

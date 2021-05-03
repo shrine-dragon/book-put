@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     if @comment.save
-      redirect_to book_path(@comment.book)
+      redirect_to book_path(@comment.book), flash: { post: '投稿に成功しました！' }
     else
       @book = @comment.book
       @comments = @book.comments

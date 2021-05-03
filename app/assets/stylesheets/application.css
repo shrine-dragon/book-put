@@ -18,31 +18,3 @@
 .pagination>li>a {
   color: #FF9933
 }
-
-/*flashメッセージのデザイン*/
-.flash-post, .flash-update, .flash-delete {
-  width: 18%;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 6px 12px;
-  position: absolute;
-  top: 20px;
-  left: 15px;
-  background-color: white;
-  position: fixed;
-}
-
-.flash-post {
-  color: #FF9933;
-  border: 1px solid #FF9933;
-}
-
-.flash-update {
-  color: #009900;
-  border: 1px solid #009900;
-}
-
-.flash-delete {
-  color: #f00;
-  border: 1px solid #f00;
-}

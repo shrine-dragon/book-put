@@ -8,7 +8,7 @@
 
 .book-detail {
   width: 80%;
-  background-color: white;
+  background-color: #fff;
   padding-bottom: 30px;
 }
 
@@ -45,7 +45,7 @@
 }
 
 .detail-user-text {
-  color: black;
+  color: #000;
 }
 
 #report-text::before {
@@ -76,7 +76,7 @@
 
 .book-comments {
   width: 80%;
-  background-color: white;
+  background-color: #fff;
   padding-bottom: 10px;
   border-top: 2px solid #ccc;
 }
@@ -88,7 +88,7 @@
 
 .comment-user-text {
   font-weight: bold;
-  color: black;
+  color: #000;
   font-size: 20px;
 }
 
@@ -104,28 +104,6 @@
 
 .comments-number {
   margin: 20px 0 10px 30px;
-}
-
-.each-comment {
-  display: flex;
-  border-top: 1px solid #ccc;
-  padding-top: 15px;
-  margin: 15px 30px;
-  justify-content: space-between;
-}
-
-.comment-upper {
-  display: flex;
-  margin-bottom: 5px;
-}
-
-.comment-posted-user {
-  font-weight: bold;
-  margin-right: 10px;
-}
-
-.comment-posted-time {
-  color: #999;
 }
 
 #view-more {

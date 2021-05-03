@@ -112,7 +112,7 @@
 }
 
 .go-back-btn-text {
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -166,7 +166,7 @@
   display: none;
   color: #FFFFFF;
   background-color: #CCCCCC;
-  border: 1px solid black;
+  border: 1px solid #000;
   border-radius: 5px;
   padding: 0 8px;
   cursor: none;
