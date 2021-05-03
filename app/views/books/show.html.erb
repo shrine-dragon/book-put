@@ -102,7 +102,7 @@
         </div>
         <% @comments.each do |comment| %>
           <li class="comments-list">
-            <div class="comment-left">
+            <div>
               <div class="comment-upper">
                 <div class="comment-posted-user-text">
                   <%= comment.user.nickname %>
@@ -115,7 +115,7 @@
                 <%= comment.text %>
               </div>
             </div>
-            <div class="comment-right">
+            <div>
               <ul class="comment-detail-btn">
                 <li><i class="fas fa-ellipsis-v" id='ellipsis-btn-2'></i></li>
               </ul>

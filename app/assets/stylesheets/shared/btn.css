@@ -173,6 +173,7 @@
 .comment-detail-btn {
   display: flex;
   font-size: 20px;
+  margin-top: -12px;
 }
 
 .comment-detail-btn > li {
