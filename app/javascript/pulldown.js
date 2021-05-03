@@ -19,9 +19,7 @@ $(() => {
       $('#pull-down-2').removeAttr('style');
     }
   });
-});
-
-window.addEventListener('load', () => {
+  
   const pullDownBtn = document.querySelectorAll('#ellipsis-btn-2');
   const pullDownMenu = document.querySelectorAll('#pull-down-3');
   for ( let i = 0; i < pullDownBtn.length; i++) {
@@ -30,6 +28,12 @@ window.addEventListener('load', () => {
         pullDownMenu[i].removeAttribute("style", "display: block;");
       } else {
         pullDownMenu[i].setAttribute("style", "display: block;");
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      if(!e.target.closest('#ellipsis-btn-2')) {
+        pullDownMenu[i].removeAttribute("style", "display:block;");
       }
     });
   }
