@@ -98,45 +98,14 @@
     <ul class="comments-lists">
       <% if @comments.present? %>
         <div class="comments-number">
-          <%= @comments.length %>件のコメント
+          <%= @all_comments.length %>件のコメント
         </div>
-        <% @comments.each do |comment| %>
-          <li class="comments-list">
-            <div>
-              <div class="comment-upper">
-                <div class="comment-posted-user-text">
-                  <%= comment.user.nickname %>
-                </div>
-                <div class="comment-posted-time">
-                  <%= time_ago_in_words(comment.created_at) %>前
-                </div>
-              </div>
-              <div class="comment-lower">
-                <%= comment.text %>
-              </div>
-            </div>
-            <div>
-              <ul class="comment-detail-btn">
-                <li><i class="fas fa-ellipsis-v" id='ellipsis-btn-2'></i></li>
-              </ul>
-              <ul class="hidden-lists-3", id="pull-down-3">
-                <% if user_signed_in? && current_user.id == comment.user_id %>
-                  <li>
-                    <%= link_to(book_comment_path(comment.book.id, comment.id), class:"destroy", method: :delete, data: { confirm: "コメントを削除します。よろしいですか？" }) do %>
-                      <span class="pulldown-menu-text", id="destroy-text">削除</span>
-                    <% end %>
-                  </li>
-                <% else %>
-                  <li>
-                    <%= link_to(root_path, class:"report") do %>
-                      <span class="pulldown-menu-text", id="report-text">報告</span>
-                    <% end %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </li>
-        <% end %>
+        <div id="comment-lists">
+          <%= render 'comment-list' %>
+        </div>
+        <div class="more">
+          <%= link_to_next_page @comments, 'もっと見る', remote: true, id: 'view-more' %>
+        </div>
       <% else %>
         <div class="comments-number">
           コメントはありません
