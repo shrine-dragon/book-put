@@ -13,8 +13,8 @@ RSpec.describe 'コメント投稿', type: :system do
     sign_in(@user)
     # 投稿詳細ページに遷移する
     visit book_path(@book.id)
-    # 詳細ページにコメントフォーム全体があることを確認する
-    expect(page).to have_selector '.comment-main'
+    # 詳細ページにコメントフォームがあることを確認する
+    expect(page).to have_selector '.comment-field'
     # フォームに情報を入力する
     fill_in 'comment[text]', with: @comment.text
     # コメントを送信すると、Commentモデルのカウントが1上がることを確認する
@@ -32,8 +32,8 @@ RSpec.describe 'コメント投稿', type: :system do
     visit root_path
     # 投稿詳細ページに遷移する
     visit book_path(@book.id)
-    # 詳細ページにコメントフォーム全体がないことを確認する
-    expect(page).to have_no_selector '.comment-main'
+    # 詳細ページにコメントフォームがないことを確認する
+    expect(page).to have_no_selector '.comment-field'
   end
 
   it '文字が入力されていないとコメントを投稿できない' do
@@ -66,6 +66,7 @@ RSpec.describe 'コメント削除', type: :system do
       # 詳細ページへ遷移する
       visit book_path(@comment1.book_id)
       # コメント1に「削除」ボタンがあることを確認する
+      find('#ellipsis-btn-2').click
       expect(page).to have_link '削除', href: book_comment_path(@comment1.book_id, @comment1.id)
       # コメントを削除するとレコードの数が1減ることを確認する
       page.accept_confirm do
@@ -82,6 +83,7 @@ RSpec.describe 'コメント削除', type: :system do
       # コメント2が含まれている書籍の詳細ページへ遷移する
       visit book_path(@comment2.book_id)
       # コメント2に「削除」ボタンが無いことを確認する
+      find('#ellipsis-btn-2').click
       expect(page).to have_no_link '削除', href: book_comment_path(@comment2.book_id, @comment2.id)
     end
 
