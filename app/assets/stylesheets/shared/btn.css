@@ -163,11 +163,13 @@
 }
 
 .comment-yellow-btn {
-  background-color: yellow;
+  display: none;
+  color: #FFFFFF;
+  background-color: #CCCCCC;
   border: 1px solid black;
   border-radius: 5px;
   padding: 0 8px;
-  cursor: pointer;
+  cursor: none;
 }
 
 .comment-detail-btn {
