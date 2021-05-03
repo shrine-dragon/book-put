@@ -48,19 +48,6 @@
   color: black;
 }
 
-.hidden-lists-2 {
-  color: #fff;
-  width: 10vw;
-  display: none;
-  align-items: center;
-  position: absolute;
-  left: 78vw;
-  padding: 1vw 0;
-  text-align: center;
-  background-color: #fff;
-  border: 1px solid gray;
-}
-
 #report-text::before {
   font-family: "Font Awesome 5 Free";
   font-weight: bold;
@@ -105,7 +92,7 @@
   font-size: 20px;
 }
 
-.comment-field-text {
+.comment-form-text {
   width: 40vw;
   padding-left: 5px;
   margin: 0 5px 0 20px;
@@ -119,7 +106,7 @@
   margin: 20px 0 10px 30px;
 }
 
-.comments-list {
+.each-comment {
   display: flex;
   border-top: 1px solid #ccc;
   padding-top: 15px;
@@ -132,7 +119,7 @@
   margin-bottom: 5px;
 }
 
-.comment-posted-user-text {
+.comment-posted-user {
   font-weight: bold;
   margin-right: 10px;
 }
@@ -141,14 +128,6 @@
   color: #999;
 }
 
-.hidden-lists-3 {
+#view-more {
   color: #fff;
-  width: 9vw;
-  display: none;
-  position: absolute;
-  left: 79vw;
-  padding: 3px 0;
-  text-align: center;
-  background-color: #fff;
-  border: 1px solid gray;
 }

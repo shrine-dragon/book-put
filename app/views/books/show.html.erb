@@ -86,8 +86,8 @@
         <div class="comment-user">
           <%= link_to current_user.nickname, '#', class:'comment-user-text', id:'user-text' %>
         </div>
-        <div class="comment-field">
-          <%= f.text_field :text, class:"comment-field-text", id:"comment", maxlength: "100", placeholder: "100文字以内で入力してください" %>
+        <div class="comment-form">
+          <%= f.text_field :text, class:"comment-form-text", id:"comment", maxlength: "100", placeholder: "100文字以内で入力してください" %>
           <p class="comment-caution-text">※批判的な意見はご遠慮ください</p>
         </div>
         <div class="comment-btn">
@@ -95,15 +95,15 @@
         </div>
       <% end %>
     <% end %>
-    <ul class="comments-lists">
+    <ul class="all-comments">
       <% if @comments.present? %>
         <div class="comments-number">
           <%= @all_comments.length %>件のコメント
         </div>
-        <div id="comment-lists">
-          <%= render 'comment-list' %>
+        <div id="comment-list">
+          <%= render 'comment_list' %>
         </div>
-        <div class="more">
+        <div id="more-btn">
           <%= link_to_next_page @comments, 'もっと見る', remote: true, id: 'view-more' %>
         </div>
       <% else %>

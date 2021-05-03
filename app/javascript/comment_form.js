@@ -1,6 +1,6 @@
 // コメントフォームにフォーカスを当てた（クリックした）時のイベントの設定
 $(() => {
-  $('.comment-field-text').focus( () => {
+  $('.comment-form-text').focus( () => {
     $('.comment-yellow-btn').css('display', 'block');
   });
   // コメントフォームからフォーカスが外れた（他の要素をクリックした）時のイベントの設定
@@ -10,7 +10,7 @@ $(() => {
     }
   });
   // コメントフォームに文字を入力した時のイベントの設定
-  $('.comment-field-text').on('input', () => {
+  $('.comment-form-text').on('input', () => {
     $('.comment-yellow-btn').css({
       'display': 'block',
       'color': 'black',
