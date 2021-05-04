@@ -1,0 +1,15 @@
+.first, .prev, .next, .last {
+  font-size: 25px;
+}
+
+.fa-angle-left::before, .fa-angle-double-left::before, .fa-angle-right::before, .fa-angle-double-right::before {
+  color: #ff9933;
+}
+
+.fa-user, .fa-edit, .fa-trash {
+  padding-left: 3px;
+}
+
+.fa-flag {
+  padding-right: 5px;
+}

@@ -40,7 +40,8 @@
 .pagination{
   margin-top: 5vh;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
+  font-family: FontAwesome;
 }
 
 .pagination span{

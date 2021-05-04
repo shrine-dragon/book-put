@@ -13,8 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-/*ページネーションのデザイン*/
-.pagination>li>a {
-  color: #FF9933
-}

@@ -82,10 +82,3 @@
   text-decoration: none;
   color: #222;
 }
-
-.pulldown-menu-text::after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: bold;
-  content: "\f105";
-  margin-left: 10px;
-}
