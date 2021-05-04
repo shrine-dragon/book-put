@@ -14,7 +14,7 @@ RSpec.describe 'コメント投稿', type: :system do
     # 投稿詳細ページに遷移する
     visit book_path(@book.id)
     # 詳細ページにコメントフォームがあることを確認する
-    expect(page).to have_selector '.comment-field'
+    expect(page).to have_selector '.comment-form'
     # フォームに情報を入力する
     fill_in 'comment[text]', with: @comment.text
     # コメントを送信すると、Commentモデルのカウントが1上がることを確認する
@@ -33,7 +33,7 @@ RSpec.describe 'コメント投稿', type: :system do
     # 投稿詳細ページに遷移する
     visit book_path(@book.id)
     # 詳細ページにコメントフォームがないことを確認する
-    expect(page).to have_no_selector '.comment-field'
+    expect(page).to have_no_selector '.comment-form'
   end
 
   it '文字が入力されていないとコメントを投稿できない' do
