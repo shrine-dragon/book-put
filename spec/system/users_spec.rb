@@ -4,11 +4,12 @@ RSpec.describe 'ユーザー新規登録', type: :system do
   before do
     @user = FactoryBot.build(:user)
   end
+
   context 'ユーザー新規登録ができる時' do
-    it '正しい情報を入力すればユーザー新規登録ができてトップページに移動する' do
-      # 新規登録ページへ移動する
+    it '正しい情報を入力すればユーザー新規登録ができて且つ、トップページへ遷移する' do
+      # 新規登録ページへ遷移する
       access_sign_up_page(@user)
-      # ユーザー情報を入力し、アンケート内容入力ページへ移動する
+      # ユーザー情報を入力し、アンケート内容入力ページへ遷移する
       input_user_info(@user)
       # アンケート内容を入力する
       select '漫画', from: 'questionnaire[category_id]'
@@ -21,9 +22,8 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       end.to change { User.count && Questionnaire.count }.by(1)
       # ユーザー新規登録2ページ目の「登録する」ボタンが表示されていないことを確認する
       expect(page).to have_no_content('登録する')
-      # 「トップページへ」ボタンを押すとトップページへ移動する
+      # 「トップページへ」ボタンを押すとトップページへ遷移する
       click_on('トップページへ')
-      # トップページへ遷移したことを確認する
       expect(current_path).to eq(root_path)
       # トップページに「新規登録」ボタンが表示されていないことを確認する
       expect(page).to have_no_content('新規登録')
@@ -31,7 +31,8 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       expect(page).to have_content(@user.nickname)
     end
   end
-  context 'ユーザー情報を保存できず、次のページへ進めない時' do
+
+  context 'ユーザー情報を保存できず且つ、次のページへ進めない時' do
     it '誤った情報ではユーザー情報を保存できずにユーザー情報入力ページへ戻ってくる' do
       access_sign_up_page(@user)
       # ユーザー情報を入力する
@@ -52,9 +53,10 @@ RSpec.describe 'ユーザー新規登録', type: :system do
       expect(page).to have_no_content('登録する')
     end
   end
-  context 'アンケート内容を保存できず、次のページへ進めない時' do
+
+  context 'アンケート内容を保存できず且つ、次のページへ進めない時' do
     it '誤った情報ではアンケート内容を保存できずにアンケート内容入力ページへ戻ってくる' do
-      # 新規登録ページへ移動する
+      # 新規登録ページへ遷移する
       access_sign_up_page(@user)
       # ユーザー情報を入力し、アンケート内容入力ページへ移動する
       input_user_info(@user)
@@ -81,6 +83,7 @@ RSpec.describe 'ログイン', type: :system do
   before do
     @user = FactoryBot.create(:user)
   end
+
   context 'ログインができるとき' do
     it '保存されているユーザーの情報と合致すればログインができる' do
       # ログインページへ移動する
@@ -89,6 +92,7 @@ RSpec.describe 'ログイン', type: :system do
       sign_in(@user)
     end
   end
+
   context 'ログインができないとき' do
     it '保存されているユーザーの情報と合致しないとログインができない' do
       # ログインページへ移動する

@@ -2,6 +2,14 @@
   <p class='flash-update', id='flash-message'>
     <%= flash[:update] %>
   </p>
+<% elsif flash[:delete] %>
+  <p class='flash-delete', id='flash-message'>
+    <%= flash[:delete] %>
+  </p>
+<% elsif flash[:post] %>
+  <p class='flash-post', id='flash-message'>
+    <%= flash[:post] %>
+  </p>
 <% end %>
 <%= render 'shared/second_header' %>
 
@@ -21,7 +29,7 @@
       </h1>
       <h1 class='detail-user'>
         <% if user_signed_in? && current_user.id == @book.user_id %>
-          by <span><%= link_to @book.user.nickname, '#', class:'detail-user-text' %></span>
+          by <span><%= link_to @book.user.nickname, '#', class:'detail-user-text', id:'user-text' %></span>
         <% else %>
           by <span><%= @book.user.nickname %></span>
         <% end %>
@@ -40,7 +48,7 @@
           </li>
           <hr>
           <li>
-            <%= link_to(book_path(@book.id), class:"destroy", method: :delete, data: { confirm: '削除しますか？ 一度削除した投稿は復元できません。' }) do %>
+            <%= link_to(book_path(@book.id), class:"destroy", method: :delete, data: { confirm: "投稿を削除します。よろしいですか？" }) do %>
               <span class="pulldown-menu-text", id="destroy-text">削除</span>
             <% end %>
           </li>
@@ -75,6 +83,39 @@
         <% end %>
       </div>
     </div>
+  </div>
+  <div class='book-comments'>
+    <% if user_signed_in? %>
+      <%= form_with model: [@book, @comment], class: "comment-main", local: true do |f| %>
+        <div class="comment-user">
+          <%= link_to current_user.nickname, '#', class:'comment-user-text', id:'user-text' %>
+        </div>
+        <div class="comment-form">
+          <%= f.text_field :text, class:"comment-form-text", id:"comment", maxlength: "100", placeholder: "100文字以内で入力してください" %>
+          <p class="comment-caution-text">※批判的な意見はご遠慮ください</p>
+        </div>
+        <div class="comment-btn">
+          <%= f.submit "コメント" ,class:"comment-yellow-btn", id:"comment" %>
+        </div>
+      <% end %>
+    <% end %>
+    <ul class="all-comments">
+      <% if @comments.present? %>
+        <div class="comments-number">
+          <%= @all_comments.length %>件のコメント
+        </div>
+        <div id="comment-list">
+          <%= render 'comment_list' %>
+        </div>
+        <div id="more-btn">
+          <%= link_to_next_page @comments, 'もっと見る', remote: true, id: 'view-more' %>
+        </div>
+      <% else %>
+        <div class="comments-number">
+          コメントはありません
+        </div>
+      <% end %>
+    </ul>
   </div>
 </div>
 

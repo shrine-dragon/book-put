@@ -78,20 +78,6 @@
   color: #333333;
 }
 
-.hidden-lists {
-  color: #fff;
-  width: 12vw;
-  display: none;
-  align-items: center;
-  position: absolute;
-  top: 60px;
-  right: 5vw;
-  padding: 1vw 0;
-  text-align: center;
-  background-color: #fff;
-  border: 1px solid gray;
-}
-
 .pulldown-menu-text {
   text-decoration: none;
   color: #222;

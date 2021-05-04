@@ -9,7 +9,7 @@
 
 .form-wrap-sign-up {
   width: 65%;
-  background-color: white;
+  background-color: #fff;
   padding-bottom: 10px;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .form-text-indispensable::after, .form-text-optional::after {
-  color: white;
+  color: #fff;
   border: none;
   padding: 3px;
   margin-left: 10px;

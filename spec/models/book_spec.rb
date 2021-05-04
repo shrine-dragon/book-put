@@ -2,12 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Book, type: :model do
   before do
-    @book = FactoryBot.create(:book)
+    @book = FactoryBot.build(:book)
     sleep 0.1
   end
-  sleep(0.1)
   describe 'アウトプット投稿機能' do
-    context '投稿内容が保存できる時' do
+    context '投稿内容を保存できる時' do
       it '必須項目が全て正しく入力・選択されていれば保存できる' do
         expect(@book).to be_valid
       end

@@ -26,6 +26,9 @@ class BooksController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @all_comments = @book.comments.includes(:user)
+    @comments = @all_comments.order('created_at DESC').page(params[:page]).per(5)
   end
 
   def edit

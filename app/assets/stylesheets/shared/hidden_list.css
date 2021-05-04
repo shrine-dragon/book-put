@@ -1,0 +1,29 @@
+.hidden-lists-1, .hidden-lists-2, .hidden-lists-3 {
+  color: #fff;
+  display: none;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #808080;
+  position: absolute;
+}
+
+.hidden-lists-1 {
+  width: 12vw;
+  align-items: center;
+  top: 60px;
+  right: 5vw;
+  padding: 1vw 0;
+}
+
+.hidden-lists-2 {
+  width: 10vw;
+  align-items: center;
+  left: 78vw;
+  padding: 1vw 0;
+}
+
+.hidden-lists-3 {
+  width: 9vw;
+  left: 79vw;
+  padding: 3px 0;
+}

@@ -1,0 +1,21 @@
+.each-comment {
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding-top: 15px;
+  margin: 15px 30px;
+  justify-content: space-between;
+}
+
+.comment-upper {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.comment-posted-user {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.comment-posted-time {
+  color: #999;
+}

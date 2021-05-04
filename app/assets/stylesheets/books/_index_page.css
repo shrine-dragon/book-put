@@ -13,11 +13,11 @@
   padding: 1vw;
   margin: 5vh 1vw 0;
   background-color: #FFF;
-  border: 1px solid black;
+  border: 1px solid #000;
 }
 
 .book-info {
-  color: black;
+  color: #000;
 }
 
 .book-title {
@@ -44,11 +44,11 @@
 }
 
 .pagination span{
-  background-color: white;
+  background-color: #FFF;
   text-align: center;
   width: 50px;
-  border: solid 1px black;
-  color: black;
+  border: solid 1px #000;
+  color: #000;
 }
 
 .pagination span.current {

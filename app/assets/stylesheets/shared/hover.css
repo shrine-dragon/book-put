@@ -27,7 +27,7 @@
   background-color: #eee;
 }
 
-#my-page-text:hover, .detail-user-text:hover {
+#my-page-text:hover, #user-text:hover {
   color: #00CCFF;
 }
 
@@ -43,7 +43,7 @@
   border-color: #FF9933;
 }
 
-#ellipsis-btn:hover {
+#ellipsis-btn:hover, #ellipsis-btn-2:hover {
   color: #666;
 }
 
@@ -53,4 +53,8 @@
 
 #report-text:hover {
   color: #8B008B;
+}
+
+#more-btn:hover {
+  background-color:#FFAD90;
 }
