@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :search]
   before_action :set_book,             only: [:show, :edit, :update, :destroy]
   before_action :move_to_root_path,    only: [:edit, :update, :destroy]
 
@@ -46,6 +46,10 @@ class BooksController < ApplicationController
     if @book.destroy
       redirect_to root_path, flash: { delete: "削除が完了しました。" }
     end
+  end
+
+  def search
+    @books = Book.search(params[:keyword])
   end
 
   private
