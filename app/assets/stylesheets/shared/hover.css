@@ -6,14 +6,6 @@
   background-color:#66CCFF;
 }
 
-.go-back-btn:hover {
-  background-color: #ddd;
-}
-
-#green-btn:hover {
-  background-color: #00ee00;
-}
-
 #list-text:hover {
   color: #FF9933;
 }
@@ -25,6 +17,10 @@
 #user-image:hover {
   border: 1px solid #FF9933;
   background-color: #eee;
+}
+
+.go-back-btn:hover {
+  background-color: #ddd;
 }
 
 #my-page-text:hover, #user-text:hover {
