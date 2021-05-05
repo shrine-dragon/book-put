@@ -34,6 +34,7 @@ RSpec.configure do |config|
   config.include SignUpSupport
   config.include SignInSupport
   config.include PostSupport
+  config.include SearchSupport
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 

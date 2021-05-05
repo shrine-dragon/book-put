@@ -1,16 +1,11 @@
-#image-list> div> img {
-  height: 23.5vw;
-  width: 30vw;
-  padding: 10px 150px 0 0;
-  object-fit: contain;
-}
-
+/* shared/header */
 #user-image {
   margin-top: -9px;
   border: 1px solid #ccc;
   cursor: pointer;
 }
 
+/* books/_index_page */
 .book-img {
   width: 22.8vw;
   height: 40vh;
@@ -24,6 +19,15 @@
   margin: 20px auto 30px;
 }
 
+/* devise/registrations/new */
+#image-list> div> img {
+  height: 23.5vw;
+  width: 30vw;
+  padding: 10px 150px 0 0;
+  object-fit: contain;
+}
+
+/* books/show */
 .detail-img-content {
   margin: 20px 16.5vw 0;
 }
@@ -31,4 +35,12 @@
 .detail-img {
   width: 45vw;
   min-height: 65vh;
+}
+
+/* books/search */
+.no-result-image {
+  width: 30vw;
+  height: 30vh;
+  min-height: 30vh;
+  margin: 10px 0 20px;
 }

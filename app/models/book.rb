@@ -3,6 +3,15 @@ class Book < ApplicationRecord
   belongs_to       :user
   has_one_attached :image
   has_many         :comments, dependent: :destroy
+
+  def self.search(search)
+    if search != ""
+      Book.where('title LIKE(?)', "%#{search}%")
+    else
+      Book.all
+    end
+  end
+
   belongs_to_active_hash :category
   belongs_to_active_hash :genre
 

@@ -34,7 +34,7 @@
           by <span><%= @book.user.nickname %></span>
         <% end %>
       </h1>
-      <ul class='font-btns'>
+      <ul class='font-three-btn'>
         <li><i class="fas fa-thumbs-up"  id='good-btn'></i></li>
         <li><i class="far fa-heart"      id='favorite-btn'></i></li>
         <li><i class="fas fa-ellipsis-h" id='ellipsis-btn'></i></li>
@@ -43,19 +43,25 @@
         <% if user_signed_in? && current_user.id == @book.user_id %>
           <li>
             <%= link_to(edit_book_path(@book.id), class:"edit") do %>
-              <span class="pulldown-menu-text", id="edit-text">編集</span>
+              <span class="pulldown-menu-text", id="edit-text">
+                編集<i class="fas fa-edit"></i>
+              </span>
             <% end %>
           </li>
           <hr>
           <li>
             <%= link_to(book_path(@book.id), class:"destroy", method: :delete, data: { confirm: "投稿を削除します。よろしいですか？" }) do %>
-              <span class="pulldown-menu-text", id="destroy-text">削除</span>
+              <span class="pulldown-menu-text", id="destroy-text">
+                削除<i class="fas fa-trash"></i>
+              </span>
             <% end %>
           </li>
         <% else %>
           <li>
             <%= link_to(root_path, class:"report") do%>
-              <span class="pulldown-menu-text", id="report-text">報告</span>
+              <span class="pulldown-menu-text", id="report-text">
+                <i class="fa fa-flag"></i>報告
+              </span>
             <% end %>
           </li>
         <% end %>

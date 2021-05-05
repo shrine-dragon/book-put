@@ -6,6 +6,7 @@
 
 .book-list {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .book-list>.list {
@@ -35,12 +36,14 @@
 
 .no-post-sentence {
   margin-left: 8.5vw;
+  font-weight: bold;
 }
 
 .pagination{
   margin-top: 5vh;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
+  font-family: FontAwesome;
 }
 
 .pagination span{

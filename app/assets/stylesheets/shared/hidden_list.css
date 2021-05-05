@@ -5,8 +5,10 @@
   background-color: #fff;
   border: 1px solid #808080;
   position: absolute;
+  font-family: FontAwesome;
 }
 
+/* shared/header */
 .hidden-lists-1 {
   width: 12vw;
   align-items: center;
@@ -15,6 +17,7 @@
   padding: 1vw 0;
 }
 
+/* books/show */
 .hidden-lists-2 {
   width: 10vw;
   align-items: center;
@@ -22,6 +25,7 @@
   padding: 1vw 0;
 }
 
+/* books/_comment_list */
 .hidden-lists-3 {
   width: 9vw;
   left: 79vw;

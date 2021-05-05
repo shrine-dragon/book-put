@@ -4,18 +4,9 @@
   cursor: pointer;
   background-color: #FF9933;
   position: relative;
-}
-
-.search-button::after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: bold;
-  content: "\f002";
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  left: 5px;
-  bottom: 1.5px;
-  color: #555;
+  font-family: FontAwesome;
+  color: #999;
+  border: none;
 }
 
 .sign-in-btn, .sign-up-btn {
@@ -100,22 +91,6 @@
   cursor: pointer;
 }
 
-.go-back-btn {
-  width: 15vw;
-  margin: 30px auto 0px;
-  background-color: #ccc;
-  border: 1px solid #ccc;
-  text-align: center;
-  line-height: 48px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
-.go-back-btn-text {
-  color: #fff;
-  text-decoration: none;
-}
-
 .login-btn {
   width: 20vw;
   margin: 0 auto;
@@ -130,6 +105,22 @@
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+}
+
+.go-back-btn {
+  width: 15vw;
+  margin: 30px auto 0px;
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  text-align: center;
+  line-height: 48px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.go-back-btn-text {
+  color: #fff;
+  text-decoration: none;
 }
 
 /* books/new */
@@ -149,17 +140,18 @@
 }
 /* books/show */
 
-.font-btns {
+.font-three-btn {
   display: flex;
   justify-content: flex-end;
   padding-right: 30px;
 }
 
-.font-btns > li {
+.font-three-btn > li {
   font-size: 25px;
   margin-left: 30px;
   color: #999;
   cursor: pointer;
+  font-family: FontAwesome;
 }
 
 .comment-yellow-btn {
@@ -187,6 +179,7 @@
   display: flex;
   font-size: 20px;
   margin-top: -12px;
+  font-family: FontAwesome;
 }
 
 .comment-detail-btn > li {
