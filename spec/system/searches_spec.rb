@@ -37,7 +37,7 @@ RSpec.describe "投稿検索", type: :system do
     # 検索結果ページには投稿した書籍が表示されていないことを確認する
     expect(page).to have_no_content( (@book1.title && @book1.image && @book1.user.nickname) ||
                                      (@book2.title && @book2.image && @book2.user.nickname) )
-    # 検索結果ページには「該当する投稿はありません」という文が表示されていることを確認する
-    expect(page).to have_content('該当する投稿はありません')
+    # 検索結果ページには「該当する投稿は見つかりませんでした」という文が表示されていることを確認する
+    expect(page).to have_content('該当する投稿は見つかりませんでした')
   end
 end
