@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
 <div class="search-result">
-  <div class="search-result-lists">
+  <div class="search-result-main">
     <% if @all_books > 0 %>
       <p class="result-sentence">
         <span>「<%= @keyword %>」</span>
@@ -20,6 +20,9 @@
                 <h1 class='book-posted-user'>
                   <%= book.user.nickname %>
                 </h1>
+                <h1 class='book-posted-time'>
+                  <%= time_ago_in_words(book.created_at) %>前
+                </h1>
               </div>
             <% end %>
           </li>
@@ -28,11 +31,11 @@
     <% else %>
       <div class='no-post'>
         <p class='result-sentence'>
-          <span>「<%= @keyword %>」</span>に該当する投稿はありません
+          <span>「<%= @keyword %>」</span>に該当する投稿は見つかりませんでした
         </p>
         <%= image_tag "aplogy-woman.png", class: "no-result-image" %>
       </div>
-      <div class='search-hints'>
+      <div>
         <p class='hint-text'>検索のヒント：</p>
         <p class='hint-text'>・キーワードに誤字や脱字がないか確認します。</p>
         <p class='hint-text'>・別のキーワードを試してみます。</p>
