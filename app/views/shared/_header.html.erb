@@ -14,7 +14,7 @@
       <%= link_to image_tag("bookput-logo.png", class:"bookput-icon"), "/" %>
     </div>
     <%= form_with(url: search_books_path, local: true, method: :get, class: "search-form") do |form| %>
-      <%= form.text_field :keyword, placeholder: "キーワードを入力してください", class: "input-box" %>
+      <%= form.text_field :keyword, placeholder: "キーワードを入力してください", maxlength: "50", class: "input-box" %>
       <%= form.submit "\uF002", class: "search-button", id:"orange-btn" %>
     <% end %>
     <ul class='display-change'>
