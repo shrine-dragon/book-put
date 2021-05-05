@@ -12,8 +12,7 @@ RSpec.describe "投稿検索", type: :system do
     # 検索フォームに投稿した書籍のタイトルを入力する
     fill_in 'keyword', with: @book1.title || @book2.title
     # 送信ボタンをクリックすると検索結果ページへ遷移したことを確認する
-    find(".search-button").click
-    expect(current_path).to eq search_books_path
+    move_to_search_books_path
     # 検索結果ページには投稿した書籍が表示されていることを確認する
     expect(page).to have_content( (@book1.title && @book1.image && @book1.user.nickname) ||
                                   (@book2.title && @book2.image && @book2.user.nickname) )
@@ -24,8 +23,7 @@ RSpec.describe "投稿検索", type: :system do
     # 検索フォームに何も入力しない
     fill_in 'keyword', with: ''
     # 送信ボタンをクリックすると検索結果ページへ遷移したことを確認する
-    find(".search-button").click
-    expect(current_path).to eq search_books_path
+    move_to_search_books_path
     # 検索結果ページには全ての投稿が表示されていることを確認する
     expect(page).to have_content(@book1.title && @book1.image && @book1.user.nickname &&
                                  @book2.title && @book2.image && @book2.user.nickname)
@@ -36,8 +34,7 @@ RSpec.describe "投稿検索", type: :system do
     # 検索フォームに適当な値を入力する
     fill_in 'keyword', with: 'あab1い234cうえ56defお78かgきhiく9けこ0j'
     # 送信ボタンをクリックすると検索結果ページへ遷移したことを確認する
-    find(".search-button").click
-    expect(current_path).to eq search_books_path
+    move_to_search_books_path
     # 検索結果ページには投稿した書籍が表示されていないことを確認する
     expect(page).to have_no_content( (@book1.title && @book1.image && @book1.user.nickname) ||
                                      (@book2.title && @book2.image && @book2.user.nickname) )
