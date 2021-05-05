@@ -63,7 +63,7 @@ RSpec.describe 'コメント削除', type: :system do
     it 'ログインしているユーザーは自分が投稿したコメントを削除できる' do
       # コメント1を投稿したユーザーでログインする
       sign_in(@comment1.user)
-      # 詳細ページへ遷移する
+      # コメント1が含まれている書籍の詳細ページへ遷移する
       visit book_path(@comment1.book_id)
       # コメント1に「削除」ボタンがあることを確認する
       find('#ellipsis-btn-2').click

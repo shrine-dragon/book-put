@@ -77,7 +77,7 @@ RSpec.describe '投稿編集', type: :system do
     it 'ログインしているユーザーは自分が投稿した書籍内容を編集できる' do
       # 書籍1を投稿したユーザーでログインする
       sign_in(@book1.user)
-      # 詳細ページへ遷移する
+      # 書籍1の詳細ページへ遷移する
       visit book_path(@book1.id)
       # 書籍1に「編集」ボタンがあることを確認する
       find('#ellipsis-btn').click
@@ -132,9 +132,9 @@ RSpec.describe '投稿編集', type: :system do
     it 'ログインしているユーザーは自分以外が投稿した書籍を編集できない' do
       # 書籍1を投稿したユーザーでログインする
       sign_in(@book1.user)
-      # 詳細ページへ遷移する
+      # 書籍2の詳細ページへ遷移する
       visit book_path(@book2.id)
-      # 書籍1に「編集」ボタンがないことを確認する
+      # 書籍2に「編集」ボタンがないことを確認する
       find('#ellipsis-btn').click
       expect(page).to have_no_link '編集', href: edit_book_path(@book2.id)
     end
@@ -142,10 +142,16 @@ RSpec.describe '投稿編集', type: :system do
     it 'ログインしていないと書籍を編集できない' do
       # トップページへ遷移する
       visit root_path
-      # 書籍1に「編集」ボタンがないことを確認する
+      # 書籍1の詳細ページへ遷移する
       visit book_path(@book1.id)
-      # 書籍2に「編集」ボタンがないことを確認する
+      # 書籍1に「編集」ボタンがないことを確認する
+      find('#ellipsis-btn').click
+      expect(page).to have_no_link '編集', href: edit_book_path(@book1.id)
+      # 書籍2の詳細ページへ遷移する
       visit book_path(@book2.id)
+      # 書籍2に「編集」ボタンがないことを確認する
+      find('#ellipsis-btn').click
+      expect(page).to have_no_link '編集', href: edit_book_path(@book2.id)
     end
   end
 end
