@@ -26,6 +26,10 @@
 
 .result-sentence {
   font-size: 20px;
+}
+
+.result-sentence> span {
+  font-size: 25px;
   font-weight: bold;
 }
 

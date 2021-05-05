@@ -3,7 +3,8 @@
   <div class="search-result-lists">
     <% if @all_books > 0 %>
       <p class="result-sentence">
-        検索結果：全<%= @all_books %>件
+        <span>「<%= @keyword %>」</span>
+        の検索結果：全<%= @all_books %>件
       </p>
       <ul class="book-list">
         <% @books.each do |book| %>
@@ -26,7 +27,9 @@
       </ul>
     <% else %>
       <div class='no-post'>
-        <p class='result-sentence'>キーワードに該当する投稿はありません</p>
+        <p class='result-sentence'>
+          <span>「<%= @keyword %>」</span>に該当する投稿はありません
+        </p>
         <%= image_tag "aplogy-woman.png", class: "no-result-image" %>
       </div>
       <div class='search-hints'>
