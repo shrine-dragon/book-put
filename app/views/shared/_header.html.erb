@@ -9,7 +9,7 @@
       <%= flash[:delete] %>
     </p>
   <% end %>
-  <div class='search-bar-contents'>
+  <div class='header-upper'>
     <div>
       <%= link_to image_tag("bookput-logo.png", class:"bookput-icon"), "/" %>
     </div>
@@ -45,7 +45,7 @@
       <% end %>
     </ul>
   </div>
-  <div class='nav'>
+  <div class='header-lower'>
     <ul class='search-lists'>
       <li><%= link_to 'タイトル', "/", class: "search-list", id:"list-text" %></li>
       <li><%= link_to 'カテゴリー', "/", class: "search-list", id:"list-text" %></li>

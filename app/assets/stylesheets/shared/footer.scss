@@ -2,8 +2,6 @@
 /* books/index.htmlの広告cssを所々使いまわしています。 */
 
 .ad-footer-contents {
-  height: 240px;
-  width: 100%;
   background-image: image-url('book-pile.png');
   background-size: cover;
   background-repeat: no-repeat;
@@ -31,16 +29,14 @@
 }
 /* //下部広告部分 */
 
-.footer {
-  height: 300px;
-  width: 100vw;
-  padding: 5vh 0;
+.top-page-footer {
+  padding-top: 5vh;
   color: #FFF;
   background-color: #999999;
   text-align: center;
 }
 
-.footer-contents {
+.footer-upper {
   display: flex;
   justify-content: center;
   margin-bottom: 5vh;
@@ -50,7 +46,7 @@
   margin: 3vh 4vw;
 }
 
-.footer-content-head {
+.footer-content-text {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -66,8 +62,7 @@
   font-size: 14px;
 }
 
-.footer-content-foot {
-  height: 100px;
+.footer-lower {
   background-color: #777;
 }
 
@@ -76,5 +71,7 @@
 }
 
 .copyright {
+  padding-bottom: 5px;
   margin-right: 26px;
+  text-align: center;
 }

@@ -14,7 +14,7 @@
   border-bottom: 2px solid #EEEEEE;
 }
 
-.search-bar-contents {
+.header-upper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,7 +58,7 @@
   margin-top: 5px;
 }
 
-.nav {
+.header-lower {
   font-size: 18px;
   display: flex;
   justify-content: space-between;
