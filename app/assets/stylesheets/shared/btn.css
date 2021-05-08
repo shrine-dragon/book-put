@@ -116,6 +116,11 @@
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+  border-radius: 4%;
+  bottom: 15px;
+  right: 15px;
+  position: fixed;
+  z-index: 20;
 }
 
 .go-back-btn-text {
@@ -139,7 +144,6 @@
   cursor: pointer;
 }
 /* books/show */
-
 .font-three-btn {
   display: flex;
   justify-content: flex-end;

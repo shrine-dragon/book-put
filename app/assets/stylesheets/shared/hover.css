@@ -43,6 +43,10 @@
   color: #666;
 }
 
+#green-btn:hover {
+  background-color: #00ee00;
+}
+
 #edit-text:hover {
   color: #00cc00;
 }
