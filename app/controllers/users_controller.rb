@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action [:authenticate_user!, :set_user, :move_to_root_path]
+  before_action :authenticate_user!
+  before_action :set_user 
+  before_action :move_to_root_path
 
   def show
     @books = @user.books
