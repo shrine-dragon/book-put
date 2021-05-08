@@ -30,7 +30,7 @@
       </h1>
       <h1 class='detail-user'>
         <% if user_signed_in? && current_user.id == @book.user_id %>
-          by <span><%= link_to @book.user.nickname, user_path(@user.id), class:'detail-user-text', id:'user-text' %></span>
+          by <span><%= link_to @book.user.nickname, user_path(current_user.id), class:'detail-user-text', id:'user-text' %></span>
         <% else %>
           by <span><%= @book.user.nickname %></span>
         <% end %>
@@ -95,7 +95,7 @@
     <% if user_signed_in? %>
       <%= form_with model: [@book, @comment], class: "comment-main", local: true do |f| %>
         <div class="comment-user">
-          <%= link_to current_user.nickname, user_path(@user.id), class:'comment-user-text', id:'user-text' %>
+          <%= link_to current_user.nickname, user_path(current_user.id), class:'comment-user-text', id:'user-text' %>
         </div>
         <div class="comment-form">
           <%= f.text_field :text, class:"comment-form-text", id:"comment", maxlength: "100", placeholder: "100文字以内で入力してください" %>
