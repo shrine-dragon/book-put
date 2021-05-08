@@ -56,7 +56,7 @@
   </div>
   <ul class="hidden-lists-1", id="pull-down-1">
     <li>
-      <%= link_to(root_path, class:"my-page") do%>
+      <%= link_to(user_path(@user.id), class:"my-page") do%>
         <span class="pulldown-menu-text", id="my-page-text">
           マイページ<i class="fas fa-user"></i>
         </span>
