@@ -29,8 +29,9 @@ RSpec.describe '新規投稿', type: :system do
       expect(current_path).to eq(root_path)
       # トップページには先ほど投稿した内容が存在することを確認する（画像）
       expect(page).to have_selector("img[src$='test_image.png']")
-      # トップページには先ほど投稿した内容が存在することを確認する（テキスト）
+      # トップページには先ほど投稿した内容が存在することを確認する（テキスト、投稿者名、投稿時刻）
       expect(page).to have_content(@book.title)
+      expect(page).to have_selector(".book-posted-user" && ".book-posted-time")
     end
   end
 
@@ -63,6 +64,31 @@ RSpec.describe '新規投稿', type: :system do
       # エラーメッセージが表示されることを確認する
       expect(page).to have_css '.field_with_errors'
     end
+  end
+end
+
+RSpec.describe '投稿詳細', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+    @book = FactoryBot.create(:book)
+  end
+
+  it 'ログインしているユーザーの場合、投稿詳細ページへ遷移するとコメント投稿欄が表示される' do
+    # ログインする
+    sign_in(@user)
+    # 投稿詳細ページへ遷移する
+    access_post_detail_page(@book)
+    # コメント用のフォームが存在することを確認する
+    expect(page).to have_selector('.comment-main')
+  end
+
+  it 'ログインしていないユーザーの場合、投稿詳細ページへ遷移できるもののコメント投稿欄が表示されない' do
+    # トップページへ遷移する
+    visit root_path
+    # 投稿詳細ページへ遷移する
+    access_post_detail_page(@book)
+    # コメント用のフォームが存在しないことを確認する
+    expect(page).to have_no_selector('.comment-main')
   end
 end
 
@@ -117,14 +143,13 @@ RSpec.describe '投稿編集', type: :system do
       expect  do
         find('input[name="commit"]').click
       end.to change { Book.count }.by(0)
-      # 編集完了画面（投稿詳細画面）へ遷移したことを確認する
+      # 編集完了ページ（投稿詳細ページ）へ遷移したことを確認する
       expect(current_path).to eq(book_path(@book1.id))
-      # トップページに遷移する
-      visit root_path
-      # トップページには先ほど変更した内容の書籍が存在することを確認する（画像）
+      # 投稿詳細ページには先ほど変更した内容が存在することを確認する（画像）
       expect(page).to have_selector("img[src$='test_image2.png']")
-      # トップページには先ほど変更した内容の書籍が存在することを確認する（テキスト）
-      expect(page).to have_content(@book1.title)
+      # トップページには先ほど変更した内容が存在することを確認する（タイトル、カテゴリー名、ジャンル名、キャッチコピー、内容文、見どころ文）
+      expect(page).to have_content(@book1.title && @book1.catch_copy && @book1.content && @book1.highlight)
+      expect(page).to have_selector(".detail-category-genre")
     end
   end
 
@@ -181,8 +206,9 @@ RSpec.describe '投稿削除', type: :system do
       expect(current_path).to eq(root_path)
       # トップページには書籍1の内容が存在しないことを確認する（画像）
       expect(page).to have_no_selector("img[src$='test_image2.png']")
-      # トップページには書籍1の内容が存在しないことを確認する（テキスト）
+      # トップページには書籍1の内容が存在しないことを確認する（テキスト、投稿者名、投稿時刻）
       expect(page).to have_no_content(@book1.title)
+      expect(page).to have_selector(".book-posted-user" && ".book-posted-time")
     end
   end
 
