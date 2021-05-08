@@ -23,8 +23,9 @@ RSpec.describe 'コメント投稿', type: :system do
     end.to change { Comment.count }.by(1)
     # 詳細ページにリダイレクトされることを確認する
     expect(current_path).to eq book_path(@book.id)
-    # 詳細ページに先ほどのコメントの内容が表示されていることを確認する
-    expect(page).to have_content(@comment.text)
+    # 詳細ページに先ほどのコメントの内容、投稿者名、投稿時刻が表示されていることを確認する
+    expect(page).to have_content(@comment.text && @comment.created_at)
+    expect(page).to have_selector(".comment-posted-user")
   end
 
   it 'ログインしていないユーザーはコメントを投稿できない' do
