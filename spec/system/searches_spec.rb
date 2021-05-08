@@ -17,8 +17,9 @@ RSpec.describe "投稿検索", type: :system do
     move_to_search_books_path
     # 検索結果ページには「 「@keyword」 の検索結果」という文が表示されていることを確認する
     expect(page).to have_content(@keyword && '「」' && 'の検索結果')
-    # 検索結果ページには投稿した書籍のタイトル、画像、投稿者名がそれぞれ表示されていることを確認する
+    # 検索結果ページには投稿した内容が表示されていることを確認する（タイトル、画像、投稿者名、投稿時刻）
     expect(page).to have_content(@book1.title && @book1.image && @book1.user.nickname)
+    expect(page).to have_selector(".book-posted-time")
   end
 
   it 'キーワードを空にして検索した場合' do
@@ -35,6 +36,7 @@ RSpec.describe "投稿検索", type: :system do
     expect(page).to have_content( (@book1.title && @book1.image && @book1.user.nickname) &&
                                   (@book2.title && @book2.image && @book2.user.nickname) 
                                 )
+    expect(page).to have_selector(".book-posted-time")
   end
 
   it 'キーワードを適当な値にして検索した場合' do
@@ -50,6 +52,7 @@ RSpec.describe "投稿検索", type: :system do
     # 検索結果ページには投稿した書籍が表示されていないことを確認する
     expect(page).to have_no_content( (@book1.title && @book1.image && @book1.user.nickname) &&
                                      (@book2.title && @book2.image && @book2.user.nickname) 
-                                )
+                                    )
+    expect(page).to have_no_selector(".book-posted-time")
   end
 end
