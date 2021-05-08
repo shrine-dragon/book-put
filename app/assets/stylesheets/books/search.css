@@ -7,16 +7,17 @@
 
 .search-result-main {
   width: 95%;
-  padding: 2vw 0 2vw 8vw;
+  padding: 2vw 6vw 2vw 8vw;
   background-color: #FFCC66;
   margin: 0 auto;
 }
 
 .result-sentence {
   font-size: 20px;
+  border-bottom: 1px solid #ddd;
 }
 
-.result-sentence> span {
+.result-sentence> span, .no-result-sentence> span {
   font-size: 25px;
   font-weight: bold;
 }
