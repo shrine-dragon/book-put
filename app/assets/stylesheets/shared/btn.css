@@ -11,7 +11,6 @@
 
 .sign-in-btn, .sign-up-btn {
   width: 80px;
-  border-radius: 4px;
   padding: 9px 9px;
   margin-right: 12px;
   cursor: pointer;
@@ -55,7 +54,6 @@
   width: 190px;
   background: #FF9933;
   text-align: center;
-  border-radius: 4%;
   bottom: 15px;
   right: 15px;
   position: fixed;
@@ -116,11 +114,9 @@
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
-  border-radius: 4%;
   bottom: 15px;
   right: 15px;
   position: fixed;
-  z-index: 20;
 }
 
 .go-back-btn-text {
@@ -143,6 +139,7 @@
   font-size: 14px;
   cursor: pointer;
 }
+
 /* books/show */
 .font-three-btn {
   display: flex;
@@ -163,7 +160,6 @@
   color: #FFFFFF;
   background-color: #CCCCCC;
   border: 1px solid #000;
-  border-radius: 5px;
   padding: 0 8px;
   cursor: none;
 }
@@ -202,4 +198,9 @@
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+}
+
+/* 共通部分をまとめる */
+.sign-in-btn, .sign-up-btn, .post-btn, .blue-next-btn, .blue-register-btn, .login-orange-btn, .go-back-btn, .post-output-orange-btn, .comment-yellow-btn, .post-edit-green-btn {
+  border-radius: 5px;
 }
