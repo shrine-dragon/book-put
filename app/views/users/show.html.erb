@@ -1,3 +1,41 @@
-<%= render 'shared/second_header' %>
+<%= render 'shared/header' %>
+
+<div class="my-page-main">
+  <div class="user-info">
+    <h1 class="user-info-text">
+      ユーザー情報
+    </h1>
+    <table class="table">
+      <tbody>
+        <tr>
+          <th class="table-key">ニックネーム</th>
+          <td class="table-value"><%= @user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="table-key">性別</th>
+          <th class="table-value"><%= @user.gender.name %></th>
+        </tr>
+        <tr>
+          <th class="table-key">生年月日</th>
+          <th class="table-value"><%= @user.birth_day %></th>
+        </tr>
+        <tr>
+          <th class="table-key">メールアドレス</th>
+          <th class="table-value"><%= @user.email %></th>
+        </tr>
+        <tr>
+          <th class="table-key">パスワード</th>
+          <th class="table-value">************</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="book-list">
+  </div>
+  <div class="favorite-list">
+  </div>
+  <div class="good-list">
+  </div>
+</div>
 
 <%= render 'shared/second_footer' %>
