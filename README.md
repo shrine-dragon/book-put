@@ -38,7 +38,7 @@ https://book-put-3839.herokuapp.com/
 
 ## Basic認証
 ID → book-lover
-パスワード → attractive3839
+パスワード → attractive2009
 
 ## テスト用アカウント
 ID → test@gmail.com
