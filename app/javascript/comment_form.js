@@ -14,14 +14,14 @@ $(() => {
     $('.comment-yellow-btn').css({
       'display': 'block',
       'color': 'black',
-      'background-color': 'yellow',
+      'background-color': '#FF0',
       'cursor': 'pointer'
     });
     // コメント送信ボタンにカーソルを合わせた時と外した時のイベントの設定
     $('.comment-yellow-btn').mouseover(() => {
       $('.comment-yellow-btn').css('background-color', '#FFFFAA');
     }).mouseout(() => {
-      $('.comment-yellow-btn').css('background-color', 'yellow');
+      $('.comment-yellow-btn').css('background-color', '#FF0');
     });
   });
 });
