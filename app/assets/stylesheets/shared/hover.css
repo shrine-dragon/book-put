@@ -3,11 +3,11 @@
 }
 
 #blue-btn:hover {
-  background-color:#66CCFF;
+  background-color:#6CF;
 }
 
 #list-text:hover {
-  color: #FF9933;
+  color: #F93;
 }
 
 #link-text:hover {
@@ -15,7 +15,7 @@
 }
 
 #user-image:hover {
-  border: 1px solid #FF9933;
+  border: 1px solid #F93;
   background-color: #eee;
 }
 
@@ -24,7 +24,7 @@
 }
 
 #my-page-text:hover, #user-text:hover {
-  color: #00CCFF;
+  color: #0CF;
 }
 
 #log-out-text:hover, #destroy-text:hover {
@@ -32,11 +32,11 @@
 }
 
 .book-list>.list:hover {
-  border-color: #FF9933;
+  border-color: #F93;
 }
 
 .pagination span:hover:not(.pagination span.current){
-  border-color: #FF9933;
+  border-color: #F93;
 }
 
 #ellipsis-btn:hover, #ellipsis-btn-2:hover {
@@ -44,11 +44,11 @@
 }
 
 #green-btn:hover {
-  background-color: #00ee00;
+  background-color: #0e0;
 }
 
 #edit-text:hover {
-  color: #00cc00;
+  color: #0c0;
 }
 
 #report-text:hover {

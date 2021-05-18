@@ -2,7 +2,7 @@
 .search-button {
   width: 5vh;
   cursor: pointer;
-  background-color: #FF9933;
+  background-color: #F93;
   position: relative;
   font-family: FontAwesome;
   color: #999;
@@ -20,7 +20,7 @@
 }
 
 .sign-in-btn {
-  background-color: #FF9933;
+  background-color: #F93;
   margin-left: 15px;
 }
 
@@ -31,7 +31,7 @@
 .sign-btn-text {
   text-decoration: none;
   line-height: 30px;
-  color: #333333;
+  color: #333;
 }
 
 /* index */
@@ -52,7 +52,7 @@
 .post-btn {
   height: 55px;
   width: 190px;
-  background: #FF9933;
+  background: #F93;
   text-align: center;
   bottom: 15px;
   right: 15px;
@@ -97,8 +97,8 @@
 
 .login-orange-btn {
   width: 100%;
-  background: #FF9933;
-  border: 1px solid #FF9933;
+  background: #F93;
+  border: 1px solid #F93;
   color: #fff;
   line-height: 48px;
   font-size: 14px;
@@ -132,8 +132,8 @@
 
 .post-output-orange-btn {
   width: 100%;
-  background: #FF9933;
-  border: 1px solid #ff9933;
+  background: #F93;
+  border: 1px solid #f93;
   color: #fff;
   line-height: 48px;
   font-size: 14px;
@@ -157,8 +157,8 @@
 
 .comment-yellow-btn {
   display: none;
-  color: #FFFFFF;
-  background-color: #CCCCCC;
+  color: #FFF;
+  background-color: #CCC;
   border: 1px solid #000;
   padding: 0 8px;
   cursor: none;
@@ -166,7 +166,7 @@
 
 #more-btn {
   width: 120px;
-  background-color: #FF9933;
+  background-color: #F93;
   line-height: 32px;
   font-size: 14px;
   text-align: center;
@@ -192,8 +192,8 @@
 
 .post-edit-green-btn {
   width: 20vw;
-  background-color: #00dd00;
-  border: 1px solid #00dd00;
+  background-color: #0d0;
+  border: 1px solid #0d0;
   color: #fff;
   line-height: 48px;
   font-size: 14px;
