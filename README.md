@@ -52,6 +52,15 @@ ID → test@gmail.com
 ## 新規投稿
 [![Image from Gyazo](https://i.gyazo.com/780b972d82e1991bc36f63af58631e60.gif)](https://gyazo.com/780b972d82e1991bc36f63af58631e60)
 
+## 投稿詳細
+[![Image from Gyazo](https://i.gyazo.com/97bd6e0783e138c0b413f08420858a23.gif)](https://gyazo.com/97bd6e0783e138c0b413f08420858a23)
+
+## コメント投稿
+[![Image from Gyazo](https://i.gyazo.com/581cd7a60e97517304bcca2ef84e200f.gif)](https://gyazo.com/581cd7a60e97517304bcca2ef84e200f)
+
+## 投稿検索
+[![Image from Gyazo](https://i.gyazo.com/29db8bb940a61b6af890e552c60fe9fa.gif)](https://gyazo.com/29db8bb940a61b6af890e552c60fe9fa)
+
 # 工夫した、苦労したポイント
 
 ①トップページの作成
