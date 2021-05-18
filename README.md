@@ -47,37 +47,19 @@ ID → test@gmail.com
 # DEMO
 
 ## トップページ
-https://gyazo.com/2f45bce6295b766149148a0eb0f9866f
-
-## 新規登録1ページ目
-https://gyazo.com/44aaea228894822d957f5b39d4fe56fb
-
-## 2ページ目＆登録完了
-https://gyazo.com/537b5c382d447e35b13edd5de59694c8
+[![Image from Gyazo](https://i.gyazo.com/2f45bce6295b766149148a0eb0f9866f.gif)](https://gyazo.com/2f45bce6295b766149148a0eb0f9866f)
 
 ## 新規投稿
-https://gyazo.com/780b972d82e1991bc36f63af58631e60
+[![Image from Gyazo](https://i.gyazo.com/780b972d82e1991bc36f63af58631e60.gif)](https://gyazo.com/780b972d82e1991bc36f63af58631e60)
 
 ## 投稿詳細
-https://gyazo.com/97bd6e0783e138c0b413f08420858a23
-
-## 投稿編集＆更新
-https://gyazo.com/c89471d2a13deb708904a689bce9648e
-https://gyazo.com/24514e95a3f5edb9b10ab748f8c1cc3c
-
-## 投稿削除
-https://gyazo.com/f0efeee220379148a7366d0c36c161b4
+[![Image from Gyazo](https://i.gyazo.com/97bd6e0783e138c0b413f08420858a23.gif)](https://gyazo.com/97bd6e0783e138c0b413f08420858a23)
 
 ## コメント投稿
-https://gyazo.com/581cd7a60e97517304bcca2ef84e200f
-
-## コメント削除
-https://gyazo.com/3db48e68d405b7e9929458ddee7f5a71
+[![Image from Gyazo](https://i.gyazo.com/581cd7a60e97517304bcca2ef84e200f.gif)](https://gyazo.com/581cd7a60e97517304bcca2ef84e200f)
 
 ## 投稿検索
-https://gyazo.com/29db8bb940a61b6af890e552c60fe9fa
-https://gyazo.com/0024d410a3b3c8b4f442f0b884471027
-https://gyazo.com/7eb5111c9cfb67ea184465f1a76a9a4e
+[![Image from Gyazo](https://i.gyazo.com/29db8bb940a61b6af890e552c60fe9fa.gif)](https://gyazo.com/29db8bb940a61b6af890e552c60fe9fa)
 
 # 工夫した、苦労したポイント
 
