@@ -47,7 +47,7 @@ ID → test@gmail.com
 # DEMO
 
 ## トップページ
-[![Image from Gyazo](https://i.gyazo.com/2f45bce6295b766149148a0eb0f9866f.gif)](https://gyazo.com/2f45bce6295b766149148a0eb0f9866f)
+[![Image from Gyazo](https://i.gyazo.com/cdd58fa78b921d65297f0a2ca2c27726.gif)](https://gyazo.com/cdd58fa78b921d65297f0a2ca2c27726)
 
 ## 新規投稿
 [![Image from Gyazo](https://i.gyazo.com/780b972d82e1991bc36f63af58631e60.gif)](https://gyazo.com/780b972d82e1991bc36f63af58631e60)
