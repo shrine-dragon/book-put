@@ -1,6 +1,6 @@
 # アプリ名
 
-BooKPuT
+BooKPuT(bookとoutputを組み合わせた造語)
 
 # 概要
 
@@ -94,7 +94,29 @@ ID → test@gmail.com
 
 # 使用技術（開発環境）
 
-Ruby/Ruby on Rails/JavaScript/MySQL/Github/AWS/Visual Studio Code
+## バックエンド
+Ruby, Ruby on Rails
+
+## フロントエンド
+JavaScript, jQuery
+
+## データベース
+MySQL
+
+## インフラ
+AWS
+
+## Webサーバ（本番環境）
+Heroku
+
+## ソース管理
+Github, GitHubDesktop
+
+## エディタ
+Visual Studio Code
+
+## テスト
+Rspec
 
 # 要件定義
 
