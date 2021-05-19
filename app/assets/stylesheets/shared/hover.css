@@ -10,6 +10,10 @@
   color: #F93;
 }
 
+#favorite-text:hover {
+  color: #FF66FF;
+}
+
 #link-text:hover {
   text-decoration: underline;
 }
@@ -23,7 +27,7 @@
   background-color: #ddd;
 }
 
-#my-page-text:hover, #user-text:hover {
+.user-nickname:hover, #my-page-text:hover, #user-text:hover {
   color: #0CF;
 }
 

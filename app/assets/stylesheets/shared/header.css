@@ -51,6 +51,7 @@
   margin: 0 0.5vw 0 3vw;
   color: #333333;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .not-login-condition {
