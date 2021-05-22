@@ -140,7 +140,7 @@ rbenvのバージョン → 1.1.2
 
 # ER図
 
-https://gyazo.com/9d944769f576bca647eabf2181e254d4
+[![Image from Gyazo](https://i.gyazo.com/9d944769f576bca647eabf2181e254d4.png)](https://gyazo.com/9d944769f576bca647eabf2181e254d4)
 
 # テーブル設計
 
