@@ -21,13 +21,30 @@
       <% if user_signed_in? %>
         <div class="login-condition">
           <li>ログインしています</li>
-          <li class="user-nickname"><%= current_user.nickname %></li>
+          <li class="user-nickname"><%= link_to current_user.nickname, user_path(current_user.id), id: "user-nickname-text" %></li>
           <% if current_user.image.attached? %>
             <li><%= image_tag current_user.image, width: "45", height: "45", id: 'user-image' %></li>
           <% else%>
             <li><%= image_tag "no-image.png", width: "45", height: "45", id: 'user-image' %></li>
           <% end %>
         </div>
+        <ul class="hidden-lists-1", id="pull-down-singular">
+          <li>
+            <%= link_to(user_path(current_user.id), class:"my-page") do %>
+              <span class="pulldown-menu-text", id="my-page-text">
+                マイページ<i class="fas fa-user"></i>
+              </span>
+            <% end %>
+          </li>
+          <hr>
+          <li>
+            <%= link_to(destroy_user_session_path, class:"log-out", method: :delete, data: { confirm: 'ログアウトしますか？' }) do %>
+              <span class="pulldown-menu-text", id="log-out-text">
+                ログアウト<i class="fas fa-trash"></i>
+              </span>
+            <% end %>
+          </li>
+        </ul>
       <% else %>
         <div class="not-login-condition">
           <li>
@@ -54,21 +71,4 @@
       <li><%= link_to 'お気に入り', "/", class: "search-list", id:"favorite-text" %></li>
     </ul>
   </div>
-  <ul class="hidden-lists-1", id="pull-down-1">
-    <li>
-      <%= link_to(root_path, class:"my-page") do%>
-        <span class="pulldown-menu-text", id="my-page-text">
-          マイページ<i class="fas fa-user"></i>
-        </span>
-      <% end %>
-    </li>
-    <hr>
-    <li>
-      <%= link_to(destroy_user_session_path, class:"log-out", method: :delete, data: { confirm: 'ログアウトしますか？' }) do%>
-        <span class="pulldown-menu-text", id="log-out-text">
-          ログアウト<i class="fas fa-trash"></i>
-        </span>
-      <% end %>
-    </li>
-  </ul>
 </header>

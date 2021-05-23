@@ -1,0 +1,132 @@
+<% if flash[:update] %>
+  <p class='flash-update', id='flash-message'>
+    <%= flash[:update] %>
+  </p>
+<% end %>
+
+<%= render 'shared/header' %>
+
+<div class="my-page-main">
+  <div class="my-page-info">
+    <h1 class="my-page-upper-text">
+      <span><%= @user.nickname %></span>さんの情報
+    </h1>
+    <div class="my-page-layout">
+      <table class="user-table">
+        <tbody>
+          <tr>
+            <th class="table-key">ニックネーム</th>
+            <td class="table-value"><%= @user.nickname %></td>
+          </tr>
+          <tr>
+            <th class="table-key">性別</th>
+            <th class="table-value"><%= @user.gender.name %></th>
+          </tr>
+          <tr>
+            <th class="table-key">生年月日</th>
+            <th class="table-value"><%= @user.birth_day %></th>
+          </tr>
+          <tr>
+            <th class="table-key">メールアドレス</th>
+            <th class="table-value"><%= @user.email %></th>
+          </tr>
+          <tr>
+            <th class="table-key">パスワード</th>
+            <th class="table-value">************</th>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <ul class="user-detail-btn">
+          <li><i class="fas fa-ellipsis-h" id='ellipsis-btn'></i></li>
+        </ul>
+        <ul class="hidden-lists-4", id="pull-down-singular-2">
+          <% if user_signed_in? && current_user.id == @user.id %>
+            <li>
+              <%= link_to(edit_user_path(@user.id), class:"edit") do %>
+                <span class="pulldown-menu-text", id="edit-text">
+                  編集<i class="fas fa-edit"></i>
+                </span>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="my-page-info">
+    <h1 class="my-page-upper-text">
+      アンケート情報
+    </h1>
+    <table class="questionnaire-table">
+      <tbody>
+        <tr>
+          <th class="table-key">好きな本の種類</th>
+          <td class="table-value"><%= @questionnaire.category.name %></td>
+        </tr>
+        <tr>
+          <th class="table-key">好きな本のジャンル</th>
+          <th class="table-value"><%= @questionnaire.genre.name %></th>
+        </tr>
+        <tr>
+          <th class="table-key">書籍の購入場所</th>
+          <th class="table-value"><%= @questionnaire.purchase_place.name %></th>
+        </tr>
+        <tr>
+          <th class="table-key">使用媒体</th>
+          <th class="table-value"><%= @questionnaire.reading_media.name %></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="my-page-info">
+    <div class="my-page-upper-text">
+      投稿一覧
+    </div>
+    <% if @books.present? %>
+      <ul class="book-list">
+        <%= render 'books/book_list' %>
+      </ul>
+    <% else %>
+      <div class='no-post'>
+        <%= image_tag "business-ojigi-man.png", class: "no-result-image" %>
+        <p class='no-result-sentence'>投稿はありません</p>
+      </div>
+    <% end %>
+    <style>
+      .book-posted-user {
+        display: none;
+      }
+    </style>
+  </div>
+
+  <div class="my-page-info">
+    <div class="my-page-upper-text">
+      お気に入り一覧
+    </div>
+    <div class='no-post'>
+      <%= image_tag "dame-man.png", class: "no-result-image" %>
+      <p class='no-result-sentence'>投稿はありません</p>
+    </div>
+  </div>
+
+  <div class="my-page-info">
+    <div class="my-page-upper-text">
+      好評価した投稿
+    </div>
+    <div class='no-post'>
+      <%= image_tag "dame-woman.png", class: "no-result-image" %>
+      <p class='no-result-sentence'>投稿はありません</p>
+    </div>
+  </div>
+
+  <div class='go-back-btn'>
+    <%= link_to(root_path, class:'go-back-gray-btn', id:"gray-btn") do %>
+      <p class="go-back-btn-text">もどる</p>
+    <% end %>
+  </div>
+</div>
+
+<%= render 'shared/second_footer' %>

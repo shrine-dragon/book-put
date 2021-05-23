@@ -1,0 +1,58 @@
+.my-page-main {
+  padding-top: 110px;
+  background-color: #f5f5f5;
+  margin: 0 auto;
+  display: block;
+}
+
+.my-page-info {
+  width: 95%;
+  padding: 2vw 6vw 2vw 8vw;
+  background-color:#CCFFFF;
+  margin: 0 auto;
+}
+
+.my-page-upper-text {
+  font-weight: bold;
+  font-size: 25px;
+  border-bottom: 1px solid #ddd;
+}
+
+.my-page-upper-text>span {
+  font-size: 30px;
+  color: #6CF;
+}
+
+.my-page-layout {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-table {
+  margin: 28px 0;
+  width: 60%;
+}
+
+.questionnaire-table {
+  margin: 16px 0;
+  width: 65%;
+}
+
+.table-key{
+  text-align: center;
+  font-weight: bold;
+  background-color: #EEE;
+  border-collapse: collapse;
+  border: 2px solid #000;
+  width: 35%;
+  padding: 8px;
+}
+
+.table-value{
+  text-align: left;
+  border: 2px solid #000;
+  border-collapse: collapse;
+  background-color: white;
+  width: 65%;
+  padding: 16px 8px;
+}

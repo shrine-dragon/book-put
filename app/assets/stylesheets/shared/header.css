@@ -54,6 +54,10 @@
   cursor: pointer;
 }
 
+#user-nickname-text {
+  color: #222;
+}
+
 .not-login-condition {
   display: flex;
   margin-top: 5px;
