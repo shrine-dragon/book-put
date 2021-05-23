@@ -1,3 +1,9 @@
+<% if flash[:update] %>
+  <p class='flash-update', id='flash-message'>
+    <%= flash[:update] %>
+  </p>
+<% end %>
+
 <%= render 'shared/header' %>
 
 <div class="my-page-main">
@@ -37,7 +43,7 @@
         <ul class="hidden-lists-4", id="pull-down-singular-2">
           <% if user_signed_in? && current_user.id == @user.id %>
             <li>
-              <%= link_to(user_path(current_user.id), class:"edit") do %>
+              <%= link_to(edit_user_path(@user.id), class:"edit") do %>
                 <span class="pulldown-menu-text", id="edit-text">
                   編集<i class="fas fa-edit"></i>
                 </span>
