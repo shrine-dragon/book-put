@@ -20,7 +20,7 @@
 
 .my-page-upper-text>span {
   font-size: 30px;
-  color: #6CF;
+  color: #6cf;
 }
 
 .my-page-layout {
@@ -31,11 +31,6 @@
 .user-table {
   margin: 28px 0;
   width: 60%;
-}
-
-.questionnaire-table {
-  margin: 16px 0;
-  width: 65%;
 }
 
 .table-key{
@@ -55,4 +50,9 @@
   background-color: white;
   width: 65%;
   padding: 16px 8px;
+}
+
+.questionnaire-table {
+  margin: 16px 0;
+  width: 65%;
 }
