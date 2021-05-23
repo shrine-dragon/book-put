@@ -27,7 +27,7 @@
   background-color: #ddd;
 }
 
-.user-nickname:hover, #my-page-text:hover, #user-text:hover {
+#user-nickname-text:hover, #my-page-text:hover, #user-text:hover {
   color: #0CF;
 }
 

@@ -189,7 +189,6 @@
 }
 
 /* books/edit */
-
 .post-edit-green-btn {
   width: 20vw;
   background-color: #0d0;
@@ -197,6 +196,15 @@
   color: #fff;
   line-height: 48px;
   font-size: 14px;
+  cursor: pointer;
+}
+
+/* users/show */
+.user-detail-btn {
+  display: flex;
+  font-size: 30px;
+  margin: 3px 6px 0 0;
+  font-family: FontAwesome;
   cursor: pointer;
 }
 

@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @books = @user.books
+    @questionnaire = Questionnaire.find_by(params[:user_id])
   end
 
   def edit

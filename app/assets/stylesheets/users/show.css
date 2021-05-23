@@ -5,22 +5,32 @@
   display: block;
 }
 
-.user-info {
+.user-info, .questionnaire-info {
   width: 85%;
   padding: 2vw 6vw 2vw 8vw;
   background-color: white;
   margin: 0 auto;
 }
 
-.user-info-text {
+.user-info-text, .questionnaire-info-text {
   font-weight: bold;
   font-size: 20px;
   border-bottom: 1px solid #ddd;
 }
 
-.table {
-  margin-bottom: 32px;
+.user-info-layout {
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-table {
+  margin: 28px 0;
   width: 60%;
+}
+
+.questionnaire-table {
+  margin: 16px 0;
+  width: 65%;
 }
 
 .table-key{
@@ -29,7 +39,7 @@
   background: #fafafa;
   border-collapse: collapse;
   border: 2px solid #000;
-  width: 30%;
+  width: 35%;
   padding: 8px;
 }
 
@@ -37,6 +47,6 @@
   text-align: left;
   border: 2px solid #000;
   border-collapse: collapse;
-  width: 70%;
+  width: 65%;
   padding: 16px 8px;
 }
