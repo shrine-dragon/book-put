@@ -1,11 +1,11 @@
 <%= render 'shared/header' %>
 
 <div class="my-page-main">
-  <div class="user-info">
-    <h1 class="user-info-text">
-      ユーザー情報
+  <div class="my-page-info">
+    <h1 class="my-page-upper-text">
+      <span><%= @user.nickname %></span>さんの情報
     </h1>
-    <div class="user-info-layout">
+    <div class="my-page-layout">
       <table class="user-table">
         <tbody>
           <tr>
@@ -48,8 +48,9 @@
       </div>
     </div>
   </div>
-  <div class="questionnaire-info">
-    <h1 class="questionnaire-info-text">
+
+  <div class="my-page-info">
+    <h1 class="my-page-upper-text">
       アンケート情報
     </h1>
     <table class="questionnaire-table">
@@ -73,11 +74,52 @@
       </tbody>
     </table>
   </div>
-  <div class="book-list">
+
+  <div class="my-page-info">
+    <div class="my-page-upper-text">
+      投稿一覧
+    </div>
+    <% if @books.present? %>
+      <ul class="book-list">
+        <%= render 'books/book_list' %>
+      </ul>
+    <% else %>
+      <div class='no-post'>
+        <%= image_tag "business-ojigi-man.png", class: "no-result-image" %>
+        <p class='no-result-sentence'>投稿はありません</p>
+      </div>
+    <% end %>
+    <style>
+      .book-posted-user {
+        display: none;
+      }
+    </style>
   </div>
-  <div class="favorite-list">
+
+  <div class="my-page-info">
+    <div class="my-page-upper-text">
+      お気に入り一覧
+    </div>
+    <div class='no-post'>
+      <%= image_tag "dame-man.png", class: "no-result-image" %>
+      <p class='no-result-sentence'>投稿はありません</p>
+    </div>
   </div>
-  <div class="good-list">
+
+  <div class="my-page-info">
+    <div class="my-page-upper-text">
+      好評価した投稿
+    </div>
+    <div class='no-post'>
+      <%= image_tag "dame-woman.png", class: "no-result-image" %>
+      <p class='no-result-sentence'>投稿はありません</p>
+    </div>
+  </div>
+
+  <div class='go-back-btn'>
+    <%= link_to(root_path, class:'go-back-gray-btn', id:"gray-btn") do %>
+      <p class="go-back-btn-text">もどる</p>
+    <% end %>
   </div>
 </div>
 
