@@ -26,6 +26,7 @@ $(() => {
   // 省略記号ボタンをクリックした時のプルダウンイベントの設定（複数の要素の場合）
   const pullDownBtn = document.querySelectorAll('#ellipsis-btn-2');
   const pullDownMenu = document.querySelectorAll('#pull-down-multiple');
+  
   for ( let i = 0; i < pullDownBtn.length; i++) {
     pullDownBtn[i].addEventListener("click", () => {
       if (pullDownMenu[i].getAttribute("style") == "display: block;") {

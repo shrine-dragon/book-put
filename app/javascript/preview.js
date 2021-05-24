@@ -8,6 +8,7 @@ if (document.URL.match( /sign_up/ ) || document.URL.match( /edit/) || document.U
       // 表示する画像を生成
       const blobImage = document.createElement('img');
       blobImage.setAttribute('src', blob);
+
       // 生成したHTMLの要素をブラウザに表示させる
       imageElement.appendChild(blobImage);
       $('#image-list').append(imageElement);
@@ -19,8 +20,10 @@ if (document.URL.match( /sign_up/ ) || document.URL.match( /edit/) || document.U
       if (imageContent){
         imageContent.remove();
       }
+
       const file = e.target.files[0];
       const blob = window.URL.createObjectURL(file);
+      
       createImageHTML(blob);
     });
   });
