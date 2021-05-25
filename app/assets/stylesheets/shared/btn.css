@@ -97,8 +97,8 @@
 
 .login-orange-btn {
   width: 100%;
-  background: #F93;
-  border: 1px solid #F93;
+  background: #f93;
+  border: 1px solid #f93;
   color: #fff;
   line-height: 48px;
   font-size: 14px;
@@ -133,7 +133,7 @@
 
 .post-output-orange-btn {
   width: 100%;
-  background: #F93;
+  background: #f93;
   border: 1px solid #f93;
   color: #fff;
   line-height: 48px;
@@ -158,8 +158,8 @@
 
 .comment-yellow-btn {
   display: none;
-  color: #FFF;
-  background-color: #CCC;
+  color: #fff;
+  background-color: #ccc;
   border: 1px solid #000;
   padding: 0 8px;
   cursor: none;
@@ -167,7 +167,7 @@
 
 #more-btn {
   width: 120px;
-  background-color: #F93;
+  background-color: #f93;
   line-height: 32px;
   font-size: 14px;
   text-align: center;
@@ -209,7 +209,7 @@
   cursor: pointer;
 }
 
-/* 共通部分をまとめる */
+/* 共通部分 */
 .sign-in-btn, .sign-up-btn, .post-btn, .blue-next-btn, .blue-register-btn, .login-orange-btn, .go-back-btn, .post-output-orange-btn, .comment-yellow-btn, .post-edit-green-btn {
   border-radius: 5px;
 }

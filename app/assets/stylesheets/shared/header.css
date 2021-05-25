@@ -49,7 +49,7 @@
 .user-nickname {
   text-decoration: none;
   margin: 0 0.5vw 0 3vw;
-  color: #333333;
+  color: #333;
   font-weight: bold;
   cursor: pointer;
 }
@@ -81,7 +81,7 @@
 .search-list {
   text-decoration: none;
   margin: 0 20px 0 0.7vw;
-  color: #333333;
+  color: #333;
 }
 
 .pulldown-menu-text {

@@ -1,17 +1,17 @@
 #orange-btn:hover {
-  background-color:#FFAD90;
+  background-color:#ffad90;
 }
 
 #blue-btn:hover {
-  background-color:#6CF;
+  background-color:#6cf;
 }
 
 #list-text:hover {
-  color: #F93;
+  color: #f93;
 }
 
 #favorite-text:hover {
-  color: #FF66FF;
+  color: #ff66ff;
 }
 
 #link-text:hover {
@@ -19,7 +19,7 @@
 }
 
 #user-image:hover {
-  border: 1px solid #F93;
+  border: 1px solid #f93;
   background-color: #eee;
 }
 
@@ -28,19 +28,19 @@
 }
 
 #user-nickname-text:hover, #my-page-text:hover, #user-text:hover {
-  color: #0CF;
+  color: #0df;
 }
 
 #log-out-text:hover, #destroy-text:hover {
-  color: #FF0000;
+  color: #ff0000;
 }
 
 .book-list>.list:hover {
-  border-color: #F93;
+  border-color: #f93;
 }
 
 .pagination span:hover:not(.pagination span.current){
-  border-color: #F93;
+  border-color: #f93;
 }
 
 #ellipsis-btn:hover, #ellipsis-btn-2:hover {
@@ -60,5 +60,5 @@
 }
 
 #more-btn:hover {
-  background-color:#FFAD90;
+  background-color:#ffad90;
 }

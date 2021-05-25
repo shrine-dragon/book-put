@@ -6,14 +6,14 @@
   position: absolute;
   top: 20px;
   left: 15px;
-  background-color: white;
+  background-color: #fff;
   border: 1px solid;
   position: fixed;
 }
 
 .flash-post {
-  color: #F93;
-  border-color: #F93;
+  color: #f93;
+  border-color: #f93;
 }
 
 .flash-update {
