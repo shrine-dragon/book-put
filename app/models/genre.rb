@@ -15,6 +15,7 @@ class Genre < ActiveHash::Base
     { id: 23, name: '転生' },         { id: 24, name: 'その他' }
   ]
   include ActiveHash::Associations
+  
   has_many :questionnaires
   has_many :books
 end

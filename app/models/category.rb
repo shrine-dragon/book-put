@@ -12,6 +12,7 @@ class Category < ActiveHash::Base
     { id: 9, name: 'その他' }
   ]
   include ActiveHash::Associations
+  
   has_many :questionnaires
   has_many :books
 end

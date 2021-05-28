@@ -6,5 +6,6 @@ class ReadingMedia < ActiveHash::Base
     { id: 3, name: 'その他' }
   ]
   include ActiveHash::Associations
+  
   has_many :questionnaires
 end
