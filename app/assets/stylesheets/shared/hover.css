@@ -23,7 +23,7 @@
   background-color: #eee;
 }
 
-.go-back-btn:hover {
+.return-btn:hover, .return-top-page-btn:hover {
   background-color: #ddd;
 }
 
