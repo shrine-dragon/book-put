@@ -66,6 +66,11 @@
   white-space: pre-line;
 }
 
+.book-table {
+  margin: 28px 0;
+  width: 60%;
+}
+
 .book-comments {
   width: 80%;
   background-color: #fff;

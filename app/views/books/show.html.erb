@@ -76,14 +76,22 @@
       <h1 class='detail-catch-copy'>
         「<%= @book.catch_copy %>」
       </h1>
-      <div class='detail-content'>
-        <%= @book.content %>
-      </div>
-      <% if @book.highlight.present? %>
-        <div class='detail-highlight'>
-          <%= @book.highlight %>
-        </div>
-      <% end %>
+      <table class="book-table">
+        <tr>
+          <th class="table-key">内容</th>
+        </tr>
+        <tr>
+          <td class="table-value"><%= @book.content %></td>
+        </tr>
+        <% if @book.highlight.present?%>        
+          <tr>
+            <th class="table-key">見どころ</th>
+          </tr>
+          <tr>
+            <td class="table-value"><%= @book.highlight %></td>
+          </tr>
+        <% end %>
+      </table>
       <div class='return-btn'>
         <%= link_to(root_path, class:'return-gray-btn', id:"gray-btn") do %>
           <p class="return-btn-text">もどる</p>
