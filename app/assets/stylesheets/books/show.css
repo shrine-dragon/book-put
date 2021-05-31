@@ -61,9 +61,8 @@
 }
 
 .book-table {
-  margin: 28px 0;
-  width: 60%;
-  margin-left: 16.5vw;
+  margin: 28px auto;
+  width: 75%;
   white-space: pre-line;
 }
 
