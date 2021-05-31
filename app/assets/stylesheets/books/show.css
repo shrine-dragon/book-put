@@ -60,15 +60,11 @@
   text-align: center;
 }
 
-.detail-content, .detail-highlight {
-  width: 60vw;
-  margin-left: 16.5vw;
-  white-space: pre-line;
-}
-
 .book-table {
   margin: 28px 0;
   width: 60%;
+  margin-left: 16.5vw;
+  white-space: pre-line;
 }
 
 .book-comments {
