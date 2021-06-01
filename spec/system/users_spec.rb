@@ -107,3 +107,21 @@ RSpec.describe 'ログイン', type: :system do
     end
   end
 end
+
+RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+  end
+  
+  context '' do
+    it 'ログインしているユーザーはマイページへ遷移でき、ユーザー情報を閲覧できる' do
+      # ログインする
+      sign_in(@user)
+      binding.pry
+      # トップページにユーザー名が表示されていることを確認する
+      expect(page).to have_content(@user.nickname)
+      click_on(@user.nickname)
+      expect(current_path).to eq(user_path(@user.id))
+    end
+  end
+end
