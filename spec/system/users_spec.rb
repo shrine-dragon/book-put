@@ -113,11 +113,10 @@ RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
     @user = FactoryBot.create(:user)
   end
   
-  context '' do
+  context 'マイページへ遷移できる時' do
     it 'ログインしているユーザーはマイページへ遷移でき、ユーザー情報を閲覧できる' do
       # ログインする
       sign_in(@user)
-      binding.pry
       # トップページにユーザー名が表示されていることを確認する
       expect(page).to have_content(@user.nickname)
       click_on(@user.nickname)
