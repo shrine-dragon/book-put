@@ -111,6 +111,8 @@ end
 RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
   before do
     @user = FactoryBot.create(:user)
+    @questionnaire = FactoryBot.create(:questionnaire)
+    @book = FactoryBot.create(:book, user_id: @user.id)
   end
   
   context 'マイページへ遷移できる時' do
@@ -119,8 +121,17 @@ RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
       sign_in(@user)
       # トップページにユーザー名が表示されていることを確認する
       expect(page).to have_content(@user.nickname)
+      # ユーザー名をクリックするとマイページへ遷移することを確認する
       click_on(@user.nickname)
       expect(current_path).to eq(user_path(@user.id))
+      # マイページにはユーザー情報が存在することを確認する
+      expect(page).to have_content(@user.nickname && @user.gender.name && @user.birth_day && @user.email)
+      # マイページにはアンケート情報が存在することを確認する
+      expect(page).to have_content(@questionnaire.category.name && @questionnaire.genre.name && @questionnaire.purchase_place.name && @questionnaire.reading_media.name)
+      # マイページには投稿した内容が存在することを確認する（画像、投稿時刻）
+      expect(page).to have_selector("img[src$='test_image.png']" && ".book-posted-time")
+      # マイページには投稿した内容が存在することを確認する（タイトル）
+      expect(page).to have_content(@book.title)
     end
   end
 end
