@@ -134,4 +134,12 @@ RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
       expect(page).to have_content(@book.title)
     end
   end
+
+  context 'マイページへ遷移できない時' do
+    it 'ログインしていないユーザーはマイページへ遷移できない' do
+      visit root_path
+      # トップページにユーザー名が表示されていないことを確認する
+      expect(page).to have_no_content(".user-nickname")
+    end
+  end
 end
