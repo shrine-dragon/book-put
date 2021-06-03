@@ -120,7 +120,7 @@ RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
       # ログインする
       sign_in(@user)
       # トップページにユーザー名が表示されていることを確認する
-      expect(page).to have_content(@user.nickname)
+      expect(page).to have_link(@user.nickname), href: user_path(@user.id)
       # ユーザー名をクリックするとマイページへ遷移することを確認する
       click_on(@user.nickname)
       expect(current_path).to eq(user_path(@user.id))
@@ -141,5 +141,40 @@ RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
       # トップページにユーザー名が表示されていないことを確認する
       expect(page).to have_no_content(".user-nickname")
     end
+  end
+end
+
+RSpec.describe 'マイページ編集', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+    @questionnaire = FactoryBot.create(:questionnaire)
+  end
+
+  it 'ログインしているユーザーはマイページへ遷移でき、ユーザー情報を閲覧できる' do
+    # ログインする
+    sign_in(@user)
+    # トップページにユーザー名が表示されていることを確認する
+    expect(page).to have_content(@user.nickname)
+    # ユーザー名をクリックするとマイページへ遷移することを確認する
+    click_on(@user.nickname)
+    expect(current_path).to eq(user_path(@user.id))
+    # マイページにはユーザー情報が存在することを確認する
+    expect(page).to have_content(@user.nickname && @user.gender.name && @user.birth_day && @user.email)
+    # マイページに「編集」ボタンがあることを確認する
+    find('#ellipsis-btn').click
+    expect(page).to have_link '編集', href: edit_user_path(@user.id)
+    # 編集ページへ遷移する
+    click_on('編集')
+    expect(current_path).to eq(edit_user_path(@user.id))
+    # すでに登録済みの内容がフォームに入っていることを確認する
+    expect(
+      find('#nickname').value
+    ).to eq(@user.nickname)
+    expect(
+      find('#user-gender').value
+    ).to eq(@user.gender_id.to_s)
+    expect(
+      find('#email').value
+    ).to eq(@user.email)
   end
 end
