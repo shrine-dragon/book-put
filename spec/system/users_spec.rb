@@ -148,6 +148,7 @@ RSpec.describe 'マイページ編集', type: :system do
   before do
     @user = FactoryBot.create(:user)
     @questionnaire = FactoryBot.create(:questionnaire)
+    sleep 0.1
   end
 
   it 'ログインしているユーザーはマイページへ遷移でき、ユーザー情報を閲覧できる' do
@@ -176,5 +177,25 @@ RSpec.describe 'マイページ編集', type: :system do
     expect(
       find('#email').value
     ).to eq(@user.email)
+    # ユーザー情報を編集する
+    fill_in 'user[nickname]', with: "#{@user.nickname}+編集"
+    select '男', from: 'user[gender_id]'
+    select '1930', from: 'user[birth_day(1i)]'
+    select '1', from: 'user[birth_day(2i)]'
+    select '1', from: 'user[birth_day(3i)]'
+    fill_in 'user[email]', with: "#{@user.email}abcde"
+    fill_in 'user[password]', with: @user.password
+    fill_in 'user[password_confirmation]', with: @user.password_confirmation
+    # 確定ボタンを押すと編集完了ページ（ログインページ）へ遷移したことを確認する
+    click_on('確定する')
+    expect(current_path).to eq(user_session_path)
+    # 再びログインする
+    fill_in 'user[email]', with: "#{@user.email}abcde"
+    fill_in 'user[password]', with: @user.password
+    click_on('ログイン')
+    # マイページへ遷移したことを確認する
+    expect(current_path).to eq(user_path(@user.id))
+    # マイページには先ほど変更した内容が存在することを確認する（ニックネーム、性別、生年月日、メールアドレス）
+    expect(page).to have_content(@user.nickname && @user.gender.name && @user.birth_day && @user.email)
   end
 end
