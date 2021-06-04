@@ -120,13 +120,8 @@ RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
       # ログインする
       sign_in(@user)
       # トップページにユーザー名が表示されていることを確認する
-<<<<<<< Updated upstream
-      expect(page).to have_content(@user.nickname)
-      # ユーザー名をクリックするとマイページへ遷移することを確認する
-=======
       expect(page).to have_link(@user.nickname), href: user_path(@user.id)
       # ユーザー名を押すとマイページへ遷移することを確認する
->>>>>>> Stashed changes
       click_on(@user.nickname)
       expect(current_path).to eq(user_path(@user.id))
       # マイページにはユーザー情報・アンケート情報・投稿内容が存在することを確認する
@@ -156,8 +151,6 @@ RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
       expect(page).to have_no_content(".user-nickname")
     end
   end
-<<<<<<< Updated upstream
-=======
 end
 
 RSpec.describe 'マイページ編集', type: :system do
@@ -213,5 +206,4 @@ RSpec.describe 'マイページ編集', type: :system do
     # マイページには先ほど変更した内容が存在することを確認する（ニックネーム、性別、生年月日、メールアドレス）
     expect(page).to have_content(@user.nickname && @user.gender.name && @user.birth_day && @user.email)
   end
->>>>>>> Stashed changes
 end
