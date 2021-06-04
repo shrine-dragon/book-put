@@ -116,22 +116,36 @@ RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
   end
   
   context 'マイページへ遷移できる時' do
-    it 'ログインしているユーザーはマイページへ遷移でき、ユーザー情報を閲覧できる' do
+    it 'ログインしているユーザーはユーザー名を押すとマイページへ遷移でき、ユーザー情報を閲覧できる' do
       # ログインする
       sign_in(@user)
       # トップページにユーザー名が表示されていることを確認する
+<<<<<<< Updated upstream
       expect(page).to have_content(@user.nickname)
       # ユーザー名をクリックするとマイページへ遷移することを確認する
+=======
+      expect(page).to have_link(@user.nickname), href: user_path(@user.id)
+      # ユーザー名を押すとマイページへ遷移することを確認する
+>>>>>>> Stashed changes
       click_on(@user.nickname)
       expect(current_path).to eq(user_path(@user.id))
-      # マイページにはユーザー情報が存在することを確認する
-      expect(page).to have_content(@user.nickname && @user.gender.name && @user.birth_day && @user.email)
-      # マイページにはアンケート情報が存在することを確認する
-      expect(page).to have_content(@questionnaire.category.name && @questionnaire.genre.name && @questionnaire.purchase_place.name && @questionnaire.reading_media.name)
-      # マイページには投稿した内容が存在することを確認する（画像、投稿時刻）
-      expect(page).to have_selector("img[src$='test_image.png']" && ".book-posted-time")
-      # マイページには投稿した内容が存在することを確認する（タイトル）
-      expect(page).to have_content(@book.title)
+      # マイページにはユーザー情報・アンケート情報・投稿内容が存在することを確認する
+      have_my_page_info(@user, @questionnaire)
+    end
+
+    it 'ログインしているユーザーはマイページボタンを押すとマイページへ遷移でき、ユーザー情報を閲覧できる' do
+      # ログインする
+      sign_in(@user)
+      # トップページにユーザー画像が存在していることを確認する
+      expect(page).to have_selector("#user-image")
+      # ユーザー画像を押すとプルダウンメニューが表示されることを確認する
+      find("#user-image").click
+      expect(page).to have_link('マイページ'), href: user_path(@user.id)
+      # マイページボタンを押すとマイページへ遷移することを確認する
+      click_on('マイページ')
+      expect(current_path).to eq(user_path(@user.id))
+      # マイページにはユーザー情報・アンケート情報・投稿内容が存在することを確認する
+      have_my_page_info(@user, @questionnaire)
     end
   end
 
@@ -142,4 +156,62 @@ RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
       expect(page).to have_no_content(".user-nickname")
     end
   end
+<<<<<<< Updated upstream
+=======
+end
+
+RSpec.describe 'マイページ編集', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+    @questionnaire = FactoryBot.create(:questionnaire)
+  end
+
+  it 'ログインしているユーザーはマイページへ遷移でき、ユーザー情報を編集できる' do
+    # ログインする
+    sign_in(@user)
+    # トップページにユーザー名が表示されていることを確認する
+    expect(page).to have_content(@user.nickname)
+    # ユーザー名を押すとマイページへ遷移することを確認する
+    click_on(@user.nickname)
+    expect(current_path).to eq(user_path(@user.id))
+    # マイページにユーザー情報が存在することを確認する
+    expect(page).to have_content(@user.nickname && @user.gender.name && @user.birth_day && @user.email)
+    # マイページに「編集」ボタンがあることを確認する
+    find('#ellipsis-btn').click
+    expect(page).to have_link '編集', href: edit_user_path(@user.id)
+    # 編集ページへ遷移する
+    click_on('編集')
+    expect(current_path).to eq(edit_user_path(@user.id))
+    # すでに登録済みの内容がフォームに入っていることを確認する
+    expect(
+      find('#nickname').value
+    ).to eq(@user.nickname)
+    expect(
+      find('#user-gender').value
+    ).to eq(@user.gender_id.to_s)
+    expect(
+      find('#email').value
+    ).to eq(@user.email)
+    # ユーザー情報を編集する
+    fill_in 'user[nickname]', with: "#{@user.nickname}+編集"
+    select '男', from: 'user[gender_id]'
+    select '1930', from: 'user[birth_day(1i)]'
+    select '1', from: 'user[birth_day(2i)]'
+    select '1', from: 'user[birth_day(3i)]'
+    fill_in 'user[email]', with: "#{@user.email}abcde"
+    fill_in 'user[password]', with: @user.password
+    fill_in 'user[password_confirmation]', with: @user.password_confirmation
+    # 確定ボタンを押すと編集完了ページ（ログインページ）へ遷移したことを確認する
+    click_on('確定する')
+    expect(current_path).to eq(user_session_path)
+    # 再びログインする
+    fill_in 'user[email]', with: "#{@user.email}abcde"
+    fill_in 'user[password]', with: @user.password
+    click_on('ログイン')
+    # マイページへ遷移したことを確認する
+    expect(current_path).to eq(user_path(@user.id))
+    # マイページには先ほど変更した内容が存在することを確認する（ニックネーム、性別、生年月日、メールアドレス）
+    expect(page).to have_content(@user.nickname && @user.gender.name && @user.birth_day && @user.email)
+  end
+>>>>>>> Stashed changes
 end
