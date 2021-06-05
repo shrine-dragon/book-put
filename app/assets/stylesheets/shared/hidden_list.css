@@ -36,5 +36,6 @@
 .hidden-lists-4 {
   width: 9vw;
   left: 82.5vw;
-  padding: 3px 0;
+  padding: 8px 0;
+  align-items: center;
 }

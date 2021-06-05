@@ -43,6 +43,14 @@
                 </span>
               <% end %>
             </li>
+          <hr>
+          <li>
+            <%= link_to(user_path(@user.id), class:"destroy", method: :delete, data: { confirm: "退会します。本当によろしいですか？" }) do %>
+              <span class="pulldown-menu-text", id="destroy-text">
+                退会<i class="fas fa-trash"></i>
+              </span>
+            <% end %>
+          </li>            
           <% end %>
         </ul>
       </div>
