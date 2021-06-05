@@ -19,6 +19,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    if @user.destroy
+      redirect_to root_path, flash: { delete: "ご利用ありがとうございました。" }
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(:nickname, :gender_id, :birth_day, :email, :password)

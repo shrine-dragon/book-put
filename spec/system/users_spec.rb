@@ -108,6 +108,41 @@ RSpec.describe 'ログイン', type: :system do
   end
 end
 
+RSpec.describe 'ログアウト', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+  end
+
+  context 'ログアウトができるとき' do
+    it 'ログインしているユーザーはログアウトできる' do
+      # ログインする
+      sign_in(@user)
+      # トップページにユーザー画像が存在していることを確認する
+      expect(page).to have_selector("#user-image")
+      # ユーザー画像を押すとプルダウンメニューが表示されることを確認する
+      find("#user-image").click
+      # プルダウンメニュー内にログアウトボタンが存在することを確認する
+      expect(page).to have_link('ログアウト'), href: destroy_user_session_path
+      # ログアウトボタンを押すとトップページへ遷移することを確認する
+      page.accept_confirm do
+        find(".log-out").click
+      end
+      expect(current_path).to eq(root_path)
+      # トップページにユーザー情報が表示されていないことを確認する
+      have_no_info
+    end
+  end
+
+  context 'ログアウトができないとき' do
+    it 'ログインしていないユーザーはログアウトできない' do
+      # トップページへ遷移する
+      visit root_path
+      # トップページにユーザー画像が存在していないことを確認する
+      expect(page).to have_no_selector("#user-image")
+    end
+  end
+end
+
 RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
   before do
     @user = FactoryBot.create(:user)
@@ -146,64 +181,107 @@ RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
 
   context 'マイページへ遷移できない時' do
     it 'ログインしていないユーザーはマイページへ遷移できない' do
+      # トップページへ遷移する
       visit root_path
-      # トップページにユーザー名が表示されていないことを確認する
-      expect(page).to have_no_content(".user-nickname")
+      # トップページにユーザー情報が表示されていないことを確認する
+      have_no_info
     end
   end
 end
 
-RSpec.describe 'マイページ編集', type: :system do
+RSpec.describe 'ユーザー情報編集', type: :system do
   before do
     @user = FactoryBot.create(:user)
     @questionnaire = FactoryBot.create(:questionnaire)
   end
+  
+  context 'ユーザー情報の編集ができる時' do
+    it 'ログインしているユーザーはマイページへ遷移でき、ユーザー情報を編集できる' do
+      # ログインしてユーザー編集ページへ遷移する
+      edit_action(@user)
+      # ユーザー情報を編集する
+      fill_in 'user[nickname]', with: "#{@user.nickname}+編集"
+      select '男', from: 'user[gender_id]'
+      select '1930', from: 'user[birth_day(1i)]'
+      select '1', from: 'user[birth_day(2i)]'
+      select '1', from: 'user[birth_day(3i)]'
+      fill_in 'user[email]', with: "#{@user.email}abcde"
+      fill_in 'user[password]', with: @user.password
+      fill_in 'user[password_confirmation]', with: @user.password_confirmation
+      # 確定ボタンを押すと編集完了ページ（ログインページ）へ遷移したことを確認する
+      click_on('確定する')
+      expect(current_path).to eq(user_session_path)
+      # 再びログインする
+      fill_in 'user[email]', with: "#{@user.email}abcde"
+      fill_in 'user[password]', with: @user.password
+      click_on('ログイン')
+      # マイページへ遷移したことを確認する
+      expect(current_path).to eq(user_path(@user.id))
+      # マイページには先ほど変更した内容が存在することを確認する（ニックネーム、性別、生年月日、メールアドレス）
+      expect(page).to have_content(@user.nickname && @user.gender.name && @user.birth_day && @user.email)
+    end
+  end
 
-  it 'ログインしているユーザーはマイページへ遷移でき、ユーザー情報を編集できる' do
-    # ログインする
-    sign_in(@user)
-    # トップページにユーザー名が表示されていることを確認する
-    expect(page).to have_content(@user.nickname)
-    # ユーザー名を押すとマイページへ遷移することを確認する
-    click_on(@user.nickname)
-    expect(current_path).to eq(user_path(@user.id))
-    # マイページにユーザー情報が存在することを確認する
-    expect(page).to have_content(@user.nickname && @user.gender.name && @user.birth_day && @user.email)
-    # マイページに「編集」ボタンがあることを確認する
-    find('#ellipsis-btn').click
-    expect(page).to have_link '編集', href: edit_user_path(@user.id)
-    # 編集ページへ遷移する
-    click_on('編集')
-    expect(current_path).to eq(edit_user_path(@user.id))
-    # すでに登録済みの内容がフォームに入っていることを確認する
-    expect(
-      find('#nickname').value
-    ).to eq(@user.nickname)
-    expect(
-      find('#user-gender').value
-    ).to eq(@user.gender_id.to_s)
-    expect(
-      find('#email').value
-    ).to eq(@user.email)
-    # ユーザー情報を編集する
-    fill_in 'user[nickname]', with: "#{@user.nickname}+編集"
-    select '男', from: 'user[gender_id]'
-    select '1930', from: 'user[birth_day(1i)]'
-    select '1', from: 'user[birth_day(2i)]'
-    select '1', from: 'user[birth_day(3i)]'
-    fill_in 'user[email]', with: "#{@user.email}abcde"
-    fill_in 'user[password]', with: @user.password
-    fill_in 'user[password_confirmation]', with: @user.password_confirmation
-    # 確定ボタンを押すと編集完了ページ（ログインページ）へ遷移したことを確認する
-    click_on('確定する')
-    expect(current_path).to eq(user_session_path)
-    # 再びログインする
-    fill_in 'user[email]', with: "#{@user.email}abcde"
-    fill_in 'user[password]', with: @user.password
-    click_on('ログイン')
-    # マイページへ遷移したことを確認する
-    expect(current_path).to eq(user_path(@user.id))
-    # マイページには先ほど変更した内容が存在することを確認する（ニックネーム、性別、生年月日、メールアドレス）
-    expect(page).to have_content(@user.nickname && @user.gender.name && @user.birth_day && @user.email)
+  context 'マイページ編集ができない時' do
+    it 'ログインしているユーザーはユーザー情報を編集できるが、空欄の状態では更新できない' do
+      # ログインしてマイページ編集ページへ遷移する
+      edit_action(@user)
+      # ユーザー情報を全て空欄にする
+      fill_in 'user[nickname]', with: ""
+      select '--', from: 'user[gender_id]'
+      select '--', from: 'user[birth_day(1i)]'
+      select '--', from: 'user[birth_day(2i)]'
+      select '--', from: 'user[birth_day(3i)]'
+      fill_in 'user[email]', with: ""
+      fill_in 'user[password]', with: ""
+      fill_in 'user[password_confirmation]', with: ""
+      # 確定ボタンを押してもユーザー情報編集ページへ戻されることを確認する
+      click_on('確定する')
+      expect(current_path).to eq(user_path(@user.id))
+      # エラーメッセージが表示されていることを確認する
+      expect(page).to have_css '.field_with_errors'
+    end 
+  end
+end
+
+RSpec.describe '退会', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+    @questionnaire = FactoryBot.create(:questionnaire)
+    @book = FactoryBot.create(:book, user_id: @user.id)
+    @comment = FactoryBot.create(:comment, user_id: @user.id)
+  end
+
+  context '退会ができる時' do
+    it 'ログインしているユーザーは退会できる' do
+      # ログインする
+      sign_in(@user)
+      # トップページにユーザー名が表示されていることを確認する
+      expect(page).to have_link(@user.nickname), href: user_path(@user.id)
+      # ユーザー名を押すとマイページへ遷移することを確認する
+      click_on(@user.nickname)
+      expect(current_path).to eq(user_path(@user.id))
+      # プルダウンメニュー内に退会ボタンがあることを確認する
+      find('#ellipsis-btn').click
+      expect(page).to have_link('退会'), href: user_path(@user.id)
+      # 退会するとレコードの数が1減ることを確認する
+      page.accept_confirm do
+        find(".leave").click
+      end
+      change { User.count && Book.count && Comment.count }.by(-1)
+      # トップページへ遷移することを確認する
+      expect(current_path).to eq(root_path)
+      # トップページにユーザー情報が表示されていないことを確認する
+      have_no_info
+    end
+  end
+
+  context '退会ができないとき' do
+    it 'ログインしていないユーザーは退会できない' do
+      # トップページへ遷移する
+      visit root_path
+      # トップページにユーザー情報が表示されていないことを確認する
+      have_no_info
+    end
   end
 end

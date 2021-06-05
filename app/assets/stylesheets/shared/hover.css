@@ -31,7 +31,7 @@
   color: #0df;
 }
 
-#log-out-text:hover, #destroy-text:hover {
+#log-out-text:hover, #destroy-text:hover, #leave-text:hover {
   color: #ff0000;
 }
 

@@ -99,7 +99,7 @@ RSpec.describe '投稿編集', type: :system do
     sleep 0.1
   end
 
-  context '投稿を編集できるとき' do
+  context '投稿の編集ができるとき' do
     it 'ログインしているユーザーは自分が投稿した書籍内容を編集できる' do
       # 書籍1を投稿したユーザーでログインする
       sign_in(@book1.user)
@@ -153,7 +153,7 @@ RSpec.describe '投稿編集', type: :system do
     end
   end
 
-  context '投稿を編集できないとき' do
+  context '投稿の編集ができないとき' do
     it 'ログインしているユーザーは自分以外が投稿した書籍を編集できない' do
       # 書籍1を投稿したユーザーでログインする
       sign_in(@book1.user)
@@ -188,7 +188,7 @@ RSpec.describe '投稿削除', type: :system do
     sleep 0.1
   end
 
-  context '投稿削除ができるとき' do
+  context '投稿の削除ができるとき' do
     it 'ログインしているユーザーは自分が投稿した書籍を削除できる' do
       # 書籍1を投稿したユーザーでログインする
       sign_in(@book1.user)
@@ -202,7 +202,7 @@ RSpec.describe '投稿削除', type: :system do
         find("#destroy-text").click
       end
       change { Book.count }.by(-1)
-      # トップページに遷移する
+      # トップページへ遷移する
       expect(current_path).to eq(root_path)
       # トップページには書籍1の内容が存在しないことを確認する（画像）
       expect(page).to have_no_selector("img[src$='test_image2.png']")
@@ -212,7 +212,7 @@ RSpec.describe '投稿削除', type: :system do
     end
   end
 
-  context '投稿削除ができないとき' do
+  context '投稿の削除ができないとき' do
     it 'ログインしているユーザーは自分以外が投稿した書籍を削除できない' do
       # 書籍1を投稿したユーザーでログインする
       sign_in(@book1.user)
