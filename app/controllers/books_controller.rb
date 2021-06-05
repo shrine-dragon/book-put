@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   before_action :move_to_root_path,    only: [:edit, :update, :destroy]
 
   def index
-    @books = Book.includes(:user).order('created_at DESC').page(params[:page]).per(3)
+    @books = Book.includes(:user).order('created_at desc').page(params[:page]).per(3)
 
     respond_to do |format|
       format.html
