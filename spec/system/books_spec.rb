@@ -202,7 +202,7 @@ RSpec.describe '投稿削除', type: :system do
         find("#destroy-text").click
       end
       change { Book.count }.by(-1)
-      # トップページに遷移する
+      # トップページへ遷移する
       expect(current_path).to eq(root_path)
       # トップページには書籍1の内容が存在しないことを確認する（画像）
       expect(page).to have_no_selector("img[src$='test_image2.png']")

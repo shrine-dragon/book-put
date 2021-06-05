@@ -1,7 +1,12 @@
 require 'rails_helper'
+RSpec.describe UsersController, type: :request do
+  before do
+    @user = FactoryBot.create(:user)
+  end
 
-RSpec.describe "Users", type: :request do
-  describe "GET /index" do
-    pending "add some examples (or delete) #{__FILE__}"
+  describe "GET #show" do
+    it 'showアクションにリクエストすると正常にレスポンスが返ってくる' do
+      get user_path(@user.id)
+    end
   end
 end

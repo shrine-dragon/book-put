@@ -108,6 +108,42 @@ RSpec.describe 'ログイン', type: :system do
   end
 end
 
+RSpec.describe 'ログアウト', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+  end
+
+  context 'ログアウトができるとき' do
+    it 'ログインしているユーザーはログアウトできる' do
+      # ログインする
+      sign_in(@user)
+      # トップページにユーザー画像が存在していることを確認する
+      expect(page).to have_selector("#user-image")
+      # ユーザー画像を押すとプルダウンメニューが表示されることを確認する
+      find("#user-image").click
+      expect(page).to have_link('ログアウト'), href: destroy_user_session_path
+      # ログアウトボタンを押すとトップページへ遷移することを確認する
+      page.accept_confirm do
+        find(".log-out").click
+      end
+      expect(current_path).to eq(root_path)
+      # トップページにユーザー名が表示されていないことを確認する
+      expect(page).to have_no_content(".user-nickname")
+      # トップページにユーザー画像が存在していないことを確認する
+      expect(page).to have_no_selector("#user-image")
+    end
+  end
+
+  context 'ログアウトができないとき' do
+    it 'ログインしていないユーザーはログアウトできない' do
+      # トップページへ遷移する
+      visit root_path
+      # トップページにユーザー画像が存在していないことを確認する
+      expect(page).to have_no_selector("#user-image")
+    end
+  end
+end
+
 RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
   before do
     @user = FactoryBot.create(:user)
