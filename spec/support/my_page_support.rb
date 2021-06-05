@@ -26,4 +26,9 @@ module MyPageSupport
       find('#email').value
     ).to eq(user.email)
   end
+
+  def have_no_info
+    expect(page).to have_no_content(".user-nickname")
+    expect(page).to have_no_selector("#user-image")
+  end
 end

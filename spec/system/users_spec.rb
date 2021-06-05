@@ -121,16 +121,15 @@ RSpec.describe 'ログアウト', type: :system do
       expect(page).to have_selector("#user-image")
       # ユーザー画像を押すとプルダウンメニューが表示されることを確認する
       find("#user-image").click
+      # プルダウンメニュー内にログアウトボタンが存在することを確認する
       expect(page).to have_link('ログアウト'), href: destroy_user_session_path
       # ログアウトボタンを押すとトップページへ遷移することを確認する
       page.accept_confirm do
         find(".log-out").click
       end
       expect(current_path).to eq(root_path)
-      # トップページにユーザー名が表示されていないことを確認する
-      expect(page).to have_no_content(".user-nickname")
-      # トップページにユーザー画像が存在していないことを確認する
-      expect(page).to have_no_selector("#user-image")
+      # トップページにユーザー情報が表示されていないことを確認する
+      have_no_info
     end
   end
 
@@ -182,9 +181,10 @@ RSpec.describe 'ユーザー情報詳細（マイページ）', type: :system do
 
   context 'マイページへ遷移できない時' do
     it 'ログインしていないユーザーはマイページへ遷移できない' do
+      # トップページへ遷移する
       visit root_path
-      # トップページにユーザー名が表示されていないことを確認する
-      expect(page).to have_no_content(".user-nickname")
+      # トップページにユーザー情報が表示されていないことを確認する
+      have_no_info
     end
   end
 end
@@ -241,5 +241,47 @@ RSpec.describe 'ユーザー情報編集', type: :system do
       # エラーメッセージが表示されていることを確認する
       expect(page).to have_css '.field_with_errors'
     end 
+  end
+end
+
+RSpec.describe '退会', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+    @questionnaire = FactoryBot.create(:questionnaire)
+    @book = FactoryBot.create(:book, user_id: @user.id)
+    @comment = FactoryBot.create(:comment, user_id: @user.id)
+  end
+
+  context '退会ができる時' do
+    it 'ログインしているユーザーは退会できる' do
+      # ログインする
+      sign_in(@user)
+      # トップページにユーザー名が表示されていることを確認する
+      expect(page).to have_link(@user.nickname), href: user_path(@user.id)
+      # ユーザー名を押すとマイページへ遷移することを確認する
+      click_on(@user.nickname)
+      expect(current_path).to eq(user_path(@user.id))
+      # プルダウンメニュー内に退会ボタンがあることを確認する
+      find('#ellipsis-btn').click
+      expect(page).to have_link('退会'), href: user_path(@user.id)
+      # 退会するとレコードの数が1減ることを確認する
+      page.accept_confirm do
+        find(".leave").click
+      end
+      change { User.count && Book.count && Comment.count }.by(-1)
+      # トップページへ遷移することを確認する
+      expect(current_path).to eq(root_path)
+      # トップページにユーザー情報が表示されていないことを確認する
+      have_no_info
+    end
+  end
+
+  context '退会ができないとき' do
+    it 'ログインしていないユーザーは退会できない' do
+      # トップページへ遷移する
+      visit root_path
+      # トップページにユーザー情報が表示されていないことを確認する
+      have_no_info
+    end
   end
 end
