@@ -10,6 +10,10 @@
   <p class='flash-post', id='flash-message'>
     <%= flash[:post] %>
   </p>
+<% elsif flash[:add] %>
+  <p class='flash-add', id='flash-message'>
+    <%= flash[:add] %>
+  </p>
 <% end %>
 
 <%= render 'shared/second_header' %>
