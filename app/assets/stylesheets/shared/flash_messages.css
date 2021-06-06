@@ -1,4 +1,4 @@
-.flash-post, .flash-update, .flash-delete {
+.flash-post, .flash-update, .flash-delete, .flash-add {
   font-weight: bold;
   font-size: 14px;
   padding: 6px 12px;
@@ -23,4 +23,9 @@
 .flash-delete {
   color: #f00;
   border-color: #f00;
+}
+
+.flash-add {
+  color: #ff66ff;
+  border-color: #ff66ff;
 }
