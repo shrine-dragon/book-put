@@ -5,8 +5,9 @@ class User < ApplicationRecord
   has_one_attached       :image
   has_one                :questionnaire
   belongs_to_active_hash :gender
-  has_many               :books,    dependent: :destroy
-  has_many               :comments, dependent: :destroy
+  has_many :books,     dependent: :destroy
+  has_many :comments,  dependent: :destroy
+  has_many :favorites, dependent: :destroy
 
   with_options presence: true do
     validates :nickname, length: { maximum: 10 }

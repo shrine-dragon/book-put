@@ -36,8 +36,12 @@
         <% end %>
       </h1>
       <ul class='font-three-btn'>
-        <li><i class="fas fa-thumbs-up"  id='good-btn'></i></li>
-        <li><i class="far fa-heart"      id='favorite-btn'></i></li>
+        <% if user_signed_in? %>
+          <li><i class="fas fa-thumbs-up"  id='good-btn'></i></li>
+          <div class="favorites_heart" id="book_<%= @book.id %>">
+            <%= render "favorites/favorite", book: @book %> 
+          </div>
+        <% end %>
         <li><i class="fas fa-ellipsis-h" id='ellipsis-btn'></i></li>
       </ul>
       <ul class="hidden-lists-2", id="pull-down-singular-2">
