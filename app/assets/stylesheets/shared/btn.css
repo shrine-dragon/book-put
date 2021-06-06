@@ -162,6 +162,11 @@
   font-family: FontAwesome;
 }
 
+.fa-heart {
+  font-family: FontAwesome;
+  color: #999;
+}
+
 .comment-yellow-btn {
   display: none;
   color: #fff;

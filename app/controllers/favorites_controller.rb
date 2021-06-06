@@ -1,16 +1,17 @@
 class FavoritesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_book,
-  before_action :move_to_root_path
 
   def create
-    if @book.user_id != current_user.id
-      @favorite = Favorite.create(user_id: current_user.id, book_id: @book.id)
-    end
+    @favorite = Favorite.new(user_id: current_user.id, book_id: params[:book_id])
+    @favorite.save
+    redirect_to root_path
   end
 
   def destroy
-    @favorite = Favorite.find_by(user_id: current_user.id, book_id: @book.id)
+    @favorite = current_user.favorites.find_by(book_id: @book.id)
+    @favorite.destroy
+    redirect_to root_path
   end
 
   private

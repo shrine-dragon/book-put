@@ -13,6 +13,10 @@ class Book < ApplicationRecord
     end
   end
 
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
+
   belongs_to_active_hash :category
   belongs_to_active_hash :genre
 
