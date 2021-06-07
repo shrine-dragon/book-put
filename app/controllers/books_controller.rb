@@ -5,7 +5,7 @@ class BooksController < ApplicationController
 
   def index
     @books = Book.includes(:user).order('created_at desc').page(params[:page]).per(3)
-
+    
     respond_to do |format|
       format.html
       format.js
