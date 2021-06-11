@@ -42,7 +42,7 @@
       <ul class='font-three-btn'>
         <% if user_signed_in? %>
           <li><i class="fas fa-thumbs-up"  id='good-btn'></i></li>
-          <div class="favorites_heart" id="book_<%= @book.id %>">
+          <div class="favorites-heart" id="book_<%= @book.id %>">
             <%= render "favorites/favorite", book: @book %> 
           </div>
         <% end %>
