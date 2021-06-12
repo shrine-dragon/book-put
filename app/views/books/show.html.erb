@@ -39,14 +39,14 @@
           by <span><%= @book.user.nickname %></span>
         <% end %>
       </h1>
-      <ul class='font-three-btn'>
+      <ul class="font-three-btn">
         <% if user_signed_in? %>
-          <li><i class="fas fa-thumbs-up"  id='good-btn'></i></li>
-          <div class="favorites-heart" id="book_<%= @book.id %>">
+          <li><i class="fas fa-thumbs-up"  id="good-btn"></i></li>
+          <div class="favorite-btn" id="book_<%= @book.id %>">
             <%= render "favorites/favorite", book: @book %> 
           </div>
         <% end %>
-        <li><i class="fas fa-ellipsis-h" id='ellipsis-btn'></i></li>
+        <li><i class="fas fa-ellipsis-h" id="ellipsis-btn"></i></li>
       </ul>
       <ul class="hidden-lists-2", id="pull-down-singular-2">
         <% if user_signed_in? && current_user.id == @book.user_id %>
