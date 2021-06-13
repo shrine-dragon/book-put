@@ -1,52 +1,52 @@
 <%= render "shared/header" %>
 
-<div class='main'>
-  <div class='title-contents'>
-    <h2 class='service-title'>
+<div class="main">
+  <div class="title-contents">
+    <h2 class="service-title">
       生き方が変わる読書アプリ
     </h2>
-    <p class='service-explain'>
+    <p class="service-explain">
       BookPutを使えば、本を読まない方でも苦手な方でも
     </p>
-    <p class='service-benefit'>
+    <p class="service-benefit">
       読書習慣が身に付きます！
     </p>
-    <p class='service-catch-copy'>
+    <p class="service-catch-copy">
       さあ、快適な読書ライフを手にしませんか？
     </p>
-    <div class='store-btn'>
+    <div class="store-btn">
       <%= link_to image_tag("https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2011-09-21&kind=iossoftware&bubble=ios_apps", class:"apple-btn"), "#" %>
       <%= link_to image_tag("dl-android.png", class:"google-btn"), "#" %>
     </div>
   </div>
 
-  <div class='how-to-use'>
-    <h2 class='title'>BooKPuTの使い方</h2>
-    <ul class='usage-lists'>
-      <li class='list'>
+  <div class="how-to-use">
+    <h2 class="title">BooKPuTの使い方</h2>
+    <ul class="usage-lists">
+      <li class="list">
         <%= image_tag "reading.png", class: "usage-image" %>
-        <span class='usage-list-number'>1</span>
-        <h2 class='usage-list-text'>読んだ本について投稿する</h2>
-        <p class='usage-list-description'>本の内容や、感じたことなどを</p>
-        <p class='usage-list-description'>思いのままに発信しましょう！</p>
+        <span class="usage-list-number">1</span>
+        <h2 class="usage-list-text">読んだ本について投稿する</h2>
+        <p class="usage-list-description">本の内容や、感じたことなどを</p>
+        <p class="usage-list-description">思いのままに発信しましょう！</p>
       </li>
-      <li class='list'>
+      <li class="list">
         <%= image_tag "smartphone.png", class: "usage-image" %>
-        <span class='usage-list-number'>2</span>
-        <h2 class='usage-list-text'>投稿内容を閲覧する</h2>
-        <p class='usage-list-description'>素敵な本と出会える場を提供します</p>
-        <p class='usage-list-description'>気になる本がないか探してみましょう！</p>
+        <span class="usage-list-number">2</span>
+        <h2 class="usage-list-text">投稿内容を閲覧する</h2>
+        <p class="usage-list-description">素敵な本と出会える場を提供します</p>
+        <p class="usage-list-description">気になる本がないか探してみましょう！</p>
       </li>
     </ul>
   </div>
 
-  <div class='book-contents'>
-    <h2 class='title'>投稿一覧</h2>
-    <%= render 'index_page' %>
+  <div class="book-contents">
+    <h2 class="title">投稿一覧</h2>
+    <%= render "index_page" %>
   </div>
 </div>
-<%= link_to(new_book_path, class:'post-btn', id:"orange-btn" ) do %>
-  <span class='post-btn-text'>投稿する</span>
+<%= link_to(new_book_path, class:"post-btn", id:"orange-btn" ) do %>
+  <span class="post-btn-text">投稿する</span>
 <% end %>
 
 <%= render "shared/footer"%>
