@@ -8,48 +8,52 @@ RSpec.describe 'コメント投稿', type: :system do
     sleep 0.1
   end
 
-  it 'ログインしているユーザーはコメントを投稿できる' do
-    # ログインする
-    sign_in(@user)
-    # 投稿詳細ページに遷移する
-    visit book_path(@book.id)
-    # 詳細ページにコメントフォームがあることを確認する
-    expect(page).to have_selector '.comment-form'
-    # フォームに情報を入力する
-    fill_in 'comment[text]', with: @comment.text
-    # コメントを送信すると、Commentモデルのカウントが1上がることを確認する
-    expect do
-      find('input[name="commit"]').click
-    end.to change { Comment.count }.by(1)
-    # 詳細ページにリダイレクトされることを確認する
-    expect(current_path).to eq book_path(@book.id)
-    # 詳細ページに先ほどのコメントの内容、投稿者名、投稿時刻が表示されていることを確認する
-    expect(page).to have_content(@comment.text && @comment.created_at)
-    expect(page).to have_selector(".comment-posted-user")
+  context 'コメントを投稿できる時' do
+    it 'ログインしているユーザーはコメントを投稿できる' do
+      # ログインする
+      sign_in(@user)
+      # 投稿詳細ページに遷移する
+      visit book_path(@book.id)
+      # 詳細ページにコメントフォームがあることを確認する
+      expect(page).to have_selector '.comment-form'
+      # フォームに情報を入力する
+      fill_in 'comment[text]', with: @comment.text
+      # コメントを送信すると、Commentモデルのカウントが1上がることを確認する
+      expect do
+        find('input[name="commit"]').click
+      end.to change { Comment.count }.by(1)
+      # 詳細ページにリダイレクトされることを確認する
+      expect(current_path).to eq book_path(@book.id)
+      # 詳細ページに先ほどのコメントの内容、投稿者名、投稿時刻が表示されていることを確認する
+      expect(page).to have_content(@comment.text && @comment.created_at)
+      expect(page).to have_selector(".comment-posted-user")
+    end
   end
 
-  it 'ログインしていないユーザーはコメントを投稿できない' do
-    # トップページに遷移する
-    visit root_path
-    # 投稿詳細ページに遷移する
-    visit book_path(@book.id)
-    # 詳細ページにコメントフォームがないことを確認する
-    expect(page).to have_no_selector '.comment-form'
-  end
+  context 'コメントを投稿できない時' do
+    it 'ログインしていないユーザーはコメントを投稿できない' do
+      # トップページへ遷移する
+      visit root_path
+      # 投稿詳細ページへ遷移する
+      visit book_path(@book.id)
+      # 詳細ページにコメントフォームがないことを確認する
+      expect(page).to have_no_selector '.comment-form'
+    end
 
-  it '文字が入力されていないとコメントを投稿できない' do
-    # ログインする
-    sign_in(@user)
-    # 投稿詳細ページに遷移する
-    visit book_path(@book.id)
-    # フォームに情報を入力する
-    fill_in 'comment[text]', with: ''
-    # コメントを送信すると、Commentモデルのカウントが1上がらないことを確認する
-    expect do
-      find('input[name="commit"]').click
-    end.to change { Comment.count }.by(0)
-    # 詳細ページ上に先ほどのコメント内容が表示されていないことを確認する
-    expect(page).to have_no_content(@comment.text)
+    it '文字が入力されていないとコメントを投稿できない' do
+      # ログインする
+      sign_in(@user)
+      # 投稿詳細ページに遷移する
+      visit book_path(@book.id)
+      # フォームに情報を入力する
+      fill_in 'comment[text]', with: ''
+      # コメントを送信しても、Commentモデルのカウントが1上がらないことを確認する
+      expect do
+        find('input[name="commit"]').click
+      end.to change { Comment.count }.by(0)
+      # 詳細ページ上に先ほどのコメント内容が表示されていないことを確認する
+      expect(page).to have_no_content(@comment.text)
+    end
   end
 end
 
@@ -60,7 +64,7 @@ RSpec.describe 'コメント削除', type: :system do
     sleep 0.1
   end
 
-  context 'コメント削除ができる時' do
+  context 'コメントの削除ができる時' do
     it 'ログインしているユーザーは自分が投稿したコメントを削除できる' do
       # コメント1を投稿したユーザーでログインする
       sign_in(@comment1.user)
