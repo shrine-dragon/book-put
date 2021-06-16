@@ -1,11 +1,11 @@
-<ul class='book-lists', id='pagenate'>
-  <div class='book-list'>
+<ul class="book-lists", id='pagenate'>
+  <div class="book-list">
     <% if @books.present? %>
       <%= render 'book_list' %>
     <% else %>
-      <div class='no-post'>
+      <div class="no-post">
         <%= image_tag "apology-man.png", class: "no-post-image" %>
-        <p class='no-post-text'>投稿はありません</p>
+        <p class="no-post-text">投稿はありません</p>
       </div>
     <% end %>
   </div>

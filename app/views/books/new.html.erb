@@ -1,13 +1,13 @@
 <%= render 'shared/second_header' %>
 
-<%= form_with model: @book, url: books_path, class: 'post-main', local: true do |f| %>
-  <div class='form-wrap-post'>
-    <div class='form-header'>
-      <h1 class='form-header-text'>
+<%= form_with model: @book, url: books_path, class: "post-main", local: true do |f| %>
+  <div class="form-wrap-post">
+    <div class="form-header">
+      <h1 class="form-header-text">
         新規投稿
       </h1>
     </div>
-    <div class='form-all'>
+    <div class="form-all">
       <div class="gray-bar">
         <h1 class="gray-bar-text">書籍情報</h1>
       </div>
@@ -21,7 +21,7 @@
               <p>
                 クリックしてファイルをアップロード
               </p>
-              <%= f.file_field :image, id:"user-image-text" %>
+              <%= f.file_field :image, id:'user-image-text' %>
             </div>
             <%= render "shared/error_messages", model: f.object, attribute: :image %>
             <div id="image-list">
@@ -30,32 +30,32 @@
         </div>  
         <div class="right-group">
           <div class="form-group">
-            <div class='form-text-wrap'>
+            <div class="form-text-wrap">
               <label class="form-text-indispensable">タイトル</label>
             </div>
-            <%= f.text_field :title, class:"input-default", id:"title", placeholder:"本のタイトル", maxlength:"50" %>
-            <%= render "shared/error_messages", model: f.object, attribute: :title %>
+            <%= f.text_field :title, class:"input-default", id:'title', placeholder:"本のタイトル", maxlength:"50" %>
+            <%= render 'shared/error_messages', model: f.object, attribute: :title %>
           </div>
           <div class="form-group">
-            <div class='form-text-wrap'>
+            <div class="form-text-wrap">
               <label class="form-text-indispensable">種類</label>
             </div>
-            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"book-category"}) %>
-            <%= render "shared/error_messages", model: f.object, attribute: :category_id %>
+            <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:'book-category'}) %>
+            <%= render 'shared/error_messages', model: f.object, attribute: :category_id %>
           </div>
           <div class="form-group">
-            <div class='form-text-wrap'>
+            <div class="form-text-wrap">
               <label class="form-text-indispensable">ジャンル</label>
             </div>
-            <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
-            <%= render "shared/error_messages", model: f.object, attribute: :genre_id %>
+            <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:'book-genre'}) %>
+            <%= render 'shared/error_messages', model: f.object, attribute: :genre_id %>
           </div>
           <div class="form-group">
-            <div class='form-text-wrap'>
+            <div class="form-text-wrap">
               <label class="form-text-indispensable">キャッチコピー</label>
             </div>
-            <%= f.text_field :catch_copy, class:"input-default", id:"catch-copy", placeholder:"キャッチコピー", maxlength:"30" %>
-            <%= render "shared/error_messages", model: f.object, attribute: :catch_copy %>
+            <%= f.text_field :catch_copy, class:"input-default", id:'catch-copy', placeholder:"キャッチコピー", maxlength:"30" %>
+            <%= render 'shared/error_messages', model: f.object, attribute: :catch_copy %>
           </div>
         </div>
       </div>
@@ -63,30 +63,30 @@
         <h1 class="gray-bar-text">書籍詳細</h1>
       </div>
       <div class="book-content">
-        <div class='form-text-wrap'>
+        <div class="form-text-wrap">
           <label class="form-text-indispensable">
             内容
           </label>
         </div>
-        <%= f.text_area :content, class:"book-content-text", id:"content", placeholder:"主旨、ストーリー、あらすじ等、本の内容について具体的に記述" ,rows:"7" ,maxlength:"1000" %>
-        <%= render "shared/error_messages", model: f.object, attribute: :content %>
-        <p class='info-text'>
+        <%= f.text_area :content, class:"book-content-text", id:'content', placeholder:"主旨、ストーリー、あらすじ等、本の内容について具体的に記述" ,rows:"7" ,maxlength:"1000" %>
+        <%= render 'shared/error_messages', model: f.object, attribute: :content %>
+        <p class="info-text">
           ※批判的な意見はご遠慮ください
         </p>
       </div>
       <div class="book-highlight">
-        <div class='form-text-wrap'>
+        <div class="form-text-wrap">
           <label class="form-text-optional">見どこと</label>
         </div>
-        <%= f.text_area :highlight, class:"book-highlight-text", id:"highlight", placeholder:"面白いところ、魅力的なところを具体的に記述", maxlength:"100" %>
-        <%= render "shared/error_messages", model: f.object, attribute: :highlight %>
+        <%= f.text_area :highlight, class:"book-highlight-text", id:'highlight', placeholder:"面白いところ、魅力的なところを具体的に記述", maxlength:"100" %>
+        <%= render 'shared/error_messages', model: f.object, attribute: :highlight %>
       </div>
-      <div class='post-output-btn'>
-        <%= f.submit "投稿する" ,class:"post-output-orange-btn", id:"orange-btn" %>
-        <p class='caution-text'>※書籍以外の投稿は削除の対象になります</p>
+      <div class="post-output-btn">
+        <%= f.submit "投稿する" ,class:"post-output-orange-btn", id:'orange-btn' %>
+        <p class="caution-text">※書籍以外の投稿は削除の対象になります</p>
       </div>
-      <div class='return-btn'>
-        <%= link_to(root_path, class:'return-gray-btn', id:"gray-btn") do %>
+      <div class="return-btn">
+        <%= link_to(root_path, class:"return-gray-btn", id:'gray-btn') do %>
           <p class="return-btn-text">もどる</p>
         <% end %>
       </div>
