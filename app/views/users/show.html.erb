@@ -34,19 +34,19 @@
         <ul class="user-detail-btn">
           <li><i class="fas fa-ellipsis-h" id='ellipsis-btn'></i></li>
         </ul>
-        <ul class="hidden-lists-4", id="pull-down-singular-2">
+        <ul class="hidden-lists-4", id='pull-down-singular-2'>
           <% if user_signed_in? && current_user.id == @user.id %>
             <li>
-              <%= link_to(edit_user_path(@user.id), class:"edit") do %>
-                <span class="pulldown-menu-text", id="edit-text">
+              <%= link_to(edit_user_path(@user.id), class: "edit") do %>
+                <span class="pulldown-menu-text", id='edit-text'>
                   編集<i class="fas fa-edit"></i>
                 </span>
               <% end %>
             </li>
           <hr>
           <li>
-            <%= link_to(user_path(@user.id), class:"leave", method: :delete, data: { confirm: "退会します。本当によろしいですか？" }) do %>
-              <span class="pulldown-menu-text", id="leave-text">
+            <%= link_to(user_path(@user.id), class: "leave", method: :delete, data: { confirm: "退会します。本当によろしいですか？" }) do %>
+              <span class="pulldown-menu-text", id='leave-text'>
                 退会<i class="fas fa-user-times"></i>
               </span>
             <% end %>
@@ -92,9 +92,9 @@
         <%= render 'books/book_list' %>
       </ul>
     <% else %>
-      <div class='no-post'>
+      <div class="no-post">
         <%= image_tag "business-ojigi-man.png", class: "no-result-image" %>
-        <p class='no-result-sentence'>投稿はありません</p>
+        <p class="no-result-sentence">投稿はありません</p>
       </div>
     <% end %>
     <style>
@@ -108,9 +108,9 @@
     <div class="my-page-upper-text">
       お気に入り一覧
     </div>
-    <div class='no-post'>
+    <div class="no-post">
       <%= image_tag "dame-man.png", class: "no-result-image" %>
-      <p class='no-result-sentence'>投稿はありません</p>
+      <p class="no-result-sentence">投稿はありません</p>
     </div>
   </div>
 
@@ -118,14 +118,14 @@
     <div class="my-page-upper-text">
       好評価した投稿
     </div>
-    <div class='no-post'>
+    <div class="no-post">
       <%= image_tag "dame-woman.png", class: "no-result-image" %>
-      <p class='no-result-sentence'>投稿はありません</p>
+      <p class="no-result-sentence">投稿はありません</p>
     </div>
   </div>
 
-  <div class='return-btn'>
-    <%= link_to(root_path, class:'return-gray-btn', id:"gray-btn") do %>
+  <div class="return-btn">
+    <%= link_to(root_path, class: "return-gray-btn", id: 'gray-btn') do %>
       <p class="return-btn-text">もどる</p>
     <% end %>
   </div>

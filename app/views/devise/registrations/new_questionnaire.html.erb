@@ -1,54 +1,54 @@
-<%= render "shared/second_header" %>
+<%= render 'shared/second_header' %>
 
-<%= form_with model: @questionnaire, url: questionnaires_path, class: 'registration-main', local: true do |f| %>
-  <div class='form-wrap-sign-up'>
+<%= form_with model: @questionnaire, url: questionnaires_path, class: "registration-main", local: true do |f| %>
+  <div class="form-wrap-sign-up">
     <%= render 'shared/form_header' %>
     <div class="form-all">
       <div class="gray-bar">
         <h1 class="gray-bar-text">アンケート【2分で終わります】</h1>
       </div>
       <div class="form-group">
-        <div class='form-text-wrap'>
+        <div class="form-text-wrap">
           <label class="form-text-indispensable">好きな本の種類を選択してください</label>
         </div>
-        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"book-category"}) %>
-        <%= render "shared/error_messages", model: f.object, attribute: :category_id %>
+        <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:'book-category'}) %>
+        <%= render 'shared/error_messages', model: f.object, attribute: :category_id %>
       </div>
       <div class="form-group">
-        <div class='form-text-wrap'>
+        <div class="form-text-wrap">
           <label class="form-text-indispensable">好きな本のジャンルを選択してください</label>
         </div>
-        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"book-genre"}) %>
-        <%= render "shared/error_messages", model: @questionnaire, attribute: :genre_id %>
+        <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:'book-genre'}) %>
+        <%= render 'shared/error_messages', model: @questionnaire, attribute: :genre_id %>
       </div>
       <div class="form-group">
-        <div class='form-text-wrap'>
+        <div class="form-text-wrap">
           <label class="form-text-indispensable">本をよく買う場所を選択してください</label>
         </div>
-        <%= f.collection_select(:purchase_place_id, PurchasePlace.all, :id, :name, {}, {class:"select-box", id:"purchase-place"}) %>
-        <%= render "shared/error_messages", model: @questionnaire, attribute: :purchase_place_id %>
+        <%= f.collection_select(:purchase_place_id, PurchasePlace.all, :id, :name, {}, {class:"select-box", id:'purchase-place'}) %>
+        <%= render 'shared/error_messages', model: @questionnaire, attribute: :purchase_place_id %>
       </div>
       <div class="form-group">
-        <div class='form-text-wrap'>
+        <div class="form-text-wrap">
           <label class="form-text-indispensable">読書時によく使う媒体を選択してください</label>
         </div>
-        <%= f.collection_select(:reading_media_id, ReadingMedia.all, :id, :name, {}, {class:"select-box", id:"reading-media"}) %>
-        <%= render "shared/error_messages", model: @questionnaire, attribute: :reading_media_id %>
+        <%= f.collection_select(:reading_media_id, ReadingMedia.all, :id, :name, {}, {class:"select-box", id:'reading-media'}) %>
+        <%= render 'shared/error_messages', model: @questionnaire, attribute: :reading_media_id %>
       </div>
       <div class="form-group">
-        <h2 class='form-bottom-text'>
+        <h2 class="form-bottom-text">
           登録ボタンを押すことにより、
           <br><span><%= link_to '利用規約', '#', id:'link-text' %></span>および<span><%= link_to 'プライバシーポリシー', '#', id:'link-text' %></span>
           <br>に同意したものとみなします
         </h2>
       </div>
-      <div class='register-btn'>
-        <%= f.submit "登録する" ,class:"blue-register-btn", id:"blue-btn" %>
-        <p class='already-registered'>登録済みの方は<span><%= link_to 'こちら',  new_user_session_path, id:'link-text' %></span></p>
+      <div class="register-btn">
+        <%= f.submit "登録する", class: "blue-register-btn", id: 'blue-btn' %>
+        <p class="already-registered">登録済みの方は<span><%= link_to 'こちら',  new_user_session_path, id:'link-text' %></span></p>
       </div>
     </div>
-    <div class='return-btn'>
-      <%= link_to(new_user_registration_path, class:'return-gray-btn', id:"gray-btn") do %>
+    <div class="return-btn">
+      <%= link_to(new_user_registration_path, class: "return-gray-btn", id: 'gray-btn') do %>
         <p class="return-btn-text">もどる</p>
       <% end %>
     </div>
@@ -70,4 +70,4 @@
   }  
 </style>
 
-<%= render "shared/second_footer" %>
+<%= render 'shared/second_footer' %>

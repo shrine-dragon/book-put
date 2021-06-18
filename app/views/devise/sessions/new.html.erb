@@ -1,39 +1,39 @@
-<%= render "shared/second_header"%>
+<%= render 'shared/second_header' %>
 
-<%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
-  <div class='form-wrap-sign-in'>
-    <div class='form-header'>
-      <h1 class='form-header-text'>
+<%= form_with model: @user, url: user_session_path, class: "registration-main", local: true do |f| %>
+  <div class="form-wrap-sign-in">
+    <div class="form-header">
+      <h1 class="form-header-text">
         会員情報入力
       </h1>
     </div>
-    <div class='login-flash-message'>
+    <div class="login-flash-message">
       <%= flash[:notice] %>
       <%= flash[:alert] %>
     </div>
     <div class="form-group">
-      <div class='form-text-wrap'>
+      <div class="form-text-wrap">
         <label class="form-text">メールアドレス</label>
       </div>
-      <%= f.email_field :email, class:"input-default", id:"email", placeholder:"登録したメールアドレス", autofocus: true %>
+      <%= f.email_field :email, class: "input-default", id: 'email', placeholder: "登録したメールアドレス", autofocus: true %>
     </div>
     <div class="form-group">
-      <div class='form-text-wrap'>
+      <div class="form-text-wrap">
         <label class="form-text">パスワード</label>
       </div>
-      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"" %>
-      <p><%= link_to "パスワードをお忘れですか？", "#", class:"forget-password", id:'link-text' %></p>
+      <%= f.password_field :password, class: "input-default", id: 'password', placeholder: "登録したパスワード" %>
+      <p><%= link_to 'パスワードをお忘れですか？', "#", class: "forget-password", id: 'link-text' %></p>
     </div>
-    <div class='login-btn'>
-      <%= f.submit "ログイン" ,class:"login-orange-btn", id:"orange-btn" %>
-      <p class='not-register'>初めての方は<span><%= link_to 'こちら',  new_user_registration_path, id:'link-text' %></span></p>
+    <div class="login-btn">
+      <%= f.submit 'ログイン' ,class: "login-orange-btn", id: 'orange-btn' %>
+      <p class="not-register">初めての方は<span><%= link_to 'こちら',  new_user_registration_path, id: 'link-text' %></span></p>
     </div>
-    <div class='return-btn'>
-      <%= link_to(root_path, class:'return-gray-btn', id:"gray-btn") do %>
+    <div class="return-btn">
+      <%= link_to(root_path, class: "return-gray-btn", id: 'gray-btn') do %>
         <p class="return-btn-text">もどる</p>
       <% end %>
     </div>
   </div>
 <% end %>
 
-<%= render "shared/second_footer"%>
+<%= render 'shared/second_footer' %>

@@ -1,13 +1,13 @@
-<%= render "shared/second_header" %>
+<%= render 'shared/second_header' %>
 
 <div class="registration-main">
-  <div class='form-wrap-sign-up'>
+  <div class="form-wrap-sign-up">
     <%= render 'shared/form_header' %>
     <div class="form-all">
       <p class="registration-completed-text">登録が完了しました</p>
     </div>
-    <div class='return-top-page-btn'>
-      <%= link_to(root_path, class:'return-gray-btn', id:"gray-btn") do %>
+    <div class="return-top-page-btn">
+      <%= link_to(root_path, class: "return-gray-btn", id: 'gray-btn') do %>
         <p class="return-btn-text">トップページへ</p>
       <% end %>
     </div>
@@ -16,7 +16,7 @@
 
 <style>
   .right-circle {
-    background-color:#ff0000;
+    background-color: #ff0000;
   }
   
   .step-text-right {
@@ -25,4 +25,4 @@
   }
 </style>
 
-<%= render "shared/second_footer" %>
+<%= render 'shared/second_footer' %>

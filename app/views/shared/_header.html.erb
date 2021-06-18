@@ -1,23 +1,23 @@
 <%# CSS・・・assets/stylesheets/shared/header.css %>
-<header class='top-page-header'>
+<header class="top-page-header">
   <% if flash[:post] %>
-    <p class='flash-post', id='flash-message'>
+    <p class="flash-post", id='flash-message'>
       <%= flash[:post] %>
     </p>
   <% elsif flash[:delete] %>
-    <p class='flash-delete', id='flash-message'>
+    <p class="flash-delete", id='flash-message'>
       <%= flash[:delete] %>
     </p>
   <% end %>
-  <div class='header-upper'>
+  <div class="header-upper">
     <div>
-      <%= link_to image_tag("bookput-logo.png", class:"bookput-icon"), "/" %>
+      <%= link_to image_tag("bookput-logo.png", class: "bookput-icon"), "/" %>
     </div>
     <%= form_with(url: search_books_path, local: true, method: :get, class: "search-form") do |form| %>
       <%= form.text_field :keyword, placeholder: "キーワードを入力してください", maxlength: "50", class: "input-box" %>
-      <%= form.submit "\uF002", class: "search-button", id:"orange-btn" %>
+      <%= form.submit "\uF002", class: "search-button", id: 'orange-btn' %>
     <% end %>
-    <ul class='display-change'>
+    <ul class="display-change">
       <% if user_signed_in? %>
         <div class="login-condition">
           <li>ログインしています</li>
@@ -28,18 +28,18 @@
             <li><%= image_tag "no-image.png", width: "45", height: "45", id: 'user-image' %></li>
           <% end %>
         </div>
-        <ul class="hidden-lists-1", id="pull-down-singular">
+        <ul class="hidden-lists-1", id='pull-down-singular'>
           <li>
-            <%= link_to(user_path(current_user.id), class:"my-page") do %>
-              <span class="pulldown-menu-text", id="my-page-text">
+            <%= link_to(user_path(current_user.id), class: "my-page") do %>
+              <span class="pulldown-menu-text", id='my-page-text'>
                 マイページ<i class="fas fa-user"></i>
               </span>
             <% end %>
           </li>
           <hr>
           <li>
-            <%= link_to(destroy_user_session_path, class:"log-out", method: :delete, data: { confirm: 'ログアウトしますか？' }) do %>
-              <span class="pulldown-menu-text", id="log-out-text">
+            <%= link_to(destroy_user_session_path, class: "log-out", method: :delete, data: { confirm: 'ログアウトしますか？' }) do %>
+              <span class="pulldown-menu-text", id='log-out-text'>
                 ログアウト<i class="fas fa-trash"></i>
               </span>
             <% end %>
@@ -49,12 +49,12 @@
         <div class="not-login-condition">
           <li>
             はじめての方はこちら
-            <%= link_to(new_user_session_path, class:'sign-in-btn', id:"orange-btn") do %>
+            <%= link_to(new_user_session_path, class: "sign-in-btn", id: 'orange-btn') do %>
               <span class="sign-btn-text">ログイン</span>
             <% end %>
           </li>
           <li>
-            <%= link_to(new_user_registration_path, class:'sign-up-btn', id:"blue-btn") do %>
+            <%= link_to(new_user_registration_path, class:"sign-up-btn", id: 'blue-btn') do %>
               <span class="sign-btn-text">新規登録</span>
             <% end %>
           </li>
@@ -62,13 +62,13 @@
       <% end %>
     </ul>
   </div>
-  <div class='header-lower'>
-    <ul class='search-lists'>
-      <li><%= link_to 'タイトル', "/", class: "search-list", id:"list-text" %></li>
-      <li><%= link_to 'カテゴリー', "/", class: "search-list", id:"list-text" %></li>
-      <li><%= link_to 'ジャンル', "/", class: "search-list", id:"list-text" %></li>
-      <li><%= link_to 'キャッチコピー', "/", class: "search-list", id:"list-text" %></li>
-      <li><%= link_to 'お気に入り', "/", class: "search-list", id:"favorite-text" %></li>
+  <div class="header-lower">
+    <ul class="search-lists">
+      <li><%= link_to 'タイトル', "/",   class: "search-list", id: 'list-text' %></li>
+      <li><%= link_to 'カテゴリー', "/", class: "search-list", id: 'list-text' %></li>
+      <li><%= link_to 'ジャンル', "/", class: "search-list", id: 'list-text' %></li>
+      <li><%= link_to 'キャッチコピー', "/", class: "search-list", id: 'list-text' %></li>
+      <li><%= link_to 'お気に入り', "/", class: "search-list", id: 'favorite-text' %></li>
     </ul>
   </div>
 </header>
