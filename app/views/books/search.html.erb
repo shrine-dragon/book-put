@@ -1,4 +1,4 @@
-<%= render "shared/header" %>
+<%= render 'shared/header' %>
 
 <div class="search-result">
   <div class="search-result-main">
@@ -11,24 +11,24 @@
         <%= render 'book_list' %>
       </ul>
     <% else %>
-      <div class='no-post'>
-        <p class='no-result-text'>
+      <div class="no-post">
+        <p class="no-result-text">
           <span>「<%= @keyword %>」</span>に該当する投稿は見つかりませんでした
         </p>
         <%= image_tag "aplogy-woman.png", class: "no-result-image" %>
       </div>
       <div>
-        <p class='hint-text'>検索のヒント：</p>
-        <p class='hint-text'>・キーワードに誤字や脱字がないか確認します。</p>
-        <p class='hint-text'>・別のキーワードを試してみます。</p>
+        <p class="hint-text">検索のヒント：</p>
+        <p class="hint-text">・キーワードに誤字や脱字がないか確認します。</p>
+        <p class="hint-text">・別のキーワードを試してみます。</p>
       </div>
     <% end %>
   </div>
-  <div class='return-btn'>
-    <%= link_to(root_path, class:'return-gray-btn', id:"gray-btn") do %>
+  <div class="return-btn">
+    <%= link_to(root_path, class: "return-gray-btn", id: 'gray-btn') do %>
       <p class="return-btn-text">もどる</p>
     <% end %>
   </div>
 </div>
 
-<%= render "shared/second_footer" %>
+<%= render 'shared/second_footer' %>

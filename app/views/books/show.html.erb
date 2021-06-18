@@ -18,70 +18,70 @@
 
 <%= render 'shared/second_header' %>
 
-<div class='book-detail-main'>
-  <div class='book-detail'>
-    <div class='detail-header'>
-      <h1 class='detail-header-text'>
+<div class="book-detail-main">
+  <div class="book-detail">
+    <div class="detail-header">
+      <h1 class="detail-header-text">
         投稿詳細
       </h1>
     </div>
-    <div class='detail-all'>
-      <div class='detail-time'>
+    <div class="detail-all">
+      <div class="detail-time">
         <%= @book.created_at.to_s(:datetime_jp) %>
       </div>
-      <h1 class='detail-title'>
+      <h1 class="detail-title">
         <%= @book.title %>
       </h1>
-      <h1 class='detail-user'>
+      <h1 class="detail-user">
         <% if user_signed_in? && current_user.id == @book.user_id %>
-          by <span><%= link_to @book.user.nickname, user_path(current_user.id), class:'detail-user-text', id:'user-text' %></span>
+          by <span><%= link_to @book.user.nickname, user_path(current_user.id), class: "detail-user-text", id: 'user-text' %></span>
         <% else %>
           by <span><%= @book.user.nickname %></span>
         <% end %>
       </h1>
       <ul class="font-three-btn">
         <% if user_signed_in? %>
-          <li><i class="fas fa-thumbs-up"  id="good-btn"></i></li>
-          <div class="favorite-btn" id="book_<%= @book.id %>">
+          <li><i class="fas fa-thumbs-up"  id='good-btn'></i></li>
+          <div class="favorite-btn" id='book_<%= @book.id %>''>
             <%= render "favorites/favorite", book: @book %> 
           </div>
         <% end %>
-        <li><i class="fas fa-ellipsis-h" id="ellipsis-btn"></i></li>
+        <li><i class="fas fa-ellipsis-h" id='ellipsis-btn'></i></li>
       </ul>
-      <ul class="hidden-lists-2", id="pull-down-singular-2">
+      <ul class="hidden-lists-2", id='pull-down-singular-2'>
         <% if user_signed_in? && current_user.id == @book.user_id %>
           <li>
-            <%= link_to(edit_book_path(@book.id), class:"edit") do %>
-              <span class="pulldown-menu-text", id="edit-text">
+            <%= link_to(edit_book_path(@book.id), class: "edit") do %>
+              <span class="pulldown-menu-text", id='edit-text'>
                 編集<i class="fas fa-edit"></i>
               </span>
             <% end %>
           </li>
           <hr>
           <li>
-            <%= link_to(book_path(@book.id), class:"destroy", method: :delete, data: { confirm: "投稿を削除します。よろしいですか？" }) do %>
-              <span class="pulldown-menu-text", id="destroy-text">
+            <%= link_to(book_path(@book.id), class: "destroy", method: :delete, data: { confirm: "投稿を削除します。よろしいですか？" }) do %>
+              <span class="pulldown-menu-text", id='destroy-text'>
                 削除<i class="fas fa-trash"></i>
               </span>
             <% end %>
           </li>
         <% else %>
           <li>
-            <%= link_to(root_path, class:"report") do%>
-              <span class="pulldown-menu-text", id="report-text">
+            <%= link_to(root_path, class: "report") do %>
+              <span class="pulldown-menu-text", id='report-text'>
                 <i class="fa fa-flag"></i>報告
               </span>
             <% end %>
           </li>
         <% end %>
       </ul>
-      <div class='detail-img-content'>
+      <div class="detail-img-content">
         <%= image_tag @book.image, class: "detail-img" %>
       </div>
-      <div class='detail-category-genre'>
+      <div class="detail-category-genre">
         <%= @book.category.name %>・<%= @book.genre.name %>
       </div>
-      <h1 class='detail-catch-copy'>
+      <h1 class="detail-catch-copy">
         「<%= @book.catch_copy %>」
       </h1>
       <table class="book-table">
@@ -91,7 +91,7 @@
         <tr>
           <td class="table-value"><%= @book.content %></td>
         </tr>
-        <% if @book.highlight.present?%>        
+        <% if @book.highlight.present?%>
           <tr>
             <th class="table-key">見どころ</th>
           </tr>
@@ -100,25 +100,25 @@
           </tr>
         <% end %>
       </table>
-      <div class='return-btn'>
-        <%= link_to(root_path, class:'return-gray-btn', id:"gray-btn") do %>
+      <div class="return-btn">
+        <%= link_to(root_path, class: "return-gray-btn", id: 'gray-btn') do %>
           <p class="return-btn-text">もどる</p>
         <% end %>
       </div>
     </div>
   </div>
-  <div class='book-comments'>
+  <div class="book-comments">
     <% if user_signed_in? %>
       <%= form_with model: [@book, @comment], class: "comment-main", local: true do |f| %>
         <div class="comment-user">
-          <%= link_to current_user.nickname, user_path(current_user.id), class:'comment-user-text', id:'user-text' %>
+          <%= link_to current_user.nickname, user_path(current_user.id), class: "comment-user-text", id: 'user-text' %>
         </div>
         <div class="comment-form">
-          <%= f.text_field :text, class:"comment-form-text", id:"comment", maxlength: "100", placeholder: "100文字以内で入力してください" %>
+          <%= f.text_field :text, class: "comment-form-text", id: 'comment', maxlength: "100", placeholder: "100文字以内で入力してください" %>
           <p class="comment-caution-text">※批判的な意見はご遠慮ください</p>
         </div>
         <div class="comment-btn">
-          <%= f.submit "コメント" ,class:"comment-yellow-btn", id:"comment" %>
+          <%= f.submit "コメント" , class: "comment-yellow-btn", id: 'comment' %>
         </div>
       <% end %>
     <% end %>
