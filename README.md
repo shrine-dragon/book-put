@@ -126,7 +126,6 @@ https://docs.google.com/spreadsheets/d/1jw4iVI66nGr78hE87O600KTDIGfpDUCkZna_1KXk
 
 - wizard形式の新規登録における、画像の保存
 - コメントの即時更新機能
-- 好評価機能
 - レスポンシブ対応
 
 # ローカルでの動作方法
