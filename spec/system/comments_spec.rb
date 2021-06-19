@@ -77,7 +77,7 @@ RSpec.describe 'コメント削除', type: :system do
       page.accept_confirm do
         find("#destroy-text").click
       end
-      change { Book.count }.by(-1)
+      change { Comment.count }.by(-1)
       # 詳細ページ上に削除したコメントの内容が存在しないことを確認する
       expect(page).to have_no_content(@comment1.text)
     end
