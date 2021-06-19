@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :books do
     resources :comments,  only: [:create, :destroy]
     resources :favorites, only: [:create, :destroy]
+    resources :likes,     only: [:create, :destroy]
 
     collection do
       get "search"

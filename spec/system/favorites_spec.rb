@@ -16,13 +16,11 @@ RSpec.describe 'お気に入り', type: :system do
       # 詳細ページにお気に入りボタンがあることを確認する
       expect(page).to have_selector '.favorite-btn'
       # クリックするとお気に入りに追加でき、Favoriteモデルのカウントが1上がることを確認する
-      expect do
-        find(".favorite-btn").click
-      end.to change { Favorite.count }.by(1)
+      find(".favorite-btn").click
+      change { Favorite.count }.by(1)
       # もう一度クリックするとお気に入りを解除でき、Favoriteモデルのカウントが1下がることを確認する
-      expect do
-        find(".favorite-btn").click
-      end.to change { Favorite.count }.by(-1)
+      find(".favorite-btn").click
+      change { Favorite.count }.by(-1)
     end
   end
 
@@ -35,9 +33,8 @@ RSpec.describe 'お気に入り', type: :system do
       # 詳細ページにお気に入りボタンがあることを確認する
       expect(page).to have_selector '.favorite-btn'
       # クリックしてもお気に入りに追加できず、Favoriteモデルのカウントも1上がらないことを確認する
-      expect do
-        find(".favorite-btn").click
-      end.to change { Favorite.count }.by(0)
+      find(".favorite-btn").click
+      change { Favorite.count }.by(0)
     end
 
     it 'ログインしていないユーザーは投稿をお気に入りに追加したり、解除したりできない' do

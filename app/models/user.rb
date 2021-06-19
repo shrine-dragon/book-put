@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :books,     dependent: :destroy
   has_many :comments,  dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :likes,     dependent: :destroy
 
   with_options presence: true do
     validates :nickname, length: { maximum: 10 }
