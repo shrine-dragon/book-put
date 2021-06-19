@@ -17,7 +17,7 @@
   border-bottom: 1px solid #ddd;
 }
 
-.result-sentence> span, .no-result-text> span {
+.result-text> span, .no-result-text> span {
   font-size: 25px;
   font-weight: bold;
 }
