@@ -8,7 +8,7 @@
 
 .comment-upper {
   display: flex;
-  margin-bottom: 5px;
+  margin-bottom: -15px;
 }
 
 .comment-posted-user {
@@ -18,4 +18,8 @@
 
 .comment-posted-time {
   color: #999;
+}
+
+.comment-lower {
+  white-space: pre-line;
 }
