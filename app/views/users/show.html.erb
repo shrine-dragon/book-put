@@ -108,10 +108,35 @@
     <div class="my-page-upper-text">
       お気に入り一覧
     </div>
-    <div class="no-post">
-      <%= image_tag "dame-man.png", class: "no-result-image" %>
-      <p class="no-result-sentence">投稿はありません</p>
-    </div>
+    <% if @favorites.present? %>
+      <ul class="book-list">
+        <% @favorites.each do |favorite| %>
+          <li class="list">
+            <%= link_to book_path(favorite.id) do %>
+              <div class="book-info">
+                <div class="book-img-content">
+                  <%= image_tag favorite.image, class: "book-img" %>
+                </div>
+                <h1 class="book-title">
+                  <%= favorite.title %>
+                </h1>
+                <h1 class="book-posted-user-favorite">
+                  <%= favorite.user.nickname %>
+                </h1>
+                <h1 class="book-posted-time">
+                  <%= time_ago_in_words(favorite.created_at) %>前
+                </h1>
+              </div>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <div class="no-post">
+        <%= image_tag "dame-man.png", class: "no-result-image" %>
+        <p class="no-result-sentence">投稿はありません</p>
+      </div>
+    <% end %>
   </div>
 
   <div class="my-page-info">

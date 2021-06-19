@@ -22,12 +22,12 @@
 }
 
 .book-title {
-  font-size: 3.5vh;
+  font-size: 20px;
   font-weight: bold;
 }
 
-.book-posted-user, .book-posted-time {
-  font-size: 3vh;
+.book-posted-user, .book-posted-time, .book-posted-user-favorite {
+  font-size: 18px;
 }
 
 .no-post {
