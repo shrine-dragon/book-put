@@ -1,12 +1,12 @@
 <% if user_signed_in? %>
   <% if book.favorited_by?(current_user) %>
     <%=link_to book_favorite_path(book_id: book.id, id: book.id), method: :delete do %>
-      <i class="fa fa-heart" aria-hidden='true' id='heart'></i>
+      <i class="fa fa-heart" aria-hidden='true' id='heart' style="color: #ff66ff;"></i>
       <%= book.favorites.count %>
     <% end %>
   <% else %>
     <%=link_to book_favorites_path(book), method: :post do %>
-      <i class="fa fa-heart" aria-hidden='true' id='heart'></i>
+      <i class="fa fa-heart" aria-hidden='true' id='heart' style="color: #808080;"></i>
       <%= book.favorites.count %>
     <% end %>
   <% end%>
