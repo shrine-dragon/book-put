@@ -37,8 +37,10 @@
       </h1>
       <ul class="font-three-btn">
         <% if user_signed_in? %>
-          <li><i class="fas fa-thumbs-up"  id='good-btn'></i></li>
-          <div class="favorite-btn" id='book_<%= @book.id %>''>
+          <div class="like-btn" id='like_<%= @book.id %>''>
+            <%= render "likes/like", book: @book %> 
+          </div>
+          <div class="favorite-btn" id='favorite_<%= @book.id %>''>
             <%= render "favorites/favorite", book: @book %> 
           </div>
         <% end %>

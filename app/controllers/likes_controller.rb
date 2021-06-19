@@ -1,4 +1,4 @@
-class likesController < ApplicationController
+class LikesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_book
   before_action :redirect_to_root_path
@@ -9,7 +9,7 @@ class likesController < ApplicationController
 
   def destroy
     @like = Like.find_by(user_id: current_user.id, book_id: @book.id)
-    @likes.destroy
+    @like.destroy
   end
 
   private
