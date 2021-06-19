@@ -85,7 +85,7 @@
         <%= f.submit "確定する" ,class:"post-edit-green-btn", id:"green-btn" %>
       </div>
       <div class='return-btn'>
-        <%= link_to(book_path(@book.id), class:'return-gray-btn', id:"gray-btn") do %>
+        <%= link_to(:back, class:'return-gray-btn', id:"gray-btn") do %>
           <p class="return-btn-text">もどる</p>
         <% end %>
       </div>

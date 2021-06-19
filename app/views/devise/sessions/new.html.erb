@@ -29,7 +29,7 @@
       <p class="not-register">初めての方は<span><%= link_to 'こちら',  new_user_registration_path, id: 'link-text' %></span></p>
     </div>
     <div class="return-btn">
-      <%= link_to(root_path, class: "return-gray-btn", id: 'gray-btn') do %>
+      <%= link_to(:back, class: "return-gray-btn", id: 'gray-btn') do %>
         <p class="return-btn-text">もどる</p>
       <% end %>
     </div>
