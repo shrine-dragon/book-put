@@ -8,8 +8,6 @@ class UsersController < ApplicationController
     @questionnaire = Questionnaire.find_by(params[:user_id])
     favorites = Favorite.where(user_id: current_user.id).order(created_at: :desc).pluck(:book_id)
     @favorites = Book.find(favorites)
-    likes = Like.where(user_id: current_user.id).order(created_at: :desc).pluck(:book_id)
-    @likes = Book.find(likes)
   end
 
   def edit

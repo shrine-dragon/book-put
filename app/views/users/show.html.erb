@@ -143,35 +143,10 @@
     <div class="my-page-upper-text">
       好評価した投稿
     </div>
-    <% if @likes.present? %>
-      <ul class="book-list">
-        <% @likes.each do |like| %>
-          <li class="list">
-            <%= link_to book_path(like.id) do %>
-              <div class="book-info">
-                <div class="book-img-content">
-                  <%= image_tag like.image, class: "book-img" %>
-                </div>
-                <h1 class="book-title">
-                  <%= like.title %>
-                </h1>
-                <h1 class="book-posted-user-favorite">
-                  <%= like.user.nickname %>
-                </h1>
-                <h1 class="book-posted-time">
-                  <%= time_ago_in_words(like.created_at) %>前
-                </h1>
-              </div>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    <% else %>
-      <div class="no-post">
-        <%= image_tag "dame-woman.png", class: "no-result-image" %>
-        <p class="no-result-sentence">好評価した投稿はありません</p>
-      </div>
-    <% end %>
+    <div class="no-post">
+      <%= image_tag "dame-woman.png", class: "no-result-image" %>
+      <p class="no-result-sentence">好評価した投稿はありません</p>
+    </div>
   </div>
 
   <div class="return-btn">
