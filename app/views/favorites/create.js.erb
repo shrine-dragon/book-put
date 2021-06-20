@@ -1,1 +1,18 @@
-document.getElementById('favorite_<%= @book.id %>').innerHTML = '<%= j(render 'favorite' , book: @book) %>'
+<%# ①お気に入り登録が行われた場合に処理を実行する %>
+if(document.getElementById('book_<%= @book.id %>').innerHTML = '<%= j(render 'favorite' , book: @book) %>') {
+
+  <%# ②flashメッセージ(p要素)を生成する %>
+  const flashMessage = document.createElement('p');
+  flashMessage.setAttribute('class', 'flash-register')
+  flashMessage.setAttribute('id', 'flash-message')
+  flashMessage.innerHTML = "お気に入りに登録しました"
+
+  <%# ③flashメッセージの挿入先を取得(body) %>
+  const body = document.querySelector("body");
+  body.prepend(flashMessage)
+
+  <%# ④flashメッセージを2秒後に消去する %>
+  window.setTimeout( () => {
+    flashMessage.remove();
+  }, 2000);
+}

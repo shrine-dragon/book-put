@@ -1,14 +1,18 @@
-<% if flash[:update] %>
+<% if flash[:post] %>
+  <p class='flash-post', id='flash-message'>
+    <%= flash[:post] %>
+  </p>
+<% elsif flash[:update] %>
   <p class='flash-update', id='flash-message'>
     <%= flash[:update] %>
+  </p>
+<% elsif flash[:register] %>
+  <p class='flash-register', id='flash-message'>
+    <%= flash[:register] %>
   </p>
 <% elsif flash[:delete] %>
   <p class='flash-delete', id='flash-message'>
     <%= flash[:delete] %>
-  </p>
-<% elsif flash[:post] %>
-  <p class='flash-post', id='flash-message'>
-    <%= flash[:post] %>
   </p>
 <% end %>
 
