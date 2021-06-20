@@ -1,14 +1,18 @@
-<% if flash[:update] %>
+<% if flash[:post] %>
+  <p class='flash-post', id='flash-message'>
+    <%= flash[:post] %>
+  </p>
+<% elsif flash[:update] %>
   <p class='flash-update', id='flash-message'>
     <%= flash[:update] %>
+  </p>
+<% elsif flash[:register] %>
+  <p class='flash-register', id='flash-message'>
+    <%= flash[:register] %>
   </p>
 <% elsif flash[:delete] %>
   <p class='flash-delete', id='flash-message'>
     <%= flash[:delete] %>
-  </p>
-<% elsif flash[:post] %>
-  <p class='flash-post', id='flash-message'>
-    <%= flash[:post] %>
   </p>
 <% end %>
 
@@ -37,10 +41,8 @@
       </h1>
       <ul class="font-three-btn">
         <% if user_signed_in? %>
-          <div class="like-btn" id='like_<%= @book.id %>''>
-            <%= render "likes/like", book: @book %> 
-          </div>
-          <div class="favorite-btn" id='favorite_<%= @book.id %>''>
+          <li><i class="fas fa-thumbs-up"  id='good-btn'></i></li>
+          <div class="favorite-btn" id='book_<%= @book.id %>''>
             <%= render "favorites/favorite", book: @book %> 
           </div>
         <% end %>
@@ -110,7 +112,7 @@
           <%= link_to current_user.nickname, user_path(current_user.id), class: "comment-user-text", id: 'user-text' %>
         </div>
         <div class="comment-form">
-          <%= f.text_area :text, class: "comment-form-text", id: 'comment', maxlength: "100", placeholder: "1000文字以内で入力してください", rows: "1" %>
+          <%= f.text_field :text, class: "comment-form-text", id: 'comment', maxlength: "100", placeholder: "100文字以内で入力してください" %>
           <p class="comment-caution-text">※批判的な意見はご遠慮ください</p>
         </div>
         <div class="comment-btn">

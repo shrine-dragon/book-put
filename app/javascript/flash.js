@@ -1,4 +1,4 @@
-// flashメッセージの表示時間の設定
+// flashメッセージを2秒後に消去
 $(()=> {
   setTimeout("$('#flash-message').fadeOut('slow')", 2000);
 });
