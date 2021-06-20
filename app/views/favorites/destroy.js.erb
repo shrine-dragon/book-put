@@ -1,1 +1,13 @@
-document.getElementById('book_<%= @book.id %>').innerHTML = '<%= j(render 'favorite' , book: @book) %>'
+if(document.getElementById('book_<%= @book.id %>').innerHTML = '<%= j(render 'favorite' , book: @book) %>') {
+  const flashMessage = document.createElement('p');
+  flashMessage.setAttribute('class', 'flash-delete')
+  flashMessage.setAttribute('id', 'flash-message')
+  flashMessage.innerHTML = "お気に入りを解除しました"
+
+  const body = document.querySelector("body");
+  body.prepend(flashMessage)
+
+  window.setTimeout( () => {
+    flashMessage.remove();
+  }, 2000);
+}

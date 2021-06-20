@@ -1,6 +1,6 @@
 if(document.getElementById('book_<%= @book.id %>').innerHTML = '<%= j(render 'favorite' , book: @book) %>') {
   const flashMessage = document.createElement('p');
-  flashMessage.setAttribute('class', 'flash-post')
+  flashMessage.setAttribute('class', 'flash-register')
   flashMessage.setAttribute('id', 'flash-message')
   flashMessage.innerHTML = "お気に入りに登録しました"
 
