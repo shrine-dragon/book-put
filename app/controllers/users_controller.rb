@@ -4,10 +4,13 @@ class UsersController < ApplicationController
   before_action :move_to_root_path
 
   def show
-    @books = @user.books
     @questionnaire = Questionnaire.find_by(params[:user_id])
+
+    @books = @user.books
+
     favorites = Favorite.where(user_id: current_user.id).order(created_at: :desc).pluck(:book_id)
     @favorites = Book.find(favorites)
+
     likes = Like.where(user_id: current_user.id).order(created_at: :desc).pluck(:book_id)
     @likes = Book.find(likes)
   end
