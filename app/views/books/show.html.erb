@@ -45,7 +45,7 @@
       </h1>
       <ul class="font-three-btn">
         <% if user_signed_in? %>
-          <div class="good-btn" id='book_<%= @book.id %>''>
+          <div class="like-btn" id='book_<%= @book.id %>''>
             <%= render "likes/like", book: @book %> 
           </div>
           <div class="favorite-btn" id='book_<%= @book.id %>''>
