@@ -1,4 +1,4 @@
-.flash-post, .flash-update, .flash-delete, .flash-register {
+.flash-post, .flash-update, .flash-register, .flash-add, .flash-delete {
   font-weight: bold;
   font-size: 14px;
   padding: 6px 12px;
@@ -20,12 +20,17 @@
   border-color: #090;
 }
 
-.flash-delete {
-  color: #f00;
-  border-color: #f00;
-}
-
 .flash-register {
   color: #ff66ff;
   border-color: #ff66ff;
+}
+
+.flash-add {
+  color: #0000FF;
+  border-color: #0000FF;
+}
+
+.flash-delete {
+  color: #f00;
+  border-color: #f00;
 }
