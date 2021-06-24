@@ -1,0 +1,13 @@
+<% if user_signed_in? %>
+  <% if book.liked_by?(current_user) %>
+    <%=link_to book_like_path(book_id: book.id, id: book.id), method: :delete, remote: true do %>
+      <i class="fa fa-thumbs-up" aria-hidden='true' id='thumbs-up' style="color: #0000FF;"></i>
+      <%= book.likes.count %>
+    <% end %>
+  <% else %>
+    <%=link_to book_likes_path(book), method: :post, remote: true do %>
+      <i class="fa fa-thumbs-up" aria-hidden='true' id='thumbs-up' style="color: #808080;"></i>
+      <%= book.likes.count %>
+    <% end %>
+  <% end%>
+<% end %>

@@ -5,7 +5,7 @@ if(document.getElementById('book_<%= @book.id %>').innerHTML = '<%= j(render 'fa
   const flashMessage = document.createElement('p');
   flashMessage.setAttribute('class', 'flash-register')
   flashMessage.setAttribute('id', 'flash-message')
-  flashMessage.innerHTML = "お気に入りに登録しました"
+  flashMessage.innerHTML = "お気に入りに登録しました！"
 
   <%# ③flashメッセージの挿入先を取得(body) %>
   const body = document.querySelector("body");

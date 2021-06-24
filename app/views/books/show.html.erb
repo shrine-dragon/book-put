@@ -10,6 +10,10 @@
   <p class='flash-register', id='flash-message'>
     <%= flash[:register] %>
   </p>
+<% elsif flash[:add] %>
+  <p class='flash-add', id='flash-message'>
+    <%= flash[:add] %>
+  </p>
 <% elsif flash[:delete] %>
   <p class='flash-delete', id='flash-message'>
     <%= flash[:delete] %>
@@ -41,7 +45,9 @@
       </h1>
       <ul class="font-three-btn">
         <% if user_signed_in? %>
-          <li><i class="fas fa-thumbs-up"  id='good-btn'></i></li>
+          <div class="like-btn" id='book_<%= @book.id %>''>
+            <%= render "likes/like", book: @book %> 
+          </div>
           <div class="favorite-btn" id='book_<%= @book.id %>''>
             <%= render "favorites/favorite", book: @book %> 
           </div>

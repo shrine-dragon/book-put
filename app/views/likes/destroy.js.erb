@@ -1,11 +1,11 @@
-<%# ①お気に入り解除が行われた場合に処理を実行する %>
-if(document.getElementById('book_<%= @book.id %>').innerHTML = '<%= j(render 'favorite' , book: @book) %>') {
+<%# ①好評価の解除が行われた場合に処理を実行する %>
+if(document.getElementById('book_<%= @book.id %>').innerHTML = '<%= j(render 'like' , book: @book) %>') {
 
   <%# ②flashメッセージ(p要素)を生成する %>
   const flashMessage = document.createElement('p');
   flashMessage.setAttribute('class', 'flash-delete')
   flashMessage.setAttribute('id', 'flash-message')
-  flashMessage.innerHTML = "お気に入りを解除しました。"
+  flashMessage.innerHTML = "好評価を解除しました。"
 
   <%# ③flashメッセージの挿入先を取得(body) %>
   const body = document.querySelector("body");
