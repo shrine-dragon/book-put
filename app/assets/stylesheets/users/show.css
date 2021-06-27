@@ -16,10 +16,11 @@
   font-weight: bold;
   font-size: 25px;
   border-bottom: 1px solid #ddd;
-  span {
-    font-size: 30px;
-    color: #6cf;
-  }
+}
+
+.my-page-upper-text>span {
+  font-size: 30px;
+  color: #6cf;
 }
 
 .my-page-layout {

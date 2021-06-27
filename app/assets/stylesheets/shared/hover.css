@@ -3,7 +3,7 @@
 }
 
 #blue-btn:hover {
-  opacity: 0.8;
+  background-color:#6cf;
 }
 
 #list-text:hover {
@@ -23,7 +23,11 @@
   background-color: #eee;
 }
 
-#my-page-text:hover, #user-text:hover {
+.return-btn:hover, .return-top-page-btn:hover {
+  background-color: #ddd;
+}
+
+#user-nickname-text:hover, #my-page-text:hover, #user-text:hover {
   color: #0df;
 }
 
@@ -31,7 +35,11 @@
   color: #ff0000;
 }
 
-.book-list>.list:hover, .pagination span:hover:not(.pagination span.current) {
+.book-list>.list:hover {
+  border-color: #f93;
+}
+
+.pagination span:hover:not(.pagination span.current){
   border-color: #f93;
 }
 
@@ -49,4 +57,8 @@
 
 #report-text:hover {
   color: #8B008B;
+}
+
+#more-btn:hover {
+  background-color:#ffad90;
 }

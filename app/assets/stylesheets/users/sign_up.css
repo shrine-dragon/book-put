@@ -48,12 +48,13 @@
 .form-text-indispensable, .form-text-optional {
   font-size: 14px;
   font-weight: bold;
-  &:after {
-    color: #fff;
-    border: none;
-    padding: 3px;
-    margin-left: 10px;
-  }
+}
+
+.form-text-indispensable::after, .form-text-optional::after {
+  color: #fff;
+  border: none;
+  padding: 3px;
+  margin-left: 10px;
 }
 
 .form-text-indispensable::after {
@@ -162,18 +163,19 @@
 .form-bottom-text {
   font-size: 15px;
   margin-top: 10px;
-  &:last-child {
-    padding-bottom: 50px;
-  }
-  span {
-    #link {
-      color: #999999;
-      cursor: pointer;
-    }
-    #link-text {
-      color: #0099e8;
-    }
-  }
+}
+
+.form-bottom-text:last-child {
+  padding-bottom: 50px;
+}
+
+.form-bottom-text>span>#link {
+  color: #0099e8;
+  cursor: pointer;
+}
+
+span > #link-text {
+  color: #0099e8;
 }
 
 .field_with_errors {

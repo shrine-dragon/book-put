@@ -39,19 +39,21 @@
   font-weight: bold;
 }
 
-.pagination {
+.pagination{
   margin-top: 5vh;
   display: flex;
   justify-content: center;
   font-family: FontAwesome;
-  span {
-    background-color: #fff;
-    text-align: center;
-    width: 50px;
-    border: solid 1px #000;
-    color: #000;
-    .current {
-      background-color: #f93;
-    }
-  }
+}
+
+.pagination span{
+  background-color: #fff;
+  text-align: center;
+  width: 50px;
+  border: solid 1px #000;
+  color: #000;
+}
+
+.pagination span.current {
+  background-color: #f93;
 }
