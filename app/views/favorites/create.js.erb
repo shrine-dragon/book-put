@@ -1,5 +1,5 @@
 <%# ①お気に入り登録が行われた場合に処理を実行する %>
-if(document.getElementById('book_<%= @book.id %>').innerHTML = '<%= j(render 'favorite' , book: @book) %>') {
+if(document.getElementById('favorite_<%= @book.id %>').innerHTML = '<%= j(render 'favorite' , book: @book) %>') {
 
   <%# ②flashメッセージ(p要素)を生成する %>
   const flashMessage = document.createElement('p');
