@@ -44,36 +44,29 @@ a {
 
 .how-to-use {
   padding: 10vh;
-}
-
-.how-to-use > .title {
-  font-size: 5vh;
-  text-align: center;
-  line-height: 1.4;
-  font-weight: bold;
+  .title {
+    font-size: 5vh;
+    text-align: center;
+    line-height: 1.4;
+    font-weight: bold;
+  }
 }
 
 .usage-lists {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-}
-
-.usage-lists>list {
-  width: 33vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  list {
+    width: 33vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .list {
   position: relative;
   z-index: 10;
-}
-
-.usage-image {
-  width: 30vw;
-  margin-top: 30px;
 }
 
 .usage-list-number {

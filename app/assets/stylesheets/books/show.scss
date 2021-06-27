@@ -37,11 +37,10 @@
 .detail-user {
   text-align: center;
   font-size: 20px;
-}
-
-.detail-user > span {
-  font-weight: bold;
-  font-size: 25px;
+  span {
+    font-weight: bold;
+    font-size: 25px;
+  }
 }
 
 .detail-user-text {

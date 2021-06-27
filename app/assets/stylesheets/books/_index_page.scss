@@ -7,14 +7,13 @@
 .book-list {
   display: flex;
   flex-wrap: wrap;
-}
-
-.book-list>.list {
-  width: 25vw;
-  padding: 1vw;
-  margin: 5vh 1vw 0;
-  background-color: #fff;
-  border: 1px solid #000;
+  .list {
+    width: 25vw;
+    padding: 1vw;
+    margin: 5vh 1vw 0;
+    background-color: #fff;
+    border: 1px solid #000;
+  }
 }
 
 .book-info {
@@ -44,16 +43,14 @@
   display: flex;
   justify-content: center;
   font-family: FontAwesome;
-}
-
-.pagination span{
-  background-color: #fff;
-  text-align: center;
-  width: 50px;
-  border: solid 1px #000;
-  color: #000;
-}
-
-.pagination span.current {
-  background-color: #f93;
+  span{
+    background-color: #fff;
+    text-align: center;
+    width: 50px;
+    border: solid 1px #000;
+    color: #000;
+    .current {
+      background-color: #f93;
+    }
+  }
 }

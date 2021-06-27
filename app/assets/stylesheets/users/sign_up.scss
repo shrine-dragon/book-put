@@ -48,13 +48,12 @@
 .form-text-indispensable, .form-text-optional {
   font-size: 14px;
   font-weight: bold;
-}
-
-.form-text-indispensable::after, .form-text-optional::after {
-  color: #fff;
-  border: none;
-  padding: 3px;
-  margin-left: 10px;
+  &:after {
+    color: #fff;
+    border: none;
+    padding: 3px;
+    margin-left: 10px;
+  }
 }
 
 .form-text-indispensable::after {
@@ -93,10 +92,9 @@
 .click-upload {
   margin-top: 10px;
   min-width: 250px;
-}
-
-.click-upload>p {
-  margin-bottom: 15px;
+  p {
+    margin-bottom: 15px;
+  }
 }
 
 .select-box {
@@ -115,23 +113,21 @@
 .input-birth-wrap {
   display: flex;
   flex-wrap: wrap;
-}
-
-.input-birth-wrap select {
-  width: 75px;
-  margin-top: 5px;
-  padding-left: 10px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 12px;
-  cursor: pointer;
-}
-
-.input-birth-wrap p {
-  line-height: 35px;
-  margin-top: 5px;
-  padding: 0 5px;
+  select {
+    width: 75px;
+    margin-top: 5px;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  p {
+    line-height: 35px;
+    margin-top: 5px;
+    padding: 0 5px;
+  }
 }
 
 .info-text {
@@ -163,10 +159,9 @@
 .form-bottom-text {
   font-size: 15px;
   margin-top: 10px;
-}
-
-.form-bottom-text:last-child {
-  padding-bottom: 50px;
+  &:last-child {
+    padding-bottom: 50px;
+  }
 }
 
 .form-bottom-text>span>#link {

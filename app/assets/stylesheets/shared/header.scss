@@ -25,12 +25,11 @@
   height: 5vh;
   display: flex;
   margin: 8px 0 0 -12vw;
-}
-
-.search-form>.input-box {
-  width: 75%;
-  height: 5vh;
-  padding-left: 10px;
+  .input-box {
+    width: 75%;
+    height: 5vh;
+    padding-left: 10px;
+  }
 }
 
 .display-change {

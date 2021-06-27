@@ -5,6 +5,11 @@
   cursor: pointer;
 }
 
+.usage-image {
+  width: 30vw;
+  margin-top: 30px;
+}
+
 /* books/_index_page */
 .book-img {
   width: 22.8vw;
