@@ -113,6 +113,9 @@
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 .return-btn {
@@ -152,14 +155,12 @@
   display: flex;
   justify-content: flex-end;
   padding-right: 30px;
-}
-
-.font-three-btn > li, .fa-heart {
-  font-size: 25px;
-  margin-left: 30px;
-  color: #999;
-  cursor: pointer;
-  font-family: FontAwesome;
+  li, .fa-heart {
+    margin-left: 30px;
+    color: #999;
+    cursor: pointer;
+    font-family: FontAwesome;
+  }
 }
 
 .comment-yellow-btn {
@@ -180,6 +181,9 @@
   border-radius: 20px;
   position: absolute;
   left: 43.5vw;
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
 /* shared/_comment_list */
@@ -188,11 +192,10 @@
   font-size: 20px;
   margin-top: -12px;
   font-family: FontAwesome;
-}
-
-.comment-detail-btn > li {
-  color: #999;
-  cursor: pointer;
+  li {
+    color: #999;
+    cursor: pointer;
+  }
 }
 
 /* books/edit */
@@ -216,6 +219,9 @@
 }
 
 /* 共通部分 */
-.sign-in-btn, .sign-up-btn, .post-btn, .blue-next-btn, .blue-register-btn, .login-orange-btn, .go-back-btn, .post-output-orange-btn, .comment-yellow-btn, .post-edit-green-btn {
+.sign-in-btn, .sign-up-btn, .post-btn,
+.blue-next-btn, .blue-register-btn, .login-orange-btn,
+.go-back-btn, .post-output-orange-btn,
+.comment-yellow-btn, .post-edit-green-btn {
   border-radius: 5px;
 }
