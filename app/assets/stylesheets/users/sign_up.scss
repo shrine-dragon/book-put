@@ -162,11 +162,12 @@
   &:last-child {
     padding-bottom: 50px;
   }
-}
-
-.form-bottom-text>span>#link {
-  color: #0099e8;
-  cursor: pointer;
+  span {
+    #link {
+      color: #0099e8;
+      cursor: pointer;
+    }
+  }
 }
 
 span > #link-text {
