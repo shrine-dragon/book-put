@@ -39,14 +39,15 @@
       </li>
     </ul>
   </div>
-
   <div class="book-contents">
     <h2 class="title">投稿一覧</h2>
     <%= render 'index_page' %>
   </div>
 </div>
-<%= link_to(new_book_path, class: "post-btn", id: 'orange-btn' ) do %>
-  <span class="post-btn-text">投稿する</span>
+<% if user_signed_in? %>
+  <%= link_to(new_book_path, class: "post-btn", id: 'orange-btn' ) do %>
+    <span class="post-btn-text">投稿する</span>
+  <% end %>
 <% end %>
 
 <%= render 'shared/footer' %>
