@@ -10,10 +10,6 @@
   color: #f93;
 }
 
-#favorite-text:hover {
-  color: #ff66ff;
-}
-
 #link-text:hover {
   text-decoration: underline;
 }

@@ -12,6 +12,7 @@ require('../pulldown')
 require('../flash')
 require('../comment_form')
 require('../accordion')
+require('../scroll')
 require('jquery')
 window.$ = jQuery;
 // Uncomment to copy all static images under ../images to the output folder and reference
