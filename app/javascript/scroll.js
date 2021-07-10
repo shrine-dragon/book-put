@@ -21,8 +21,4 @@ $(function () {
        }
      });
    });
-
-   $('#header_top').click(function() {
-    $('html, body').scrollTop(0);
-  });
 });
