@@ -1,8 +1,11 @@
 $(() => {
-  const parentMenu = document.querySelectorAll('.question');
-  for(let i = 0; i < parentMenu.length;i++) {
-    parentMenu[i].addEventListener('click', (e) => {
-      e.preventDefault();
-    })
-  }
+  $('#question1').click(() => {
+    $('#answer1').slideToggle();
+  })
+  $('#question2').click(() => {
+    $('#answer2').slideToggle();
+  })
+  $('#question3').click(() => {
+    $('#answer3').slideToggle();
+  })
 });
