@@ -21,4 +21,7 @@ $(function () {
        }
      });
    });
+   $('#page_top').click(function() {
+    $('body').scrollTop(0);
+  });
 });
