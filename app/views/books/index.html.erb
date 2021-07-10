@@ -22,7 +22,7 @@
 
   <div class="how-to-use">
     <h2 class="title">BooKPuTの使い方</h2>
-    <ul class="usage-lists">
+    <ul class="usage-list">
       <li class="list">
         <%= image_tag "reading.png", class: "usage-image" %>
         <span class="usage-list-number">1</span>
@@ -42,6 +42,40 @@
   <div class="book-contents">
     <h2 class="title">投稿一覧</h2>
     <%= render 'index_page' %>
+  </div>
+  
+  <div class="faq">
+    <div class="faq-contents">
+      <div class="heading">
+        <h2 class="title">FAQ</h2>
+      </div>
+      <div class="faq">
+        <ul id="faq-list">
+          <li class="faq-list-item">
+            <p class="question">使用するのに、年齢制限はありますか？</p>
+            <span>+</span>
+            <div class="answer">
+              <p>特に年齢制限はございません。どなたでもご利用いただけます。</p>
+            </div>
+          </li>
+          <li class="faq-list-item">
+            <p class="question">使用料はかかりますか？</p>
+            <span>+</span>
+            <div class="answer">
+              <p>使用量は一切かかりません。無料でご利用いただけます。</p>
+            </div>
+          </li>
+          <li class="faq-list-item">
+            <p class="question">自分の読んでいる本について投稿したいのですが、<br>上手く言語化できません。</p>
+            <span>+</span>
+            <div class="answer">
+              <p>完璧に伝える必要はありません。感想や内容などを自分の言葉で書くことで伝わります。箇条書きでも構いません。</p>
+            </div>
+          </li>
+        </ul>
+        
+      </div>
+    </div>
   </div>
 </div>
 <% if user_signed_in? %>
