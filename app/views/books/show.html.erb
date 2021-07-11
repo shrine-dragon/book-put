@@ -132,7 +132,7 @@
           <%= @all_comments.length %>件のコメント
         </div>
         <div id="comment-list">
-          <%= render 'comment_list' %>
+          <%= render 'comments/comment_list' %>
         </div>
         <div id="more-btn">
           <%= link_to_next_page @comments, 'もっと見る', remote: true, id: 'view-more' %>

@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     else
       @book = @comment.book
       @comments = @book.comments
-      render "books/show"
+      redirect_to book_path(@comment.book)
     end
   end
 
