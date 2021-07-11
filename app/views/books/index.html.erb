@@ -39,6 +39,7 @@
       </li>
     </ul>
   </div>
+
   <div class="book-contents" id="book_list" >
     <h2 class="title">投稿一覧</h2>
     <%= render 'index_page' %>
@@ -48,29 +49,30 @@
     <h2 class="title">FAQ</h2>
     <ul id="faq-list">
       <li class="faq-list-item">
-        <p class="question" id="question1">使用するのに、年齢制限はありますか？</p>
-        <div class="answer" id="answer1">
+        <p class="question">使用するのに、年齢制限はありますか？</p>
+        <span>+</span>
+        <div class="answer">
           <p>特に年齢制限はございません。どなたでもご利用いただけます。</p>
         </div>
-        <span>+</span>
       </li>
       <li class="faq-list-item">
-        <p class="question" id="question2">使用料はかかりますか？</p>
-        <div class="answer" id="answer2">
+        <p class="question">使用料はかかりますか？</p>
+        <span>+</span>
+        <div class="answer">
           <p>使用量は一切かかりません。無料でご利用いただけます。</p>
         </div>
-        <span>+</span>
       </li>
       <li class="faq-list-item">
-        <p class="question" id="question3">自分の読んでいる本について投稿したいのですが、<br>上手く言語化できません。</p>
-        <div class="answer" id="answer3">
+        <p class="question">自分の読んでいる本について投稿したいのですが、<br>上手く言語化できません。</p>
+        <span>+</span>
+        <div class="answer">
           <p>完璧に伝える必要はありません。感想や内容などを自分の言葉で書くことで伝わります。箇条書きでも構いません。</p>
         </div>
-        <span>+</span>
       </li>
     </ul>
   </div>
 </div>
+
 <% if user_signed_in? %>
   <%= link_to(new_book_path, class: "post-btn", id: 'orange-btn' ) do %>
     <span class="post-btn-text">投稿する</span>
