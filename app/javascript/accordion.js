@@ -2,7 +2,11 @@ $(() => {
   $('.faq-list-item').click(function() {
     let $answer = $(this).find('.answer');
     $answer.slideToggle();
-    let $symbol = $(this).find('span');
-    $symbol.text('-');
+    if($answer.attr('style')) {
+      let $symbol = $(this).find('span');
+      $symbol.text('-');
+    } else {
+      $symbol.text('+');
+    }
   })
 });
