@@ -1,6 +1,4 @@
 $(function () {
-  var headerHight = $("header").height();
-
   $('a[href^="#"]').click(function(e) {
      var href = $(this).attr("href");
      var target = $(href == "#" || href == "" ? 'html' : href);
@@ -12,6 +10,7 @@ $(function () {
        }, 400, "swing"),
        e.preventDefault(),
      ).done(function() {
+       var headerHight = $("header").height();
        var diff = target.offset().top - headerHight;
        if (diff === position) {
        } else {
@@ -21,6 +20,7 @@ $(function () {
        }
      });
    });
+
    $('#page_top').click(function() {
     $('body').scrollTop(0);
   });
