@@ -1,12 +1,23 @@
 $(() => {
-  $('.faq-list-item').click(function() {
+  $('.faq-list-item').click(() => {
     let $answer = $(this).find('.answer');
-    $answer.slideToggle();
-    if($answer.attr('style')) {
-      let $symbol = $(this).find('span');
-      $symbol.text('-');
+    if($answer.hasClass('open')) { 
+      $answer.removeClass('open');
+      // slideUpメソッドを用いて、$answerを隠してください
+      $answer.slideUp();
+
+      // 子要素のspanタグの中身をtextメソッドを用いて書き換えてください
+      $(this).find('.plus');
+      $('.plus').text('+');
     } else {
-      $symbol.text('+');
+      $answer.addClass('open'); 
+      // slideDownメソッドを用いて、$answerを表示してください
+      $answer.slideDown();
+      
+      // 子要素のspanタグの中身をtextメソッドを用いて書き換えてください
+      $(this).find('.plus');
+      $('.plus').text('-');
+      
     }
   })
 });
