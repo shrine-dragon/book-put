@@ -1,5 +1,5 @@
 $(() => {
-  $('.faq-list-item').click(() => {
+  $('.faq-list-item').click(function() {
     let $answer = $(this).find('.answer');
     if($answer.hasClass('open')) { 
       $answer.removeClass('open');
